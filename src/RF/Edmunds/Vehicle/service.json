@@ -1,0 +1,426 @@
+{
+  "name": "Edmunds.com HTTP API - Vehicles",
+  "apiVersion": "1.0",
+  "operations": {
+    "AbstractService": {
+      "httpMethod": "GET",
+      "parameters": {
+        "version": {
+          "location": "uri",
+          "description": "API version",
+          "required": true
+        },
+        "api_key": {
+          "location": "query",
+          "description": "API version",
+          "required": true
+        },
+        "fmt": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Tools.VinDecoder": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/toolsrepository/vindecoder",
+      "responseClass": "styleHolder",
+      "summary": "Return a style object for a given vin",
+      "parameters": {
+        "vin": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Make.FindAll": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findall",
+      "responseClass": "makeHolder",
+      "summary": "Find All Makes"
+    },
+    "Make.FindById": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findbyid",
+      "responseClass": "makeHolder",
+      "parameters": {
+        "id": {
+          "location": "query",
+          "require": true
+        }
+      }
+    },
+    "Make.FindFutureMakes": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findfuturemakes",
+      "responseClass": "makeHolder"
+    },
+    "Make.FindMakeByName": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findmakebyname",
+      "responseClass": "makeHolder",
+      "parameters": {
+        "name": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Make.FindMakesByModelYear": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findmakesbymodelyear",
+      "responseClass": "makeHolder",
+      "parameters": {
+        "year": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Make.FindMakesByPublicationState": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findmakesbypublicationstate",
+      "responseClass": "makeHolder",
+      "parameters": {
+        "state": {
+          "location": "query",
+          "required": true,
+          "type": "enum:new,used,future"
+        }
+      }
+    },
+    "Make.FindNewAndUsed": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findnewandused",
+      "responseClass": "makeHolder"
+    },
+    "Make.FindNewAndUsedMakesByModelYear": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findnewandusedmakesbymodelyear",
+      "responseClass": "makeHolder",
+      "parameters": {
+        "year": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Make.FindNewMakes": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findnewmakes",
+      "responseClass": "makeHolder"
+    },
+    "Make.FindUsedMakes": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/makerepository/findusedmakes",
+      "responseClass": "makeHolder"
+    }
+  },
+  "models": {
+    "makeHolder": {
+      "type": "array",
+      "items": {
+        "$ref": "Make"
+      }
+    },
+    "modelYearHolder": {
+      "type": "array",
+      "items": {
+        "$ref": "ModelYear"
+      }
+    },
+    "styleHolder": {
+      "type": "array",
+      "items": {
+        "$ref": "Style"
+      }
+    },
+    "Make": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "location": "json",
+          "type": "integer"
+        },
+        "models": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "$ref": "Model"
+          }
+        },
+        "name": {
+          "location": "json",
+          "type": "string"
+        },
+        "niceName": {
+          "location": "json",
+          "type": "string"
+        },
+        "attributeGroups": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "Model": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "link": {
+          "location": "json",
+          "type": "string"
+        },
+        "id": {
+          "location": "json",
+          "type": "string"
+        },
+        "name": {
+          "location": "json",
+          "type": "string"
+        } 
+      }
+    },
+    "ModelYear": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "makeId": {
+          "location": "json",
+          "type": "integer"
+        },
+        "makeName": {
+          "location": "json",
+          "type": "string"
+        },
+        "makeNiceName": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelId": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelName": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelNiceName": {
+          "location": "json",
+          "type": "string"
+        },
+        "id": {
+          "location": "json",
+          "type": "integer"
+        },
+        "styles": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "$ref": "Style"
+          }
+        },
+        "newDefaultStyles": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "usedDefaultStyle": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "equipment": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "subModels": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "$ref": "SubModel"
+          }
+        },
+        "midYear": {
+          "location": "json",
+          "type": "boolean"
+        },
+        "year": {
+          "location": "json",
+          "type": "integer"
+        },
+        "dateAvailable": {
+          "location": "json",
+          "type": "any"
+        },
+        "model": {
+          "location": "json",
+          "$ref": "Model"
+        },
+        "name": {
+          "location": "json",
+          "type": "string"
+        },
+        "attributeGroups": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "categories": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "publicationStates": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Style": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "location": "json",
+          "type": "integer"
+        },
+        "makeId": {
+          "location": "json",
+          "type": "integer"
+        },
+        "year": {
+          "location": "json",
+          "type": "integer"
+        },
+        "makeName": {
+          "location": "json",
+          "type": "string"
+        },
+        "makeNiceName": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelId": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelName": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelNiceName": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelYearId": {
+          "location": "json",
+          "type": "integer"
+        },
+        "transmissionType": {
+          "location": "json",
+          "type": "string"
+        },
+        "engineCompessorType": {
+          "location": "json",
+          "type": "string"
+        },
+        "engineFuelType": {
+          "location": "json",
+          "type": "string"
+        },
+        "engineCylinder": {
+          "location": "json",
+          "type": "string"
+        },
+        "engineSize": {
+          "location": "json",
+          "type": "string"
+        },
+        "price": {
+          "location": "json",
+          "type": "object",
+          "properties": {
+            "baseMSRP": {
+              "location": "json",
+              "type": "number"
+            },
+            "baseInvoice": {
+              "location": "json",
+              "type": "number"
+            },
+            "deliveryCharges": {
+              "location": "json",
+              "type": "number"
+            },
+            "tmv": {
+              "location": "json",
+              "type": "number"
+            },
+            "usedTmvRetail": {
+              "location": "json",
+              "type": "number"
+            },
+            "usedPrivateParty": {
+              "location": "json",
+              "type": "number"
+            },
+            "usedTradeIn": {
+              "location": "json",
+              "type": "number"
+            },
+            "estimateTmv": {
+              "location": "json",
+              "type": "boolean"
+            },
+            "tmvRecommendedRating": {
+              "location": "json",
+              "type": "number"
+            }
+          }
+        },
+        "trim": {
+          "location": "json",
+          "type": "object",
+          "properties": {
+            "name": {
+              "location": "json",
+              "type": "string"
+            },
+            "niceName": {
+              "location": "json",
+              "type": "string"
+            }
+          }
+        },
+        "specification": {
+          "location": "json",
+          "type": "object",
+          "properties": {
+            "elements": {
+              "location": "json",
+              "type": "array"
+            },
+            "type": {
+              "location": "json",
+              "type": "string"
+            }  
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+
+  }
+}
