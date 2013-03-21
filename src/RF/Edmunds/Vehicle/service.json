@@ -514,6 +514,153 @@
         }
       }
     },
+    "TrueCostToOwn.NewTrueCostToOwnByStyleIdAndZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/newtruecosttoownbystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.UsedTrueCostToOwnByStyleIdAndZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/usedtruecosttoownbystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.ResaleValuesByStyleIdAndZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/resalevaluesbystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.Depreciation.UsedRatesByStyleIdAndZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/depreciation/usedratesbystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.Depreciation.NewRatesByStyleIdAndZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/depreciation/newratesbystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.NewTotalCashPriceByStyleIdAndZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/newtotalcashpricebystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.UsedTrueCostToOwnByStyleIdAndZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/usedtotalcashpricebystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.GetMakesWithTcoData": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/getmakeswithtcodata",
+      "responseClass": "makes"
+    },
+    "TrueCostToOwn.GetModelsWithTcoData": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/getmodelswithtcodata",
+      "responseClass": "models",
+      "parameters": {
+        "makeid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "TrueCostToOwn.GetStylesWithTcoDataBySubModel": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tco/getstyleswithtcodatabysubmodel",
+      "responseClass": "styleHolder",
+      "parameters": {
+        "make": {
+          "location": "query",
+          "required": true
+        },
+        "model": {
+          "location": "query",
+          "required": true
+        },
+        "year": {
+          "location": "query",
+          "required": true
+        },
+        "submodel": {
+          "location": "query",
+          "required": true
+        },
+        "makeyear": {
+          "location": "query"
+        }
+      }
+    },
     "Maintenance.FindActionById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/action/{id}",
@@ -591,41 +738,162 @@
       "parameters": {
         "id": {
           "location": "uri",
+          "required": true  
+        }
+      }
+    },
+    "Incentive.FindById": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/incentive/incentiverepository/findbyid",
+      "responseClass": "incentiveHolder",
+      "parameters": {
+        "id": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Incentive.FindIncentivesByCategoryAndZipCode": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbycategoryandzipcode",
+      "responseClass": "incentiveHolder",
+      "parameters": {
+        "category": {
+          "location": "query",
+          "required": true
+        },
+        "zipcode": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Incentive.FindIncentivesByMakeId": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeid",
+      "responseClass": "incentiveHolder",
+      "parameters": {
+        "makeid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Incentive.FindIncentivesByMakeIdAndZipCode": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeidandzipcode",
+      "responseClass": "incentiveHolder",
+      "parameters": {
+        "makeid": {
+          "location": "query",
+          "required": true
+        },
+        "zipcode": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Incentive.FindIncentivesByModelYearIdAndZipCode": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymodelyearidandzipcode",
+      "responseClass": "incentiveHolder",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        },
+        "zipcode": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Incentive.FindIncentivesByStyleId": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/incentive/incentiverepository/findincentivebystyleid",
+      "responseClass": "incentiveHolder",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Incentive.FindIncentivesByStyleIdAndZipCode": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbystyleidandzipcode",
+      "responseClass": "incentiveHolder",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "zipcode": {
+          "location": "query",
           "required": true
         }
       }
     }
-
   },
   "models": {
     "makeHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "Make"
       }
     },
+    "makes": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true
+    },
     "modelHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "Model"
       }
     },
+    "models": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true
+    },
     "modelYearHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "ModelYear"
       }
     },
     "styleHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "Style"
       }
     },
     "serviceBulletinHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "ServiceBulletin"
+      }
+    },
+    "zipLaborRateHolder": {
+      "location": "json",
+      "type": "array",
+      "items": {
+        "$ref": "ZipLaborRate"
+      }
+    },
+    "incentiveHolder": {
+      "location": "json",
+      "type": "array",
+      "items": {
+        "$ref": "Incentive"
       }
     },
     "Make": {
@@ -1208,6 +1476,147 @@
           "type": "string"
         }
       }
+    },
+    "TrueCostToOwn": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ZipLaborRate": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "zipcode": {
+          "location": "json",
+          "type": "string"
+        },
+        "laborRate": {
+          "location": "json",
+          "type": "number"
+        }
+      }
+    },
+    "Incentive": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "location": "json",
+          "type": "integer"
+        },
+        "type": {
+          "location": "json",
+          "type": "string"
+        },
+        "contentType": {
+          "location": "json",
+          "type": "string"
+        },
+        "sourceType": {
+          "location": "json",
+          "type": "string"
+        },
+        "startDate": {
+          "location": "json",
+          "type": "string"
+        },
+        "endDate": {
+          "location": "json",
+          "type": "string"
+        },
+        "comments": {
+          "location": "json",
+          "type": "string"
+        },
+        "restrictions": {
+          "location": "json",
+          "type": "string"
+        },
+        "name": {
+          "location": "json",
+          "type": "string"
+        },
+        "primary": {
+          "location": "json",
+          "type": "boolean"
+        },
+        "incentiveVehicles": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "zipcodeExceptions": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "string"
+          }
+        },
+        "categories": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "string"
+          }
+        },
+        "regions": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "string"
+          }
+        },
+        "incentiveType": {
+          "location": "json",
+          "type": "string"
+        },
+        "optionIds": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "any"
+          }
+        },
+        "makeIds": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "styleIds": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "location": "json",
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "rebateAmount": {
+          "location": "json",
+          "type": "any"
+        },
+        "apr": {
+          "location": "json",
+          "type": "any"
+        },
+        "creditRatingTier": {
+          "location": "json",
+          "type": "any"
+        }
+      },
+      "additionalProperties": true
     }
   }
 }
