@@ -380,9 +380,221 @@
           "required": true
         }
       }
+    },
+    "Style.FindById": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/stylerepository/findbyid",
+      "responseClass": "styleHolder",
+      "parameters": {
+        "id": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Style.FindStylesByMakeModelYear": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/stylerepository/findstylesbymakemodelyear",
+      "responseClass": "styleHolder",
+      "parameters": {
+        "make": {
+          "location": "query",
+          "required": true
+        },
+        "model": {
+          "location": "query",
+          "required": true
+        },
+        "year": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Style.FindStylesByModelYearId": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/vehicle/stylerepository/findstylebymakemodelyearid",
+      "responseClass": "styleHolder",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "TMV.CalculateNewTmv": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tmv/tmvservice/calculatenewtmv",
+      "responseClass": "TMV",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "zip": {
+          "location": "query",
+          "required": true
+        },
+        "colorid": {
+          "location": "query"
+        },
+        "optionid": {
+          "location": "query"
+        }
+      }
+    },
+    "TMV.CalculateUsedTmv": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tmv/tmvservice/calculateusedtmv",
+      "responseClass": "TMV",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "condition": {
+          "location": "query",
+          "required": true,
+          "type": "enum:Outstanding,Clean,Average,Rough,Damaged"
+        },
+        "mileage": {
+          "location": "query",
+          "required": true
+        },
+        "zip": {
+          "location": "query",
+          "required": true
+        },
+        "colorid": {
+          "location": "query"
+        },
+        "optionid": {
+          "location": "query"
+        }
+      }
+    },
+    "TMV.CalculateTypicallyEquippedUsedTmv": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tmv/tmvservice/calculatetypicallyequippedusedtmv",
+      "responseClass": "TMV",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "zip": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "TMV.FindCertifiedPriceForStyle": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tmv/tmvservice/findcertifiedpriceforstyle",
+      "responseClass": "TMV",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "zip": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "TMV.FindCpoYearsByMake": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/tmv/tmvservice/findcpoyearsbymake",
+      "responseClass": "TMV",
+      "parameters": {
+        "makeid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Maintenance.FindActionById": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/action/{id}",
+      "responseClass": "serviceBulletinHolder",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "Maintenance.FindActionByModelYearId": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/actionrepository/findbymodelyearid",
+      "responseClass": "serviceBulletinHolder",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Maintenance.FindModelYearIdsWithMaintenanceSchedule": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/actionrepository/findmodelyearidswithmaintenanceschedule",
+      "responseClass": "serviceBulletinHolder"
+    },
+    "Maintenance.FindRecallById": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/recall/{id}",
+      "responseClass": "serviceBulletinHolder",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "Maintenance.FindRecallByModelYearId": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/recallrepository/findbymodelyearid",
+      "responseClass": "serviceBulletinHolder",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Maintenance.FindServiceBulletinById": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/servicebulletinrepository/findbymodelyearid",
+      "responseClass": "serviceBulletinHolder",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "Maintenance.FindStyleNotesById": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/stylesnotes/{id}",
+      "responseClass": "serviceBulletinHolder",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "Maintenance.FindLaborRateByZip": {
+      "extends": "AbstractService",
+      "uri": "/{version}/api/maintenance/ziplaborrate/{id}",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
     }
-
-
 
   },
   "models": {
@@ -408,6 +620,12 @@
       "type": "array",
       "items": {
         "$ref": "Style"
+      }
+    },
+    "serviceBulletinHolder": {
+      "type": "array",
+      "items": {
+        "$ref": "ServiceBulletin"
       }
     },
     "Make": {
@@ -899,6 +1117,95 @@
         "tmvRecommendedRating": {
           "location": "json",
           "type": "number"
+        }
+      }
+    },
+    "TMV": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "colorAdjustment": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "destinationCharge": {
+          "location": "json",
+          "type": "integer"
+        },
+        "estimatedTmv": {
+          "location": "json",
+          "type": "boolean"
+        },
+        "gasGuzzlerTax": {
+          "location": "json",
+          "type": "integer"
+        },
+        "incentivesAndRebates": {
+          "location": "json",
+          "type": "integer"
+        },
+        "nationalBasePrice": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "offerPrice": {
+          "location": "json",
+          "type": "integer"
+        },
+        "optionTMVPrices": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "regionalAdjustment": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "totalWithOptions": {
+          "location": "json",
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "ServiceBulletin": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "location": "json",
+          "type": "integer"
+        },
+        "bulletinNumber": {
+          "location": "json",
+          "type": "string"
+        },
+        "bulletinDateMonth": {
+          "location": "json",
+          "type": "string"
+        },
+        "componentNumber": {
+          "location": "json",
+          "type": "integer"
+        },
+        "componentDescription": {
+          "location": "json",
+          "type": "string"
+        },
+        "nhtsaItemNumber": {
+          "location": "json",
+          "type": "string"
+        },
+        "modelYearId": {
+          "location": "json",
+          "type": "integer"
+        },
+        "summaryText": {
+          "location": "json",
+          "type": "string"
         }
       }
     }
