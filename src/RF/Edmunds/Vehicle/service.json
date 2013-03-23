@@ -12,7 +12,7 @@
         },
         "api_key": {
           "location": "query",
-          "description": "API version",
+          "description": "API key",
           "required": true
         },
         "fmt": {
@@ -24,7 +24,7 @@
     "Tools.VinDecoder": {
       "extends": "AbstractService",
       "uri": "/{version}/api/toolsrepository/vindecoder",
-      "responseClass": "styleHolder",
+      "responseClass": "styleHolderModel",
       "summary": "Return a style object for a given vin",
       "parameters": {
         "vin": {
@@ -36,13 +36,13 @@
     "Make.FindAll": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findall",
-      "responseClass": "makeHolder",
+      "responseClass": "makeHolderModel",
       "summary": "Find All Makes"
     },
     "Make.FindById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findbyid",
-      "responseClass": "makeHolder",
+      "responseClass": "makeHolderModel",
       "parameters": {
         "id": {
           "location": "query",
@@ -53,12 +53,12 @@
     "Make.FindFutureMakes": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findfuturemakes",
-      "responseClass": "makeHolder"
+      "responseClass": "makeHolderModel"
     },
     "Make.FindMakeByName": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findmakebyname",
-      "responseClass": "makeHolder",
+      "responseClass": "makeHolderModel",
       "parameters": {
         "name": {
           "location": "query",
@@ -69,7 +69,7 @@
     "Make.FindMakesByModelYear": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findmakesbymodelyear",
-      "responseClass": "makeHolder",
+      "responseClass": "makeHolderModel",
       "parameters": {
         "year": {
           "location": "query",
@@ -80,7 +80,7 @@
     "Make.FindMakesByPublicationState": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findmakesbypublicationstate",
-      "responseClass": "makeHolder",
+      "responseClass": "makeHolderModel",
       "parameters": {
         "state": {
           "location": "query",
@@ -92,12 +92,12 @@
     "Make.FindNewAndUsed": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findnewandused",
-      "responseClass": "makeHolder"
+      "responseClass": "makeHolderModel"
     },
     "Make.FindNewAndUsedMakesByModelYear": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findnewandusedmakesbymodelyear",
-      "responseClass": "makeHolder",
+      "responseClass": "makeHolderModel",
       "parameters": {
         "year": {
           "location": "query",
@@ -108,17 +108,17 @@
     "Make.FindNewMakes": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findnewmakes",
-      "responseClass": "makeHolder"
+      "responseClass": "makeHolderModel"
     },
     "Make.FindUsedMakes": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/makerepository/findusedmakes",
-      "responseClass": "makeHolder"
+      "responseClass": "makeHolderModel"
     },
     "Model.FindById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findbyid",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "id": {
           "location": "query",
@@ -129,7 +129,7 @@
     "Model.FindByMakeId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findbymakeid",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -140,7 +140,7 @@
     "Model.FindFutureModelsByMakeId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findfuturemodelsbymakeid",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "makeId": {
           "location": "query",
@@ -151,7 +151,7 @@
     "Model.FindModelByMakeModelName": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelbymakemodelname",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -166,7 +166,7 @@
     "Model.FindModelsByMake": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymake",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -177,7 +177,7 @@
     "Model.FindModelsByMakeAndPublicationState": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymakeandpublicationstate",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -189,7 +189,7 @@
     "Model.FindModelsByMakeAndYear": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymakeandyear",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -204,7 +204,7 @@
     "Model.FindNewAndUsedModelsByMakeId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findnewandusedmodelsbymakeid",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "makeId": {
           "location": "query",
@@ -215,7 +215,7 @@
     "Model.FindNewModelsByMakeId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findnewmodelsbymakeid",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "makeId": {
           "location": "query",
@@ -226,7 +226,7 @@
     "Model.FindUsedModelsByMakeId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findusedmodelsbymakeid",
-      "responseClass": "modelHolder",
+      "responseClass": "modelHolderModel",
       "parameters": {
         "makeId": {
           "location": "query",
@@ -237,7 +237,7 @@
     "ModelYear.FindById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findbyid",
-      "responseClass": "modelYearHolder",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
         "id": {
           "location": "query",
@@ -248,22 +248,22 @@
     "ModelYear.FindDistinctYearWithNew": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithnew",
-      "responseType": "primitive"
+      "responseType": "modelYearList"
     },
     "ModelYear.FindDistinctYearWithNewOrUsed": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithneworused",
-      "responseType": "primitive"
+      "responseType": "modelYearList"
     },
     "ModelYear.FindDistinctYearWithUsed": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithused",
-      "responseType": "primitive"
+      "responseType": "modelYearList"
     },
     "ModelYear.FindFutureModelYearsByModelId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findfuturemodelyearsbymodelid",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "modelId": {
           "location": "query",
@@ -274,7 +274,7 @@
     "ModelYear.FindModelYearsByMakeAndYear": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakeandyear",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "make": {
           "location": "query",
@@ -289,7 +289,7 @@
     "ModelYear.FindModelYearsByMakeModel": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakemodel",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "make": {
           "location": "query",
@@ -304,7 +304,7 @@
     "ModelYear.FindNewAndUsedModelYearsByMakeIdAndYear": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findnewandusedmodelyearsbymakeidandyear",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -318,7 +318,7 @@
     "ModelYear.FindNewModelYearsByModelId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findnewmodelyearsbymodelid",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "modelId": {
           "location": "query",
@@ -329,7 +329,7 @@
     "ModelYear.FindUsedModelYearsByModelId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findusedmodelyearsbymodelid",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "modelId": {
           "location": "query",
@@ -340,7 +340,7 @@
     "ModelYear.FindYearsByCategoryAndPublicationState": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findyearsbycategoryandpublicationstate",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "category": {
           "location": "query",
@@ -354,7 +354,7 @@
     "ModelYear.ForModelId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/formodelid",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "modelid": {
           "location": "query",
@@ -365,7 +365,7 @@
     "ModelYear.ForYearMakeModel": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/foryearmakemodel",
-      "responseType": "primitive",
+      "responseType": "modelYearList",
       "parameters": {
         "make": {
           "location": "query",
@@ -384,7 +384,7 @@
     "Style.FindById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findbyid",
-      "responseClass": "styleHolder",
+      "responseClass": "styleHolderModel",
       "parameters": {
         "id": {
           "location": "query",
@@ -395,7 +395,7 @@
     "Style.FindStylesByMakeModelYear": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findstylesbymakemodelyear",
-      "responseClass": "styleHolder",
+      "responseClass": "styleHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -414,7 +414,7 @@
     "Style.FindStylesByModelYearId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findstylebymakemodelyearid",
-      "responseClass": "styleHolder",
+      "responseClass": "styleHolderModel",
       "parameters": {
         "modelyearid": {
           "location": "query",
@@ -638,7 +638,7 @@
     "TrueCostToOwn.GetStylesWithTcoDataBySubModel": {
       "extends": "AbstractService",
       "uri": "/{version}/api/tco/getstyleswithtcodatabysubmodel",
-      "responseClass": "styleHolder",
+      "responseClass": "styles",
       "parameters": {
         "make": {
           "location": "query",
@@ -664,7 +664,7 @@
     "Maintenance.FindActionById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/action/{id}",
-      "responseClass": "serviceBulletinHolder",
+      "responseClass": "serviceBulletinHolderModel",
       "parameters": {
         "id": {
           "location": "uri",
@@ -675,7 +675,7 @@
     "Maintenance.FindActionByModelYearId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/actionrepository/findbymodelyearid",
-      "responseClass": "serviceBulletinHolder",
+      "responseClass": "serviceBulletinHolderModel",
       "parameters": {
         "modelyearid": {
           "location": "query",
@@ -686,12 +686,12 @@
     "Maintenance.FindModelYearIdsWithMaintenanceSchedule": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/actionrepository/findmodelyearidswithmaintenanceschedule",
-      "responseClass": "serviceBulletinHolder"
+      "responseClass": "serviceBulletinHolderModel"
     },
     "Maintenance.FindRecallById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/recall/{id}",
-      "responseClass": "serviceBulletinHolder",
+      "responseClass": "serviceBulletinHolderModel",
       "parameters": {
         "id": {
           "location": "uri",
@@ -702,7 +702,7 @@
     "Maintenance.FindRecallByModelYearId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/recallrepository/findbymodelyearid",
-      "responseClass": "serviceBulletinHolder",
+      "responseClass": "serviceBulletinHolderModel",
       "parameters": {
         "modelyearid": {
           "location": "query",
@@ -713,7 +713,7 @@
     "Maintenance.FindServiceBulletinById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/servicebulletinrepository/findbymodelyearid",
-      "responseClass": "serviceBulletinHolder",
+      "responseClass": "serviceBulletinHolderModel",
       "parameters": {
         "modelyearid": {
           "location": "query",
@@ -724,7 +724,7 @@
     "Maintenance.FindStyleNotesById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/maintenance/stylesnotes/{id}",
-      "responseClass": "serviceBulletinHolder",
+      "responseClass": "serviceBulletinHolderModel",
       "parameters": {
         "id": {
           "location": "uri",
@@ -734,9 +734,10 @@
     },
     "Maintenance.FindLaborRateByZip": {
       "extends": "AbstractService",
-      "uri": "/{version}/api/maintenance/ziplaborrate/{id}",
+      "uri": "/{version}/api/maintenance/ziplaborrate/{zip}",
+      "responseClass": "zipLaborRateHolderModel",
       "parameters": {
-        "id": {
+        "zip": {
           "location": "uri",
           "required": true  
         }
@@ -745,7 +746,7 @@
     "Incentive.FindById": {
       "extends": "AbstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findbyid",
-      "responseClass": "incentiveHolder",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "id": {
           "location": "query",
@@ -756,7 +757,7 @@
     "Incentive.FindIncentivesByCategoryAndZipCode": {
       "extends": "AbstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbycategoryandzipcode",
-      "responseClass": "incentiveHolder",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "category": {
           "location": "query",
@@ -771,7 +772,7 @@
     "Incentive.FindIncentivesByMakeId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeid",
-      "responseClass": "incentiveHolder",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -782,7 +783,7 @@
     "Incentive.FindIncentivesByMakeIdAndZipCode": {
       "extends": "AbstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeidandzipcode",
-      "responseClass": "incentiveHolder",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -797,7 +798,7 @@
     "Incentive.FindIncentivesByModelYearIdAndZipCode": {
       "extends": "AbstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymodelyearidandzipcode",
-      "responseClass": "incentiveHolder",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "modelyearid": {
           "location": "query",
@@ -812,7 +813,7 @@
     "Incentive.FindIncentivesByStyleId": {
       "extends": "AbstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivebystyleid",
-      "responseClass": "incentiveHolder",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -823,7 +824,7 @@
     "Incentive.FindIncentivesByStyleIdAndZipCode": {
       "extends": "AbstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbystyleidandzipcode",
-      "responseClass": "incentiveHolder",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -837,8 +838,68 @@
     }
   },
   "models": {
-    "makeHolder": {
+    "makeHolderModel": {
       "location": "json",
+      "type": "object",
+      "properties": {
+        "makeHolder": {
+          "$ref": "makeHolder"
+        }
+      }
+    },
+    "modelHolderModel": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "modelHolder": {
+          "$ref": "modelHolder"
+        }
+      }
+    },
+    "modelYearHolderModel": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "modelYearHolder": {
+          "$ref": "modelYearHolder"
+        }
+      }
+    },
+    "styleHolderModel": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "styleHolder": {
+          "$ref": "styleHolder"
+        }
+      }
+    },
+    "serviceBulletinHolderModel": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "serviceBulletinHolder": {
+          "$ref": "serviceBulletinHolder"
+        }
+      }
+    },
+    "zipLaborRateHolderModel": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "zipLaborRateHolder": {
+          "$ref": "zipLaborRateHolder"
+        }
+      }
+    },
+    "incentiveHolderModel": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "$ref": "incentiveHolder"
+      }
+    },
+    "makeHolder": {
       "type": "array",
       "items": {
         "$ref": "Make"
@@ -850,7 +911,6 @@
       "additionalProperties": true
     },
     "modelHolder": {
-      "location": "json",
       "type": "array",
       "items": {
         "$ref": "Model"
@@ -861,15 +921,30 @@
       "type": "object",
       "additionalProperties": true
     },
-    "modelYearHolder": {
+    "styles": {
       "location": "json",
+      "type": "object",
+      "properties": {
+        "styles": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "modelYearHolder": {
       "type": "array",
       "items": {
         "$ref": "ModelYear"
       }
     },
-    "styleHolder": {
+    "modelYearList": {
       "location": "json",
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "styleHolder": {
       "type": "array",
       "items": {
         "$ref": "Style"
@@ -901,26 +976,21 @@
       "type": "object",
       "properties": {
         "id": {
-          "location": "json",
           "type": "integer"
         },
         "models": {
-          "location": "json",
           "type": "array",
           "items": {
             "$ref": "ModelShort"
           }
         },
         "name": {
-          "location": "json",
           "type": "string"
         },
         "niceName": {
-          "location": "json",
           "type": "string"
         },
         "attributeGroups": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         }
@@ -931,65 +1001,52 @@
       "type": "object",
       "properties": {
         "makeId": {
-          "location": "json",
           "type": "integer"
         },
         "makeName": {
-          "location": "json",
           "type": "string"
         },
         "makeNiceName": {
-          "location": "json",
           "type": "string"
         },
         "id": {
-          "location": "json",
           "type": "string"
         },
         "name": {
-          "location": "json",
           "type": "string"
         },
         "niceName": {
-          "location": "json",
           "type": "string"
         },
         "make": {
-          "location": "json",
           "type": "object",
           "properties": {
             "link": {
-              "location": "json",
               "type": "string"
             }
           }
         },
         "modelYears": {
-          "location": "json",
           "type": "array",
           "items": {
             "$ref": "ModelYearShort"
           }
         },
         "attributeGroups": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "categories": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "publicationStates": {
-          "location": "json",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "subModels": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         }
@@ -1000,15 +1057,12 @@
       "type": "object",
       "properties": {
         "link": {
-          "location": "json",
           "type": "string"
         },
         "id": {
-          "location": "json",
           "type": "string"
         },
         "name": {
-          "location": "json",
           "type": "string"
         } 
       }
@@ -1018,98 +1072,77 @@
       "type": "object",
       "properties": {
         "makeId": {
-          "location": "json",
           "type": "integer"
         },
         "makeName": {
-          "location": "json",
           "type": "string"
         },
         "makeNiceName": {
-          "location": "json",
           "type": "string"
         },
         "modelId": {
-          "location": "json",
           "type": "string"
         },
         "modelName": {
-          "location": "json",
           "type": "string"
         },
         "modelNiceName": {
-          "location": "json",
           "type": "string"
         },
         "id": {
-          "location": "json",
           "type": "integer"
         },
         "styles": {
-          "location": "json",
           "type": "array",
           "items": {
             "$ref": "Style"
           }
         },
         "newDefaultStyles": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "usedDefaultStyle": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "equipment": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "additionalProperties": true
           }
         },
         "subModels": {
-          "location": "json",
           "type": "array",
           "items": {
             "$ref": "SubModel"
           }
         },
         "midYear": {
-          "location": "json",
           "type": "boolean"
         },
         "year": {
-          "location": "json",
           "type": "integer"
         },
         "dateAvailable": {
-          "location": "json",
           "type": "any"
         },
         "model": {
-          "location": "json",
           "$ref": "ModelShort"
         },
         "name": {
-          "location": "json",
           "type": "string"
         },
         "attributeGroups": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "categories": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "publicationStates": {
-          "location": "json",
           "type": "array",
           "items": {
             "location": "json",
@@ -1123,15 +1156,12 @@
       "type": "object",
       "properties": {
         "link": {
-          "location": "json",
           "type": "string"
         },
         "id": {
-          "location": "json",
           "type": "integer"
         },
         "year": {
-          "location": "json",
           "type": "string"
         }
       }
@@ -1141,161 +1171,126 @@
       "type": "object",
       "properties": {
         "id": {
-          "location": "json",
           "type": "integer"
         },
         "makeId": {
-          "location": "json",
           "type": "integer"
         },
         "year": {
-          "location": "json",
           "type": "integer"
         },
         "makeName": {
-          "location": "json",
           "type": "string"
         },
         "makeNiceName": {
-          "location": "json",
           "type": "string"
         },
         "modelId": {
-          "location": "json",
           "type": "string"
         },
         "modelName": {
-          "location": "json",
           "type": "string"
         },
         "modelNiceName": {
-          "location": "json",
           "type": "string"
         },
         "modelYearId": {
-          "location": "json",
           "type": "integer"
         },
         "transmissionType": {
-          "location": "json",
           "type": "string"
         },
         "engineCompessorType": {
-          "location": "json",
           "type": "string"
         },
         "engineFuelType": {
-          "location": "json",
           "type": "string"
         },
         "engineCylinder": {
-          "location": "json",
           "type": "string"
         },
         "engineSize": {
-          "location": "json",
           "type": "string"
         },
         "price": {
           "$ref": "Price"
         },
         "trim": {
-          "location": "json",
           "type": "object",
           "properties": {
             "name": {
-              "location": "json",
               "type": "string"
             },
             "niceName": {
-              "location": "json",
               "type": "string"
             }
           }
         },
         "specification": {
-          "location": "json",
           "type": "object",
           "properties": {
             "elements": {
-              "location": "json",
               "type": "array"
             },
             "type": {
-              "location": "json",
               "type": "string"
             }  
           }
         },
         "standardEquipment": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "properties": {
               "link": {
-                "location": "json",
                 "type": "string"
               }
             }
           }
         },
         "optionalEquipment": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "properties": {
               "link": {
-                "location": "json",
                 "type": "string"
               }
             }
           }
         },
         "usedEquipment": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "properties": {
               "link": {
-                "location": "json",
                 "type": "string"
               }
             }
           }
         },
         "options": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "categories": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "modelYear": {
-          "location": "json",
           "type": "object",
           "properties": {
             "link": {
-              "location": "json",
               "type": "string"
             }
           }
         },
         "attributeGroups": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
         "configurableEquipment": {
-          "location": "json",
           "type": "object",
           "additionalProperties": true
         },
@@ -1305,42 +1300,33 @@
           "additionalProperties": true
         },
         "typicallyEquippedSpecifications": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "additionalProperties": true
           }
         },
         "squishVins": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "additionalProperties": true
           }
         },
         "subModels": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "additionalProperties": true
           }
         },
         "name": {
-          "location": "json",
           "type": "string"
         },
         "niceName": {
-          "location": "json",
           "type": "string"
         },
         "publicationState": {
-          "location": "json",
           "type": "string"
         }  
       },
@@ -1351,39 +1337,30 @@
       "type": "object",
       "properties": {
         "baseMSRP": {
-          "location": "json",
           "type": "number"
         },
         "baseInvoice": {
-          "location": "json",
           "type": "number"
         },
         "deliveryCharges": {
-          "location": "json",
           "type": "number"
         },
         "tmv": {
-          "location": "json",
           "type": "number"
         },
         "usedTmvRetail": {
-          "location": "json",
           "type": "number"
         },
         "usedPrivateParty": {
-          "location": "json",
           "type": "number"
         },
         "usedTradeIn": {
-          "location": "json",
           "type": "number"
         },
         "estimateTmv": {
-          "location": "json",
           "type": "boolean"
         },
         "tmvRecommendedRating": {
-          "location": "json",
           "type": "number"
         }
       }
@@ -1392,50 +1369,45 @@
       "location": "json",
       "type": "object",
       "properties": {
-        "colorAdjustment": {
-          "location": "json",
+        "tmv": {
           "type": "object",
-          "additionalProperties": true
-        },
-        "destinationCharge": {
-          "location": "json",
-          "type": "integer"
-        },
-        "estimatedTmv": {
-          "location": "json",
-          "type": "boolean"
-        },
-        "gasGuzzlerTax": {
-          "location": "json",
-          "type": "integer"
-        },
-        "incentivesAndRebates": {
-          "location": "json",
-          "type": "integer"
-        },
-        "nationalBasePrice": {
-          "location": "json",
-          "type": "object",
-          "additionalProperties": true
-        },
-        "offerPrice": {
-          "location": "json",
-          "type": "integer"
-        },
-        "optionTMVPrices": {
-          "location": "json",
-          "type": "object",
-          "additionalProperties": true
-        },
-        "regionalAdjustment": {
-          "location": "json",
-          "type": "object",
-          "additionalProperties": true
-        },
-        "totalWithOptions": {
-          "location": "json",
-          "type": "object",
-          "additionalProperties": true
+          "properties": {
+            "colorAdjustment": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "destinationCharge": {
+              "type": "integer"
+            },
+            "estimatedTmv": {
+              "type": "boolean"
+            },
+            "gasGuzzlerTax": {
+              "type": "integer"
+            },
+            "incentivesAndRebates": {
+              "type": "integer"
+            },
+            "nationalBasePrice": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "offerPrice": {
+              "type": "integer"
+            },
+            "optionTMVPrices": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "regionalAdjustment": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "totalWithOptions": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
         }
       }
     },
@@ -1444,35 +1416,27 @@
       "type": "object",
       "properties": {
         "id": {
-          "location": "json",
           "type": "integer"
         },
         "bulletinNumber": {
-          "location": "json",
           "type": "string"
         },
         "bulletinDateMonth": {
-          "location": "json",
           "type": "string"
         },
         "componentNumber": {
-          "location": "json",
           "type": "integer"
         },
         "componentDescription": {
-          "location": "json",
           "type": "string"
         },
         "nhtsaItemNumber": {
-          "location": "json",
           "type": "string"
         },
         "modelYearId": {
-          "location": "json",
           "type": "integer"
         },
         "summaryText": {
-          "location": "json",
           "type": "string"
         }
       }
@@ -1487,11 +1451,9 @@
       "type": "object",
       "properties": {
         "zipcode": {
-          "location": "json",
           "type": "string"
         },
         "laborRate": {
-          "location": "json",
           "type": "number"
         }
       }
@@ -1501,118 +1463,90 @@
       "type": "object",
       "properties": {
         "id": {
-          "location": "json",
           "type": "integer"
         },
         "type": {
-          "location": "json",
           "type": "string"
         },
         "contentType": {
-          "location": "json",
           "type": "string"
         },
         "sourceType": {
-          "location": "json",
           "type": "string"
         },
         "startDate": {
-          "location": "json",
           "type": "string"
         },
         "endDate": {
-          "location": "json",
           "type": "string"
         },
         "comments": {
-          "location": "json",
           "type": "string"
         },
         "restrictions": {
-          "location": "json",
           "type": "string"
         },
         "name": {
-          "location": "json",
           "type": "string"
         },
         "primary": {
-          "location": "json",
           "type": "boolean"
         },
         "incentiveVehicles": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "additionalProperties": true
           }
         },
         "zipcodeExceptions": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "string"
           }
         },
         "categories": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "string"
           }
         },
         "regions": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "string"
           }
         },
         "incentiveType": {
-          "location": "json",
           "type": "string"
         },
         "optionIds": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "any"
           }
         },
         "makeIds": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "additionalProperties": true
           }
         },
         "styleIds": {
-          "location": "json",
           "type": "array",
           "items": {
-            "location": "json",
             "type": "object",
             "additionalProperties": true
           }
         },
         "rebateAmount": {
-          "location": "json",
           "type": "any"
         },
         "apr": {
-          "location": "json",
           "type": "any"
         },
         "creditRatingTier": {
-          "location": "json",
           "type": "any"
         }
       },
