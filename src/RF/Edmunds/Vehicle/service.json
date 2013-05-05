@@ -2,7 +2,7 @@
   "name": "Edmunds.com HTTP API - Vehicles",
   "apiVersion": "1.0",
   "operations": {
-    "AbstractService": {
+    "abstractService": {
       "httpMethod": "GET",
       "parameters": {
         "version": {
@@ -21,8 +21,8 @@
         }
       }
     },
-    "Tools.VinDecoder": {
-      "extends": "AbstractService",
+    "tools.vinDecoder": {
+      "extends": "abstractService",
       "uri": "/{version}/api/toolsrepository/vindecoder",
       "responseClass": "styleHolderModel",
       "summary": "Return a style object for a given vin",
@@ -33,14 +33,14 @@
         }
       }
     },
-    "Make.FindAll": {
-      "extends": "AbstractService",
+    "make.findAll": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findall",
       "responseClass": "makeHolderModel",
       "summary": "Find All Makes"
     },
-    "Make.FindById": {
-      "extends": "AbstractService",
+    "make.findById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findbyid",
       "responseClass": "makeHolderModel",
       "parameters": {
@@ -50,13 +50,13 @@
         }
       }
     },
-    "Make.FindFutureMakes": {
-      "extends": "AbstractService",
+    "make.findFutureMakes": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findfuturemakes",
       "responseClass": "makeHolderModel"
     },
-    "Make.FindMakeByName": {
-      "extends": "AbstractService",
+    "make.findMakeByName": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findmakebyname",
       "responseClass": "makeHolderModel",
       "parameters": {
@@ -66,8 +66,8 @@
         }
       }
     },
-    "Make.FindMakesByModelYear": {
-      "extends": "AbstractService",
+    "make.findMakesByModelYear": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findmakesbymodelyear",
       "responseClass": "makeHolderModel",
       "parameters": {
@@ -77,25 +77,26 @@
         }
       }
     },
-    "Make.FindMakesByPublicationState": {
-      "extends": "AbstractService",
+    "make.findMakesByPublicationState": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findmakesbypublicationstate",
       "responseClass": "makeHolderModel",
       "parameters": {
         "state": {
           "location": "query",
           "required": true,
-          "type": "enum:new,used,future"
+          "type": "string",
+          "enum": [ "new", "used", "future" ]
         }
       }
     },
-    "Make.FindNewAndUsed": {
-      "extends": "AbstractService",
+    "make.findNewAndUsed": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findnewandused",
       "responseClass": "makeHolderModel"
     },
-    "Make.FindNewAndUsedMakesByModelYear": {
-      "extends": "AbstractService",
+    "make.findNewAndUsedMakesByModelYear": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findnewandusedmakesbymodelyear",
       "responseClass": "makeHolderModel",
       "parameters": {
@@ -105,18 +106,18 @@
         }
       }
     },
-    "Make.FindNewMakes": {
-      "extends": "AbstractService",
+    "make.findNewMakes": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findnewmakes",
       "responseClass": "makeHolderModel"
     },
-    "Make.FindUsedMakes": {
-      "extends": "AbstractService",
+    "make.findUsedMakes": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/makerepository/findusedmakes",
       "responseClass": "makeHolderModel"
     },
-    "Model.FindById": {
-      "extends": "AbstractService",
+    "model.findById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findbyid",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -126,8 +127,8 @@
         }
       }
     },
-    "Model.FindByMakeId": {
-      "extends": "AbstractService",
+    "model.findByMakeId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findbymakeid",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -137,8 +138,8 @@
         }
       }
     },
-    "Model.FindFutureModelsByMakeId": {
-      "extends": "AbstractService",
+    "model.findFutureModelsByMakeId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findfuturemodelsbymakeid",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -148,8 +149,8 @@
         }
       }
     },
-    "Model.FindModelByMakeModelName": {
-      "extends": "AbstractService",
+    "model.findModelByMakeModelName": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelbymakemodelname",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -163,8 +164,8 @@
         }
       }
     },
-    "Model.FindModelsByMake": {
-      "extends": "AbstractService",
+    "model.findModelsByMake": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymake",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -174,20 +175,26 @@
         }
       }
     },
-    "Model.FindModelsByMakeAndPublicationState": {
-      "extends": "AbstractService",
+    "model.findModelsByMakeAndPublicationState": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymakeandpublicationstate",
       "responseClass": "modelHolderModel",
       "parameters": {
         "make": {
           "location": "query",
           "required": true,
-          "type": "enum:new,used,future"
+          "type": "string"
+        },
+        "state": {
+          "location": "query",
+          "required": true,
+          "type": "string",
+          "enum": [ "new", "used", "future" ]
         }
       }
     },
-    "Model.FindModelsByMakeAndYear": {
-      "extends": "AbstractService",
+    "model.findModelsByMakeAndYear": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymakeandyear",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -201,8 +208,8 @@
         }
       }
     },
-    "Model.FindNewAndUsedModelsByMakeId": {
-      "extends": "AbstractService",
+    "model.findNewAndUsedModelsByMakeId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findnewandusedmodelsbymakeid",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -212,8 +219,8 @@
         }
       }
     },
-    "Model.FindNewModelsByMakeId": {
-      "extends": "AbstractService",
+    "model.findNewModelsByMakeId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findnewmodelsbymakeid",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -223,8 +230,8 @@
         }
       }
     },
-    "Model.FindUsedModelsByMakeId": {
-      "extends": "AbstractService",
+    "model.findUsedModelsByMakeId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelrepository/findusedmodelsbymakeid",
       "responseClass": "modelHolderModel",
       "parameters": {
@@ -234,8 +241,8 @@
         }
       }
     },
-    "ModelYear.FindById": {
-      "extends": "AbstractService",
+    "modelYear.findById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findbyid",
       "responseClass": "modelYearHolderModel",
       "parameters": {
@@ -245,23 +252,23 @@
         }
       }
     },
-    "ModelYear.FindDistinctYearWithNew": {
-      "extends": "AbstractService",
+    "modelYear.findDistinctYearWithNew": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithnew",
       "responseType": "modelYearList"
     },
-    "ModelYear.FindDistinctYearWithNewOrUsed": {
-      "extends": "AbstractService",
+    "modelYear.findDistinctYearWithNewOrUsed": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithneworused",
       "responseType": "modelYearList"
     },
-    "ModelYear.FindDistinctYearWithUsed": {
-      "extends": "AbstractService",
+    "modelYear.findDistinctYearWithUsed": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithused",
       "responseType": "modelYearList"
     },
-    "ModelYear.FindFutureModelYearsByModelId": {
-      "extends": "AbstractService",
+    "modelYear.findFutureModelYearsByModelId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findfuturemodelyearsbymodelid",
       "responseType": "modelYearList",
       "parameters": {
@@ -271,8 +278,8 @@
         }
       }
     },
-    "ModelYear.FindModelYearsByMakeAndYear": {
-      "extends": "AbstractService",
+    "modelYear.findModelYearsByMakeAndYear": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakeandyear",
       "responseType": "modelYearList",
       "parameters": {
@@ -286,8 +293,8 @@
         }  
       }
     },
-    "ModelYear.FindModelYearsByMakeModel": {
-      "extends": "AbstractService",
+    "modelYear.findModelYearsByMakeModel": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakemodel",
       "responseType": "modelYearList",
       "parameters": {
@@ -301,8 +308,8 @@
         }
       }
     },
-    "ModelYear.FindNewAndUsedModelYearsByMakeIdAndYear": {
-      "extends": "AbstractService",
+    "modelYear.findNewAndUsedModelYearsByMakeIdAndYear": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findnewandusedmodelyearsbymakeidandyear",
       "responseType": "modelYearList",
       "parameters": {
@@ -315,8 +322,8 @@
         }  
       }
     },
-    "ModelYear.FindNewModelYearsByModelId": {
-      "extends": "AbstractService",
+    "modelYear.findNewModelYearsByModelId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findnewmodelyearsbymodelid",
       "responseType": "modelYearList",
       "parameters": {
@@ -326,8 +333,8 @@
         }
       }
     },
-    "ModelYear.FindUsedModelYearsByModelId": {
-      "extends": "AbstractService",
+    "modelYear.findUsedModelYearsByModelId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findusedmodelyearsbymodelid",
       "responseType": "modelYearList",
       "parameters": {
@@ -337,8 +344,8 @@
         } 
       }
     },
-    "ModelYear.FindYearsByCategoryAndPublicationState": {
-      "extends": "AbstractService",
+    "modelYear.findYearsByCategoryAndPublicationState": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findyearsbycategoryandpublicationstate",
       "responseType": "modelYearList",
       "parameters": {
@@ -351,8 +358,8 @@
         }
       }
     },
-    "ModelYear.ForModelId": {
-      "extends": "AbstractService",
+    "modelYear.forModelId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/formodelid",
       "responseType": "modelYearList",
       "parameters": {
@@ -362,8 +369,8 @@
         }
       }
     },
-    "ModelYear.ForYearMakeModel": {
-      "extends": "AbstractService",
+    "modelYear.forYearMakeModel": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/foryearmakemodel",
       "responseType": "modelYearList",
       "parameters": {
@@ -381,8 +388,8 @@
         }
       }
     },
-    "Style.FindById": {
-      "extends": "AbstractService",
+    "style.findById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findbyid",
       "responseClass": "styleHolderModel",
       "parameters": {
@@ -392,8 +399,8 @@
         }
       }
     },
-    "Style.FindStylesByMakeModelYear": {
-      "extends": "AbstractService",
+    "style.findStylesByMakeModelYear": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findstylesbymakemodelyear",
       "responseClass": "styleHolderModel",
       "parameters": {
@@ -411,8 +418,8 @@
         }
       }
     },
-    "Style.FindStylesByModelYearId": {
-      "extends": "AbstractService",
+    "style.findStylesByModelYearId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findstylebymakemodelyearid",
       "responseClass": "styleHolderModel",
       "parameters": {
@@ -422,10 +429,10 @@
         }
       }
     },
-    "TMV.CalculateNewTmv": {
-      "extends": "AbstractService",
+    "tmv.calculateNewTmv": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/calculatenewtmv",
-      "responseClass": "TMV",
+      "responseClass": "tmv",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -443,10 +450,10 @@
         }
       }
     },
-    "TMV.CalculateUsedTmv": {
-      "extends": "AbstractService",
+    "tmv.calculateUsedTmv": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/calculateusedtmv",
-      "responseClass": "TMV",
+      "responseClass": "tmv",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -455,7 +462,8 @@
         "condition": {
           "location": "query",
           "required": true,
-          "type": "enum:Outstanding,Clean,Average,Rough,Damaged"
+          "type": "string",
+          "enum": [ "Outstanding", "Clean", "Average", "Rough", "Damaged" ]
         },
         "mileage": {
           "location": "query",
@@ -473,10 +481,10 @@
         }
       }
     },
-    "TMV.CalculateTypicallyEquippedUsedTmv": {
-      "extends": "AbstractService",
+    "tmv.calculateTypicallyEquippedUsedTmv": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/calculatetypicallyequippedusedtmv",
-      "responseClass": "TMV",
+      "responseClass": "tmv",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -488,10 +496,10 @@
         }
       }
     },
-    "TMV.FindCertifiedPriceForStyle": {
-      "extends": "AbstractService",
+    "tmv.findCertifiedPriceForStyle": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/findcertifiedpriceforstyle",
-      "responseClass": "TMV",
+      "responseClass": "tmv",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -503,10 +511,10 @@
         }
       }
     },
-    "TMV.FindCpoYearsByMake": {
-      "extends": "AbstractService",
+    "tmv.findCpoYearsByMake": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/findcpoyearsbymake",
-      "responseClass": "TMV",
+      "responseClass": "tmv",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -514,8 +522,8 @@
         }
       }
     },
-    "TrueCostToOwn.NewTrueCostToOwnByStyleIdAndZip": {
-      "extends": "AbstractService",
+    "trueCostToOwn.newTrueCostToOwnByStyleIdAndZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/newtruecosttoownbystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
       "parameters": {
@@ -529,8 +537,8 @@
         }
       }
     },
-    "TrueCostToOwn.UsedTrueCostToOwnByStyleIdAndZip": {
-      "extends": "AbstractService",
+    "trueCostToOwn.usedTrueCostToOwnByStyleIdAndZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/usedtruecosttoownbystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
       "parameters": {
@@ -544,8 +552,8 @@
         }
       }
     },
-    "TrueCostToOwn.ResaleValuesByStyleIdAndZip": {
-      "extends": "AbstractService",
+    "trueCostToOwn.resaleValuesByStyleIdAndZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/resalevaluesbystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
       "parameters": {
@@ -559,8 +567,8 @@
         }
       }
     },
-    "TrueCostToOwn.Depreciation.UsedRatesByStyleIdAndZip": {
-      "extends": "AbstractService",
+    "trueCostToOwn.depreciation.usedRatesByStyleIdAndZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/depreciation/usedratesbystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
       "parameters": {
@@ -574,8 +582,8 @@
         }
       }
     },
-    "TrueCostToOwn.Depreciation.NewRatesByStyleIdAndZip": {
-      "extends": "AbstractService",
+    "trueCostToOwn.depreciation.newRatesByStyleIdAndZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/depreciation/newratesbystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
       "parameters": {
@@ -589,8 +597,8 @@
         }
       }
     },
-    "TrueCostToOwn.NewTotalCashPriceByStyleIdAndZip": {
-      "extends": "AbstractService",
+    "trueCostToOwn.newTotalCashPriceByStyleIdAndZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/newtotalcashpricebystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
       "parameters": {
@@ -604,8 +612,8 @@
         }
       }
     },
-    "TrueCostToOwn.UsedTrueCostToOwnByStyleIdAndZip": {
-      "extends": "AbstractService",
+    "trueCostToOwn.usedTrueCostToOwnByStyleIdAndZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/usedtotalcashpricebystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
       "parameters": {
@@ -619,13 +627,13 @@
         }
       }
     },
-    "TrueCostToOwn.GetMakesWithTcoData": {
-      "extends": "AbstractService",
+    "trueCostToOwn.getMakesWithTcoData": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/getmakeswithtcodata",
       "responseClass": "makes"
     },
-    "TrueCostToOwn.GetModelsWithTcoData": {
-      "extends": "AbstractService",
+    "trueCostToOwn.getModelsWithTcoData": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/getmodelswithtcodata",
       "responseClass": "models",
       "parameters": {
@@ -635,8 +643,8 @@
         }
       }
     },
-    "TrueCostToOwn.GetStylesWithTcoDataBySubModel": {
-      "extends": "AbstractService",
+    "trueCostToOwn.getStylesWithTcoDataBySubModel": {
+      "extends": "abstractService",
       "uri": "/{version}/api/tco/getstyleswithtcodatabysubmodel",
       "responseClass": "styles",
       "parameters": {
@@ -661,8 +669,8 @@
         }
       }
     },
-    "Maintenance.FindActionById": {
-      "extends": "AbstractService",
+    "maintenance.findActionById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/action/{id}",
       "responseClass": "serviceBulletinHolderModel",
       "parameters": {
@@ -672,8 +680,8 @@
         }
       }
     },
-    "Maintenance.FindActionByModelYearId": {
-      "extends": "AbstractService",
+    "maintenance.findActionByModelYearId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/actionrepository/findbymodelyearid",
       "responseClass": "serviceBulletinHolderModel",
       "parameters": {
@@ -683,13 +691,13 @@
         }
       }
     },
-    "Maintenance.FindModelYearIdsWithMaintenanceSchedule": {
-      "extends": "AbstractService",
+    "maintenance.findModelYearIdsWithMaintenanceSchedule": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/actionrepository/findmodelyearidswithmaintenanceschedule",
       "responseClass": "serviceBulletinHolderModel"
     },
-    "Maintenance.FindRecallById": {
-      "extends": "AbstractService",
+    "maintenance.findRecallById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/recall/{id}",
       "responseClass": "serviceBulletinHolderModel",
       "parameters": {
@@ -699,8 +707,8 @@
         }
       }
     },
-    "Maintenance.FindRecallByModelYearId": {
-      "extends": "AbstractService",
+    "maintenance.findRecallByModelYearId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/recallrepository/findbymodelyearid",
       "responseClass": "serviceBulletinHolderModel",
       "parameters": {
@@ -710,8 +718,8 @@
         }
       }
     },
-    "Maintenance.FindServiceBulletinById": {
-      "extends": "AbstractService",
+    "maintenance.findServiceBulletinById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/servicebulletinrepository/findbymodelyearid",
       "responseClass": "serviceBulletinHolderModel",
       "parameters": {
@@ -721,8 +729,8 @@
         }
       }
     },
-    "Maintenance.FindStyleNotesById": {
-      "extends": "AbstractService",
+    "maintenance.findStyleNotesById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/stylesnotes/{id}",
       "responseClass": "serviceBulletinHolderModel",
       "parameters": {
@@ -732,8 +740,8 @@
         }
       }
     },
-    "Maintenance.FindLaborRateByZip": {
-      "extends": "AbstractService",
+    "maintenance.findLaborRateByZip": {
+      "extends": "abstractService",
       "uri": "/{version}/api/maintenance/ziplaborrate/{zip}",
       "responseClass": "zipLaborRateHolderModel",
       "parameters": {
@@ -743,8 +751,8 @@
         }
       }
     },
-    "Incentive.FindById": {
-      "extends": "AbstractService",
+    "incentive.findById": {
+      "extends": "abstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findbyid",
       "responseClass": "incentiveHolderModel",
       "parameters": {
@@ -754,8 +762,8 @@
         }
       }
     },
-    "Incentive.FindIncentivesByCategoryAndZipCode": {
-      "extends": "AbstractService",
+    "incentive.findIncentivesByCategoryAndZipCode": {
+      "extends": "abstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbycategoryandzipcode",
       "responseClass": "incentiveHolderModel",
       "parameters": {
@@ -769,8 +777,8 @@
         }
       }
     },
-    "Incentive.FindIncentivesByMakeId": {
-      "extends": "AbstractService",
+    "incentive.findIncentivesByMakeId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeid",
       "responseClass": "incentiveHolderModel",
       "parameters": {
@@ -780,8 +788,8 @@
         }
       }
     },
-    "Incentive.FindIncentivesByMakeIdAndZipCode": {
-      "extends": "AbstractService",
+    "incentive.findIncentivesByMakeIdAndZipCode": {
+      "extends": "abstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeidandzipcode",
       "responseClass": "incentiveHolderModel",
       "parameters": {
@@ -795,8 +803,8 @@
         }
       }
     },
-    "Incentive.FindIncentivesByModelYearIdAndZipCode": {
-      "extends": "AbstractService",
+    "incentive.findIncentivesByModelYearIdAndZipCode": {
+      "extends": "abstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymodelyearidandzipcode",
       "responseClass": "incentiveHolderModel",
       "parameters": {
@@ -810,8 +818,8 @@
         }
       }
     },
-    "Incentive.FindIncentivesByStyleId": {
-      "extends": "AbstractService",
+    "incentive.findIncentivesByStyleId": {
+      "extends": "abstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivebystyleid",
       "responseClass": "incentiveHolderModel",
       "parameters": {
@@ -821,8 +829,8 @@
         }
       }
     },
-    "Incentive.FindIncentivesByStyleIdAndZipCode": {
-      "extends": "AbstractService",
+    "incentive.findIncentivesByStyleIdAndZipCode": {
+      "extends": "abstractService",
       "uri": "/{version}/api/incentive/incentiverepository/findincentivesbystyleidandzipcode",
       "responseClass": "incentiveHolderModel",
       "parameters": {
@@ -839,7 +847,6 @@
   },
   "models": {
     "makeHolderModel": {
-      "location": "json",
       "type": "object",
       "properties": {
         "makeHolder": {
@@ -848,7 +855,6 @@
       }
     },
     "modelHolderModel": {
-      "location": "json",
       "type": "object",
       "properties": {
         "modelHolder": {
@@ -857,7 +863,6 @@
       }
     },
     "modelYearHolderModel": {
-      "location": "json",
       "type": "object",
       "properties": {
         "modelYearHolder": {
@@ -866,7 +871,6 @@
       }
     },
     "styleHolderModel": {
-      "location": "json",
       "type": "object",
       "properties": {
         "styleHolder": {
@@ -875,7 +879,6 @@
       }
     },
     "serviceBulletinHolderModel": {
-      "location": "json",
       "type": "object",
       "properties": {
         "serviceBulletinHolder": {
@@ -884,7 +887,6 @@
       }
     },
     "zipLaborRateHolderModel": {
-      "location": "json",
       "type": "object",
       "properties": {
         "zipLaborRateHolder": {
@@ -893,13 +895,13 @@
       }
     },
     "incentiveHolderModel": {
-      "location": "json",
       "type": "object",
       "properties": {
         "$ref": "incentiveHolder"
       }
     },
     "makeHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "Make"
@@ -911,6 +913,7 @@
       "additionalProperties": true
     },
     "modelHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "Model"
@@ -932,6 +935,7 @@
       }
     },
     "modelYearHolder": {
+      "location": "json",
       "type": "array",
       "items": {
         "$ref": "ModelYear"
@@ -945,9 +949,10 @@
       }
     },
     "styleHolder": {
+      "location": "json",
       "type": "array",
       "items": {
-        "$ref": "Style"
+        "$ref": "style"
       }
     },
     "serviceBulletinHolder": {
@@ -981,7 +986,7 @@
         "models": {
           "type": "array",
           "items": {
-            "$ref": "ModelShort"
+            "$ref": "modelShort"
           }
         },
         "name": {
@@ -1029,7 +1034,7 @@
         "modelYears": {
           "type": "array",
           "items": {
-            "$ref": "ModelYearShort"
+            "$ref": "modelYearShort"
           }
         },
         "attributeGroups": {
@@ -1052,7 +1057,7 @@
         }
       }
     },
-    "ModelShort": {
+    "modelShort": {
       "location": "json",
       "type": "object",
       "properties": {
@@ -1095,7 +1100,7 @@
         "styles": {
           "type": "array",
           "items": {
-            "$ref": "Style"
+            "$ref": "style"
           }
         },
         "newDefaultStyles": {
@@ -1129,7 +1134,7 @@
           "type": "any"
         },
         "model": {
-          "$ref": "ModelShort"
+          "$ref": "modelShort"
         },
         "name": {
           "type": "string"
@@ -1151,7 +1156,7 @@
         }
       }
     },
-    "ModelYearShort": {
+    "modelYearShort": {
       "location": "json",
       "type": "object",
       "properties": {
@@ -1166,7 +1171,7 @@
         }
       }
     },
-    "Style": {
+    "style": {
       "location": "json",
       "type": "object",
       "properties": {
@@ -1365,7 +1370,7 @@
         }
       }
     },
-    "TMV": {
+    "tmv": {
       "location": "json",
       "type": "object",
       "properties": {
@@ -1395,7 +1400,7 @@
             "offerPrice": {
               "type": "integer"
             },
-            "optionTMVPrices": {
+            "optiontmvPrices": {
               "type": "object",
               "additionalProperties": true
             },
