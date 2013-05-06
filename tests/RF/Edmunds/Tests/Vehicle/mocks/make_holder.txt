@@ -1,0 +1,39 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "makeHolder": [
+    {
+      "id": 200347864,
+      "models": [
+        {
+          "link": "/api/vehicle/am-general/hummer",
+          "id": "AM_General_Hummer",
+          "name": "Hummer"
+        }
+      ],
+      "name": "AM General",
+      "niceName": "amgeneral",
+      "manufacturer": null,
+      "attributeGroups": {}
+    },
+    {
+      "id": 200464140,
+      "models": [
+        {
+          "link": "/api/vehicle/alfa-romeo/4c",
+          "id": "Alfa_Romeo_4C",
+          "name": "4C"
+        }
+      ],
+      "name": "Alfa Romeo",
+      "niceName": "alfaromeo",
+      "manufacturer": null,
+      "attributeGroups": {}
+    }
+  ]
+}

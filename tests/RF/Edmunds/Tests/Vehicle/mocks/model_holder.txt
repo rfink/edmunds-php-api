@@ -1,0 +1,34 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "modelHolder": [
+    {
+      "makeId": "200347864",
+      "makeName": "AM General",
+      "makeNiceName": "amgeneral",
+      "id": "AM_General_Hummer",
+      "name": "Hummer",
+      "niceName": "hummer",
+      "modelLinkCode": "M030013",
+      "make": {
+        "link": "/api/vehicle/am-general"
+      },
+      "modelYears": [
+        {
+          "link": "/api/vehicle/am-general/hummer/2000",
+          "id": "305",
+          "year": 2000
+        }
+      ],
+      "attributeGroups": {},
+      "categories": {},
+      "publicationStates": [ "USED" ],
+      "subModels": {}
+    }
+  ]
+}

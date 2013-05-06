@@ -843,6 +843,21 @@
           "required": true
         }
       }
+    },
+    "photo.findPhotosByStyleId": {
+      "extends": "abstractService",
+      "uri": "/{version}/api/vehiclephoto/service/findphotosbystyleid",
+      "responseClass": "photoHolderModel",
+      "parameters": {
+        "styleId": {
+          "location": "query",
+          "required": true
+        },
+        "vdpOrder": {
+          "location": "query",
+          "required": false
+        }
+      }
     }
   },
   "models": {
@@ -897,7 +912,9 @@
     "incentiveHolderModel": {
       "type": "object",
       "properties": {
-        "$ref": "incentiveHolder"
+        "incentiveHolder": {
+          "$ref": "incentiveHolder"
+        }
       }
     },
     "makeHolder": {
@@ -974,6 +991,18 @@
       "type": "array",
       "items": {
         "$ref": "Incentive"
+      }
+    },
+    "photoHolderModel": {
+      "type": "object",
+      "properties": {
+        "photos": {
+          "type": "array",
+          "location": "json",
+          "items": {
+            "$ref": "Photo"
+          }
+        }
       }
     },
     "Make": {
@@ -1464,7 +1493,6 @@
       }
     },
     "Incentive": {
-      "location": "json",
       "type": "object",
       "properties": {
         "id": {
@@ -1556,6 +1584,41 @@
         }
       },
       "additionalProperties": true
+    },
+    "Photo": {
+      "type": "object",
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "id": {
+          "type": "number"
+        },
+        "captionTranscript": {
+          "type": "string"
+        },
+        "subType": {
+          "type": "string"
+        },
+        "shotTypeAbbreviation": {
+          "type": "string"
+        },
+        "photoSrcs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source": {
+          "type": "string"
+        },
+        "vdpOrder": {
+          "type": "number"
+        }
+      }
     }
   }
 }

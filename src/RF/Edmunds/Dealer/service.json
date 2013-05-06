@@ -1,0 +1,169 @@
+{
+  "name": "Edmunds.com HTTP API - Dealers",
+  "apiVersion": "1.0",
+  "operations": {
+    "abstractService": {
+      "httpMethod": "GET",
+      "parameters": {
+        "version": {
+          "location": "uri",
+          "description": "API version",
+          "required": true
+        },
+        "api_key": {
+          "location": "query",
+          "description": "API key",
+          "required": true
+        },
+        "fmt": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "dealer.get": {
+      "extends": "abstractService",
+      "uri": "/{version}/api/dealer",
+      "responseClass": "dealerHolderModel",
+      "summary": "Return a filtered list of dealers",
+      "parameters": {
+        "zipcode": {
+          "location": "query",
+          "required": true
+        },
+        "makeName": {
+          "location": "query",
+          "required": false
+        },
+        "model": {
+          "location": "query",
+          "required": false
+        },
+        "styleid": {
+          "location": "query",
+          "required": false
+        },
+        "radius": {
+          "location": "query",
+          "required": false
+        }
+      }
+    }
+  },
+  "models": {
+    "dealerHolderModel": {
+      "type": "object",
+      "properties": {
+        "dealerHolder": {
+          "$ref": "dealerHolder"
+        }
+      }
+    },
+    "dealerHolder": {
+      "location": "json",
+      "type": "array",
+      "items": {
+        "$ref": "Dealer"
+      }
+    },
+    "Dealer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "Address"
+        },
+        "name": {
+          "type": "string"
+        },
+        "logicalName": {
+          "type": "string"
+        },
+        "syndicationPartner": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "make": {
+          "type": "string"
+        },
+        "operations": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "contactinfo": {
+          "type": "object",
+          "properties": {
+            "dealer_website": {
+              "type": "string"
+            },
+            "email_address": {
+              "type": "string"
+            },
+            "phone_areacode": {
+              "type": "string"
+            },
+            "phone_postfix": {
+              "type": "string"
+            },
+            "phone_prefix": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "publishDate": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "ratings": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "apartment": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "stateCode": {
+          "type": "string"
+        },
+        "stateName": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

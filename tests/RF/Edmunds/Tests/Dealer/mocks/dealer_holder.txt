@@ -1,0 +1,85 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "dealerHolder": [
+    {
+      "id": "",
+      "locationId": "10691",
+      "address": {
+        "street": "7601 South Blvd",
+        "apartment": "",
+        "city": "Charlotte",
+        "stateCode": "NC",
+        "stateName": "North Carolina",
+        "county": "Mecklenburg",
+        "country": "USA",
+        "zipcode": "28273",
+        "latitude": 35.13182,
+        "longitude": -80.875107
+      },
+      "name": "Keith Hawthorne Ford Lincoln of Charlotte",
+      "logicalName": "KeithHawthorneFordLincolnofCharlotte",
+      "type": "ROOFTOP",
+      "make": "",
+      "operations": {
+        "Wednesday": "08:30 AM-08:00 PM",
+        "Thursday": "08:30 AM-08:00 PM",
+        "Tuesday": "08:30 AM-08:00 PM",
+        "Saturday": "08:30 AM-08:00 PM",
+        "Friday": "08:30 AM-08:00 PM",
+        "Monday": "08:30 AM-08:00 PM",
+        "Sunday": "01:00 PM-06:00 PM"
+      },
+      "contactinfo": {
+        "dealer_website": "http:\/\/www.harrelsonford.com\/",
+        "email_address": "",
+        "phone": "(866) 217-1098"
+      },
+      "publishDate": "2013-05-05",
+      "active": true,
+      "syncPublishDate": "2013-05-05"
+    },
+    {
+      "id": "",
+      "locationId": "739685",
+      "address": {
+        "street": "8201 South Blvd",
+        "apartment": "",
+        "city": "Charlotte",
+        "stateCode": "NC",
+        "stateName": "North Carolina",
+        "county": "Mecklenburg",
+        "country": "USA",
+        "zipcode": "28273",
+        "latitude": 35.124801,
+        "longitude": -80.87856
+      },
+      "name": "Williams Buick GMC",
+      "logicalName": "FolgerBuickGMC",
+      "type": "ROOFTOP",
+      "make": "",
+      "operations": {
+        "Wednesday": "09:00 AM-08:00 PM",
+        "Thursday": "09:00 AM-08:00 PM",
+        "Tuesday": "09:00 AM-08:00 PM",
+        "Saturday": "09:00 AM-06:00 PM",
+        "Friday": "09:00 AM-08:00 PM",
+        "Monday": "09:00 AM-08:00 PM",
+        "Sunday": ""
+      },
+      "contactinfo": {
+        "dealer_website": "http:\/\/www.folgerbuickgmc.com\/",
+        "email_address": "",
+        "phone": "(704) 522-8422, (888) 929-6351, (888) 929-7012, (888) 928-4453"
+      },
+      "publishDate": "2013-05-05",
+      "active": true,
+      "syncPublishDate": "2013-05-05"
+    }
+  ]
+}

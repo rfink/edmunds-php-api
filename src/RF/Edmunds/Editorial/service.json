@@ -1,0 +1,90 @@
+{
+  "name": "Edmunds.com HTTP API - Editorials",
+  "apiVersion": "1.0",
+  "operations": {
+    "abstractService": {
+      "httpMethod": "GET",
+      "parameters": {
+        "version": {
+          "location": "uri",
+          "description": "API version",
+          "required": true
+        },
+        "api_key": {
+          "location": "query",
+          "description": "API key",
+          "required": true
+        },
+        "fmt": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "editorial.get": {
+      "extends": "abstractService",
+      "uri": "/{version}/content",
+      "responseClass": "contentHolderModel",
+      "summary": "Return a filtered list of editorials",
+      "parameters": {
+        "category": {
+          "location": "query",
+          "required": false
+        },
+        "make": {
+          "location": "query",
+          "required": false
+        },
+        "model": {
+          "location": "query",
+          "required": false
+        },
+        "year": {
+          "location": "query",
+          "required": false
+        },
+        "limit": {
+          "location": "query",
+          "required": false
+        }
+      }
+    }
+  },
+  "models": {
+    "contentHolderModel": {
+      "type": "object",
+      "properties": {
+        "contents": {
+          "type": "array",
+          "location": "json",
+          "items": {
+            "$ref": "Content"
+          }
+        }
+      }
+    },
+    "Content": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "published": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

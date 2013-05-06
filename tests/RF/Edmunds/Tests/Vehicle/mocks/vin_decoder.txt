@@ -1,0 +1,44 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "styleHolder": [{
+        "id": 100336294,
+        "makeId": 200003381,
+        "year": 2004,
+        "makeName": "Toyota",
+        "makeNiceName": "toyota",
+        "modelId": "Toyota_4Runner",
+        "modelName": "4Runner",
+        "modelNiceName": "4runner",
+        "modelYearId": 100503599,
+        "transmissionType": "AUTOMATIC",
+        "engineCompressorType": "NA",
+        "engineFuelType": "regular unleaded",
+        "engineCylinder": 6,
+        "engineSize": 4.0,
+        "price": {
+            "baseMSRP": 35820.0,
+            "baseInvoice": 31986.0,
+            "deliveryCharges": 540.0,
+            "tmv": 32834.0,
+            "usedTmvRetail": 13367.0,
+            "usedPrivateParty": 12054.0,
+            "usedTradeIn": 10889.0,
+            "estimateTmv": false,
+            "tmvRecommendedRating": 0
+        },
+        "trim": {
+            "name": "Limited",
+            "niceName": "limited"
+        },
+        "specification": {
+            "elements": [],
+            "type": "AND"
+        }
+    }]
+}

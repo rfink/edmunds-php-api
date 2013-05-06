@@ -1,0 +1,21 @@
+{
+    "name": "rfink/edmunds-php-client",
+    "type": "library",
+    "description": "edmunds api bundle",
+    "keywords": ["edmunds", "api"],
+    "homepage": "https://www.github.com/rfink/edmunds-php-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Fink",
+            "email": "ryanjfink@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "guzzle/guzzle": "3.3.1"
+    },
+    "autoload": {
+        "psr-0": { "RF\\Edmunds": "src/" }
+    }
+}

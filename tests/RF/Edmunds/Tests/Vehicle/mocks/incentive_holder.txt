@@ -1,0 +1,309 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "incentiveHolder": [
+    {
+      "userMessaging": "The Turn-Key Payment Credit is available towards leasing or retail purchase to owners or lessees with a current BMW Financial Services contract or an immediate family member residing in the same household. BMW Financial Services will make your first payment up to $500. Returning Lessees must turn in their leased vehicle within 30 days of signing a new contract. Can be combined with other offers. Must finance new contract through BMW Financial Services.",
+      "id": 2843330,
+      "type": "MISCELLANEOUS",
+      "contentType": "TEXT_ONLY",
+      "sourceType": "UNKNOWN",
+      "subprogramId": 800811,
+      "startDate": "2013-03-01",
+      "endDate": "2013-07-01",
+      "comments": "",
+      "restrictions": "",
+      "name": "12 BMW Turn Key Text Only National",
+      "primary": false,
+      "incentiveVehicles": [
+        {
+          "link": "\/api\/incentive\/incentivevehicle\/42811"
+        }
+      ],
+      "zipcodeExceptions": [
+
+      ],
+      "categories": [
+        "SUV",
+        "Large",
+        "Hybrid",
+        "Coupe",
+        "Car",
+        "Crossover",
+        "Convertible",
+        "Sedan",
+        "Hatchback",
+        "Midsize",
+        "4dr Hatchback",
+        "Compact",
+        "Diesel",
+        "Factory Tuner",
+        "Luxury",
+        "Performance",
+        "Wagon",
+        "High-Performance",
+        "4dr SUV"
+      ],
+      "regions": [
+        "i397"
+      ],
+      "incentiveType": "miscellaneous",
+      "optionIds": [
+
+      ],
+      "makeIds": [
+        {
+          "link": "\/api\/vehicle\/make\/200000081"
+        }
+      ],
+      "styleIds": [
+        {
+          "link": "\/api\/vehicle\/style\/101380944"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411287"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101410189"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101410191"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101410190"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411294"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411295"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411288"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381632"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381538"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381537"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101356425"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381536"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101410192"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411140"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411141"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411142"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411143"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411139"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381668"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101418475"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101418474"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101418477"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101380991"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381665"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101418476"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101319172"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381666"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381534"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381535"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381667"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101411296"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101407834"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101420164"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381630"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381631"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101381629"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101414949"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101408924"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101414951"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101408925"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101414950"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382179"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101287559"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382180"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382181"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382182"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382183"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101407923"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382184"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101407922"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101417974"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101407921"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101417984"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101417985"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101407925"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101407924"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382006"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101382005"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101386360"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101409210"
+        },
+        {
+          "link": "\/api\/vehicle\/style\/101409209"
+        }
+      ]
+    },
+    {
+      "monthlyPayment": 879,
+      "termMonths": 36,
+      "requiredDownPayment": 6104,
+      "securityDeposit": 0,
+      "annualMileage": 10000,
+      "leaseResidualPercentage": 0.58,
+      "leaseCapReduction": 4500,
+      "leaseCapitalizationCost": 77225,
+      "leaseAcquisitionFee": 725,
+      "excessMileagePenalty": 0.25,
+      "leasePurchaseOptionAmount": 51461,
+      "creditRatingTier": "Tier 1",
+      "rebateAmount": 3750,
+      "id": 2871101,
+      "type": "LEASE",
+      "contentType": "LEASE",
+      "sourceType": "UNKNOWN",
+      "subprogramId": 809733,
+      "startDate": "2013-05-01",
+      "endDate": "2013-05-31",
+      "comments": "",
+      "restrictions": "Loyalty Lease is based on the 2013 750i equipped with M Sport Package with 19\" wheels (no cost option). MSRP as equipped is $88,725. $3,250 Dealer contribution and $3,750 Lease Cash are required for the $879 monthly payment. Lease Cash includes $3,000 Lease Cash Bonus Cash and $750 Loyalty Bonus Cash. $6,104 due at signing. Tax, tags and insurance are extra. Must finance through BMW Financial Services.",
+      "name": "Autoload Sample Lease for 2013 Sample 750i  in National",
+      "primary": false,
+      "incentiveVehicles": [
+        {
+          "link": "\/api\/incentive\/incentivevehicle\/56922"
+        }
+      ],
+      "zipcodeExceptions": [
+
+      ],
+      "categories": [
+        "Car",
+        "Sedan"
+      ],
+      "regions": [
+        "i397"
+      ],
+      "incentiveType": "lease",
+      "optionIds": [
+
+      ],
+      "makeIds": [
+        {
+          "link": "\/api\/vehicle\/make\/200000081"
+        }
+      ],
+      "styleIds": [
+        {
+          "link": "\/api\/vehicle\/style\/200429766"
+        }
+      ]
+    }
+  ]
+}

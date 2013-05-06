@@ -1,0 +1,120 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "resultsList": [
+    {
+      "GPExperiationDate": "",
+      "exteriorGenericColor": "",
+      "interiorColor": "Black leather|40,40,40",
+      "msrpPrice": "N\/A",
+      "dealerSaleRating": "1.8",
+      "dealerPhone": "(704) 535-8800",
+      "submodel": "A4 Sedan",
+      "driveTrain": "front wheel drive",
+      "vin": "WAUAFAFL0AN012824",
+      "modelLinkCode": "",
+      "features": [
+
+      ],
+      "TMVDealerCash": "N\/A",
+      "year": "2010",
+      "tmvPrice": "N\/A",
+      "inventoryPrice": "N\/A",
+      "photoUrlsST": [
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_sfc_ei_1_87.jpg",
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_cid_ei_1_87.jpg",
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_bkf_ei_1_87.jpg",
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_bps_ei_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_cc_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_rq_oem_2_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_detail_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_fq_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_f_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_i_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_fbdg_oem_2_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_ri_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_s_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_w_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_e_oem_1_87.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_rbdg_oem_1_87.jpg"
+      ],
+      "dealerDistance": "N\/A",
+      "dealerLatitude": "",
+      "styleId": "101186695",
+      "dealerId": "",
+      "mileage": "N\/A",
+      "interiorGenericColor": "",
+      "engineSize": "N\/A",
+      "countAllVehicles": "N\/A",
+      "transmission": "AUTOMATIC",
+      "franchiseId": "748160",
+      "styleName": "2.0T Premium 4dr Sedan (2.0L 4cyl Turbo CVT)",
+      "hasBuildDataAndFullyMatched": false,
+      "invoicePrice": "N\/A",
+      "carfaxes": [
+
+      ],
+      "f34PhotoUrlST": "N\/A",
+      "TMVCustomerIncentives": "N\/A",
+      "guaranteedPrice": "N\/A",
+      "countMatchedVehicles": "",
+      "make": "Audi",
+      "photoUrlsE": [
+
+      ],
+      "model": "A4",
+      "submodelId": "",
+      "dealerSalesReviewsCount": "5",
+      "exteriorColor": "Quartz Gray Metallic|175,180,183",
+      "dealerMake": "",
+      "vehicleComments": "",
+      "f34PhotoUrlE": "",
+      "bodyType": "",
+      "hwyMpg": "N\/A",
+      "photoUrlsT": [
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_sfc_ei_1_175.jpg",
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_cid_ei_1_175.jpg",
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_bkf_ei_1_175.jpg",
+        "\/audi\/a4\/2010\/ei\/2010_audi_a4_sedan_20t-premium_bps_ei_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_cc_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_rq_oem_2_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_detail_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_fq_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_f_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_i_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_fbdg_oem_2_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_ri_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_s_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_w_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_e_oem_1_175.jpg",
+        "\/audi\/a4\/2010\/oem\/2010_audi_a4_sedan_20t-premium-quattro_rbdg_oem_1_175.jpg"
+      ],
+      "dealerServiceReviewsCount": "0",
+      "premierDealer": false,
+      "cityMpg": "N\/A",
+      "inventoryType": "",
+      "trim": "2.0T Premium",
+      "options": [
+
+      ],
+      "f34PhotoUrlT": "N\/A",
+      "TMVInventoryPrice": "N\/A",
+      "dealerInPDP": false,
+      "dealerLongitude": "",
+      "photoCount": "",
+      "dealerName": "Audi of Charlotte",
+      "dealerLocationId": "",
+      "dealerAddress": "9300 E Independence Blvd|Matthews, NC 28105",
+      "dealerServiceRating": "0.0",
+      "combinedMpg": "N\/A",
+      "stockNumber": "",
+      "inventoryId": ""
+    }
+  ],
+  "incentiveAvailable": "no"
+}
