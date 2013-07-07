@@ -1,5 +1,5 @@
 {
-    "name": "rfink/edmunds-php-client",
+    "name": "rfink/edmunds-php-api",
     "type": "library",
     "description": "edmunds api bundle",
     "keywords": ["edmunds", "api"],
