@@ -3,7 +3,7 @@
     "type": "library",
     "description": "edmunds api bundle",
     "keywords": ["edmunds", "api"],
-    "homepage": "https://www.github.com/rfink/edmunds-php-client",
+    "homepage": "https://www.github.com/rfink/edmunds-php-api",
     "license": "MIT",
     "authors": [
         {
