@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "recallHolder":[
+    {
+      "id":177958,
+      "recallNumber":"09V377000",
+      "componentDescription":"FUEL SYSTEM, GASOLINE:STORAGE:TANK ASSEMBLY",
+      "manufacturerRecallNumber":"20Q3/J3",
+      "manufacturedFrom":"2005-09-29",
+      "manufacturedTo":"2009-07-30",
+      "numberOfVehiclesAffected":"10200",
+      "ownerNotificationDate":"2009-11-16",
+      "influencedBy":"MFR",
+      "defectConsequence":"IN THE PRESENCE OF AN IGNITION SOURCE, A VEHICLE FIRE COULD OCCUR.",
+      "defectCorrectiveAction":"VOLKSWAGEN WILL NOTIFY OWNERS AND AUDI DEALERS WILL REPLACE THE FUEL TANK VENTILATION VALVE WITH AN IMPROVED VALVE FREE OF CHARGE.  THE SAFETY RECALL BEGAN ON NOVEMBER 16, 2009.  OWNERS MAY CONTACT AUDI AT 1-800-253-2834.",
+      "defectDescription":"VOLKSWAGEN IS RECALLING CERTAIN MODEL YEAR 2006 THROUGH 2010 AUDI A3, TT, AND TT ROADSTER PASSENGER VEHICLES MANUFACTURED BETWEEN SEPTEMBER 29, 2005 AND AUGUST 26, 2009.  THE CLOSING FORCE OF AN INTERNAL SPRING OF THE FUEL TANK VENTILATION VALVE IS NOT ADEQUATE ENOUGH TO HOLD THE VALVE CLOSED UNDER EXTREME DRIVING CONDITIONS POSSIBLY ALLOWING FUEL TO LEAK.",
+      "modelYear":"/api/vehicle/modelyearrepository/findbyid?id=100523189"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "serviceBulletinHolder":[
+    {
+      "id":210998,
+      "bulletinNumber":"TSB-0064-10",
+      "bulletinDateMonth":"1002",
+      "componentNumber":61000,
+      "componentDescription":"ENGINE AND ENGINE COOLING:ENGINE",
+      "nhtsaItemNumber":"10034284",
+      "modelYearId":100000241,
+      "summaryText":"TOYOTA:  TECHSTREAM ECU FLASH REPROGRAMMING PROCEDURE.  FLASH REPROGRAMMING ALLOWS THE ECU SOFTWARE TO BE UPDATED WITHOUT REPLACING THE ECU.  FLASH CALIBRATION UPDATES FOR SPECIFIC VEHICLE MODELS/ECUS ARE RELEASED AS FIELD-FIX PROCEDURES DE   ( NHTSA ITEM NUMBER - 10034284 )"
+    }
+  ]
+}

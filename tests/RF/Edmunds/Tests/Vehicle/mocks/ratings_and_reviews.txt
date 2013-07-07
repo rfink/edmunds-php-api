@@ -1,0 +1,51 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "reviews": [{
+    "consumerName": "mc1223",
+    "styleId": 100001207,
+    "title": "An awesom car!",
+    "likes": 0,
+    "totalRating": 5.0,
+    "favorites": "I love it all!!",
+    "suggestions": "More power in the 4cyl models.",
+    "date": "",
+    "ratings": {
+      "fuelEconomy": 5.0,
+      "buildQuality": 5.0,
+      "comfort": 5.0,
+      "performance": 5.0,
+      "realiability": 5.0,
+      "exteriorDesign": 5.0,
+      "funToDrive": 5.0,
+      "interiorDesign": 5.0
+    },
+    "review": "I used to drive a Jetta which I loved, \r\nbut decided to go with a Honda after my \r\nfriend put 179k on her \u002789 Accord, \r\nwhich ran incredible. I have a \u002702 \r\nAccord EX Coupe (only 4cyl), which \r\ncould be faster, but thats what \r\nperformance intakes and exhaust systems \r\nare for. Its extremely comfortable and \r\nrides very smooth. Gas mileage is good, \r\nwhich helps me with the amount of miles \r\nI put on it. The car is good looking, \r\nwhich will turn heads once I finish \r\nwith the work I am doing to it. Bottom \r\nline...this car will run forever if you \r\ntake car of it and is one of the most \r\nreliable cars out there. Resale value \r\nis also excellent."
+  }, 
+  {
+    "consumerName": "boisedogmom",
+    "styleId": 100001207,
+    "title": "Love my Honda!",
+    "likes": 0,
+    "totalRating": 4.8,
+    "favorites": "The acceleration is excellent with the \r\nV-6 engine.  Very happy with the ride \r\nand the solid feel of the vehicle.  \r\nLike having both CD and cassette \r\noptions in the dash.",
+    "suggestions": "Definitely heated seats!  The Canadian \r\nmodel did have them, and that would be \r\na huge plus.  Driver\u0027s seat needs to \r\nmove further to allow better access to \r\nback seat.",
+    "date": {},
+    "ratings": {
+      "fuelEconomy": 4.0,
+      "buildQuality": 5.0,
+      "comfort": 4.0,
+      "performance": 5.0,
+      "realiability": 5.0,
+      "exteriorDesign": 5.0,
+      "funToDrive": 5.0,
+      "interiorDesign": 5.0
+    },
+    "review": "I used to drive a Jetta which I loved, \r\nbut decided to go with a Honda after my \r\nfriend put 179k on her \u002789 Accord, \r\nwhich ran incredible. I have a \u002702 \r\nAccord EX Coupe (only 4cyl), which \r\ncould be faster, but thats what \r\nperformance intakes and exhaust systems \r\nare for. Its extremely comfortable and \r\nrides very smooth. Gas mileage is good, \r\nwhich helps me with the amount of miles \r\nI put on it. The car is good looking, \r\nwhich will turn heads once I finish \r\nwith the work I am doing to it. Bottom \r\nline...this car will run forever if you \r\ntake car of it and is one of the most \r\nreliable cars out there. Resale value \r\nis also excellent."
+  }]
+}

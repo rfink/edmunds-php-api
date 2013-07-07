@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "values": [
+    24822.0,
+    21538.0,
+    18648.0,
+    16086.0,
+    13787.0
+  ],
+  "total": 94881.0
+}

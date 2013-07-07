@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "actionHolder":[
+    {
+      "id":1680065,
+      "engineCode":"8VNAF4.6",
+      "transmissionCode":"ALL",
+      "intervalMileage":0,
+      "intervalMonth":1,
+      "frequency":4,
+      "action":"Inspect & adjust air pressure",
+      "item":"Wheels & tires",
+      "itemDescription":"A circular frame of hard material that may be solid or partly solid, is capable of  turning on an axle, and holds the rubber cushion that contains compressed air.",
+      "laborUnits":0.0,
+      "partUnits":0.0,
+      "driveType":"ALL",
+      "modelYear":"/api/vehicle/modelyearrepository/findbyid?id=100531950"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "maintenanceStyleNotesHolder":[
+    {
+      "note1":"Free full maintenance service is provided by the vehicle manufacturer for four (4) years or 50,000 miles, whichever occurs first.",
+      "note2":"Models that are equipped with the BMW Assist(TM) and Bluetooth system, will receive a four-year, unlimited mileage subscription to the BMW Assist Safety Plan(TM) and is included as part of BMW Ultimate Service, at no additional charge.",
+      "style":"/api/vehicle/style/101287989"
+    }
+  ]
+}

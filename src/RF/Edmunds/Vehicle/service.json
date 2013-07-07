@@ -1,6 +1,6 @@
 {
   "name": "Edmunds.com HTTP API - Vehicles",
-  "apiVersion": "1.0",
+  "apiVersion": "v1",
   "operations": {
     "abstractService": {
       "httpMethod": "GET",
@@ -281,7 +281,7 @@
     "modelYear.findModelYearsByMakeAndYear": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakeandyear",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -296,7 +296,7 @@
     "modelYear.findModelYearsByMakeModel": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakemodel",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -311,7 +311,7 @@
     "modelYear.findNewAndUsedModelYearsByMakeIdAndYear": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findnewandusedmodelyearsbymakeidandyear",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -325,9 +325,9 @@
     "modelYear.findNewModelYearsByModelId": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findnewmodelyearsbymodelid",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
-        "modelId": {
+        "modelid": {
           "location": "query",
           "required": true
         }
@@ -336,9 +336,9 @@
     "modelYear.findUsedModelYearsByModelId": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findusedmodelyearsbymodelid",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
-        "modelId": {
+        "modelid": {
           "location": "query",
           "required": true
         } 
@@ -347,7 +347,7 @@
     "modelYear.findYearsByCategoryAndPublicationState": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/findyearsbycategoryandpublicationstate",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
         "category": {
           "location": "query",
@@ -361,7 +361,7 @@
     "modelYear.forModelId": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/formodelid",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
         "modelid": {
           "location": "query",
@@ -372,7 +372,7 @@
     "modelYear.forYearMakeModel": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/modelyearrepository/foryearmakemodel",
-      "responseType": "modelYearList",
+      "responseClass": "modelYearHolderModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -432,7 +432,7 @@
     "tmv.calculateNewTmv": {
       "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/calculatenewtmv",
-      "responseClass": "tmv",
+      "responseClass": "tmvHolder",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -453,7 +453,7 @@
     "tmv.calculateUsedTmv": {
       "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/calculateusedtmv",
-      "responseClass": "tmv",
+      "responseClass": "tmvHolder",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -484,7 +484,7 @@
     "tmv.calculateTypicallyEquippedUsedTmv": {
       "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/calculatetypicallyequippedusedtmv",
-      "responseClass": "tmv",
+      "responseClass": "tmvHolder",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -499,7 +499,7 @@
     "tmv.findCertifiedPriceForStyle": {
       "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/findcertifiedpriceforstyle",
-      "responseClass": "tmv",
+      "responseClass": "number",
       "parameters": {
         "styleid": {
           "location": "query",
@@ -514,7 +514,7 @@
     "tmv.findCpoYearsByMake": {
       "extends": "abstractService",
       "uri": "/{version}/api/tmv/tmvservice/findcpoyearsbymake",
-      "responseClass": "tmv",
+      "responseClass": "array",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -555,7 +555,7 @@
     "trueCostToOwn.resaleValuesByStyleIdAndZip": {
       "extends": "abstractService",
       "uri": "/{version}/api/tco/resalevaluesbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "TrueCostToOwn",
+      "responseClass": "ResaleValues",
       "parameters": {
         "styleId": {
           "location": "uri",
@@ -570,7 +570,7 @@
     "trueCostToOwn.depreciation.usedRatesByStyleIdAndZip": {
       "extends": "abstractService",
       "uri": "/{version}/api/tco/depreciation/usedratesbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "TrueCostToOwn",
+      "responseClass": "DepreciationRates",
       "parameters": {
         "styleId": {
           "location": "uri",
@@ -585,7 +585,7 @@
     "trueCostToOwn.depreciation.newRatesByStyleIdAndZip": {
       "extends": "abstractService",
       "uri": "/{version}/api/tco/depreciation/newratesbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "TrueCostToOwn",
+      "responseClass": "DepreciationRates",
       "parameters": {
         "styleId": {
           "location": "uri",
@@ -612,7 +612,7 @@
         }
       }
     },
-    "trueCostToOwn.usedTrueCostToOwnByStyleIdAndZip": {
+    "trueCostToOwn.usedTotalCashPriceByStyleIdAndZip": {
       "extends": "abstractService",
       "uri": "/{version}/api/tco/usedtotalcashpricebystyleidandzip/{styleId}/{zip}",
       "responseClass": "TrueCostToOwn",
@@ -630,12 +630,12 @@
     "trueCostToOwn.getMakesWithTcoData": {
       "extends": "abstractService",
       "uri": "/{version}/api/tco/getmakeswithtcodata",
-      "responseClass": "makes"
+      "responseClass": "makesModel"
     },
     "trueCostToOwn.getModelsWithTcoData": {
       "extends": "abstractService",
       "uri": "/{version}/api/tco/getmodelswithtcodata",
-      "responseClass": "models",
+      "responseClass": "modelsModel",
       "parameters": {
         "makeid": {
           "location": "query",
@@ -646,7 +646,7 @@
     "trueCostToOwn.getStylesWithTcoDataBySubModel": {
       "extends": "abstractService",
       "uri": "/{version}/api/tco/getstyleswithtcodatabysubmodel",
-      "responseClass": "styles",
+      "responseClass": "stylesModel",
       "parameters": {
         "make": {
           "location": "query",
@@ -672,7 +672,7 @@
     "maintenance.findActionById": {
       "extends": "abstractService",
       "uri": "/{version}/api/maintenance/action/{id}",
-      "responseClass": "serviceBulletinHolderModel",
+      "responseClass": "actionHolderModel",
       "parameters": {
         "id": {
           "location": "uri",
@@ -683,7 +683,7 @@
     "maintenance.findActionByModelYearId": {
       "extends": "abstractService",
       "uri": "/{version}/api/maintenance/actionrepository/findbymodelyearid",
-      "responseClass": "serviceBulletinHolderModel",
+      "responseClass": "actionHolderModel",
       "parameters": {
         "modelyearid": {
           "location": "query",
@@ -694,12 +694,12 @@
     "maintenance.findModelYearIdsWithMaintenanceSchedule": {
       "extends": "abstractService",
       "uri": "/{version}/api/maintenance/actionrepository/findmodelyearidswithmaintenanceschedule",
-      "responseClass": "serviceBulletinHolderModel"
+      "responseClass": "longListHolder"
     },
     "maintenance.findRecallById": {
       "extends": "abstractService",
       "uri": "/{version}/api/maintenance/recall/{id}",
-      "responseClass": "serviceBulletinHolderModel",
+      "responseClass": "recallHolderModel",
       "parameters": {
         "id": {
           "location": "uri",
@@ -710,7 +710,7 @@
     "maintenance.findRecallByModelYearId": {
       "extends": "abstractService",
       "uri": "/{version}/api/maintenance/recallrepository/findbymodelyearid",
-      "responseClass": "serviceBulletinHolderModel",
+      "responseClass": "recallHolderModel",
       "parameters": {
         "modelyearid": {
           "location": "query",
@@ -719,6 +719,17 @@
       }
     },
     "maintenance.findServiceBulletinById": {
+      "extends": "abstractService",
+      "uri": "/{version}/api/maintenance/servicebulletin/{id}",
+      "responseClass": "serviceBulletinHolderModel",
+      "parameters": {
+        "id": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "maintenance.findServiceBulletinByModelYearId": {
       "extends": "abstractService",
       "uri": "/{version}/api/maintenance/servicebulletinrepository/findbymodelyearid",
       "responseClass": "serviceBulletinHolderModel",
@@ -732,7 +743,7 @@
     "maintenance.findStyleNotesById": {
       "extends": "abstractService",
       "uri": "/{version}/api/maintenance/stylesnotes/{id}",
-      "responseClass": "serviceBulletinHolderModel",
+      "responseClass": "styleNotesHolderModel",
       "parameters": {
         "id": {
           "location": "uri",
@@ -858,6 +869,25 @@
           "required": false
         }
       }
+    },
+    "ratingsAndReviews.getForMakeModelYear": {
+      "extends": "abstractService",
+      "uri": "/{version}/api/crrrepository/getcrrformakemodelyear",
+      "responseClass": "reviewHolderModel",
+      "parameters": {
+        "make": {
+          "location": "query",
+          "required": true
+        },
+        "model": {
+          "location": "query",
+          "required": true
+        },
+        "year": {
+          "location": "query",
+          "required": true
+        }
+      }
     }
   },
   "models": {
@@ -893,6 +923,30 @@
         }
       }
     },
+    "actionHolderModel": {
+      "type": "object",
+      "properties": {
+        "actionHolder": {
+          "$ref": "actionHolder"
+        }
+      }
+    },
+    "styleNotesHolderModel": {
+      "type": "object",
+      "properties": {
+        "styleNotesHolder": {
+          "$ref": "styleNotesHolder"
+        }
+      }
+    },
+    "recallHolderModel": {
+      "type": "object",
+      "properties": {
+        "recallHolder": {
+          "$ref": "recallHolder"
+        }
+      }
+    },
     "serviceBulletinHolderModel": {
       "type": "object",
       "properties": {
@@ -924,6 +978,14 @@
         "$ref": "Make"
       }
     },
+    "makesModel": {
+      "type": "object",
+      "properties": {
+        "make": {
+          "$ref": "makes"
+        }
+      }
+    },
     "makes": {
       "location": "json",
       "type": "object",
@@ -936,10 +998,26 @@
         "$ref": "Model"
       }
     },
+    "modelsModel": {
+      "type": "object",
+      "properties": {
+        "models": {
+          "$ref": "models"
+        }
+      }
+    },
     "models": {
       "location": "json",
       "type": "object",
       "additionalProperties": true
+    },
+    "stylesModel": {
+      "type": "object",
+      "properties": {
+        "styles": {
+          "$ref": "styles"
+        }
+      }
     },
     "styles": {
       "location": "json",
@@ -972,11 +1050,44 @@
         "$ref": "style"
       }
     },
+    "actionHolder": {
+      "location": "json",
+      "type": "array",
+      "items": {
+        "$ref": "Action"
+      }
+    },
+    "recallHolder": {
+      "location": "json",
+      "type": "array",
+      "items": {
+        "$ref": "Recall"
+      }
+    },
     "serviceBulletinHolder": {
       "location": "json",
       "type": "array",
       "items": {
         "$ref": "ServiceBulletin"
+      }
+    },
+    "styleNotesHolder": {
+      "location": "json",
+      "type": "array",
+      "items": {
+        "$ref": "StyleNote"
+      }
+    },
+    "longListHolder": {
+      "type": "object",
+      "properties": {
+        "longListHolder": {
+          "location": "json",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "zipLaborRateHolder": {
@@ -993,6 +1104,15 @@
         "$ref": "Incentive"
       }
     },
+    "tmvHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "tmv": {
+          "$ref": "tmv"
+        }
+      }
+    },
     "photoHolderModel": {
       "type": "object",
       "properties": {
@@ -1001,6 +1121,18 @@
           "location": "json",
           "items": {
             "$ref": "Photo"
+          }
+        }
+      }
+    },
+    "reviewHolderModel": {
+      "type": "object",
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "location": "json",
+          "items": {
+            "$ref": "Review"
           }
         }
       }
@@ -1403,49 +1535,44 @@
       "location": "json",
       "type": "object",
       "properties": {
-        "tmv": {
+        "colorAdjustment": {
           "type": "object",
-          "properties": {
-            "colorAdjustment": {
-              "type": "object",
-              "additionalProperties": true
-            },
-            "destinationCharge": {
-              "type": "integer"
-            },
-            "estimatedTmv": {
-              "type": "boolean"
-            },
-            "gasGuzzlerTax": {
-              "type": "integer"
-            },
-            "incentivesAndRebates": {
-              "type": "integer"
-            },
-            "nationalBasePrice": {
-              "type": "object",
-              "additionalProperties": true
-            },
-            "offerPrice": {
-              "type": "integer"
-            },
-            "optiontmvPrices": {
-              "type": "object",
-              "additionalProperties": true
-            },
-            "regionalAdjustment": {
-              "type": "object",
-              "additionalProperties": true
-            },
-            "totalWithOptions": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
+          "additionalProperties": true
+        },
+        "destinationCharge": {
+          "type": "integer"
+        },
+        "estimatedTmv": {
+          "type": "boolean"
+        },
+        "gasGuzzlerTax": {
+          "type": "integer"
+        },
+        "incentivesAndRebates": {
+          "type": "integer"
+        },
+        "nationalBasePrice": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "offerPrice": {
+          "type": "integer"
+        },
+        "optiontmvPrices": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "regionalAdjustment": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "totalWithOptions": {
+          "type": "object",
+          "additionalProperties": true
         }
       }
     },
-    "ServiceBulletin": {
+    "Action": {
       "location": "json",
       "type": "object",
       "properties": {
@@ -1475,10 +1602,128 @@
         }
       }
     },
-    "TrueCostToOwn": {
-      "location": "json",
+    "Recall": {
       "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "recallNumber": {
+          "type": "string"
+        },
+        "componentDescription": {
+          "type": "string"
+        },
+        "manufacturerRecallNumber": {
+          "type": "string"
+        },
+        "manufacturedFrom": {
+          "type": "string"
+        },
+        "manufacturedTo": {
+          "type": "string"
+        },
+        "numberOfVehiclesAffected": {
+          "type": "integer"
+        },
+        "ownerNotificationDate": {
+          "type": "string"
+        },
+        "influencedBy": {
+          "type": "string"
+        },
+        "defectConsequence": {
+          "type": "string"
+        },
+        "defectCorrectiveAction": {
+          "type": "string"
+        },
+        "defectDescription": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceBulletin": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "any"
+        },
+        "bulletinNumber": {
+          "type": "string"
+        },
+        "bulletinDateMonth": {
+          "type": "string"
+        },
+        "componentNumber": {
+          "type": "string"
+        },
+        "componentDescription": {
+          "type": "string"
+        },
+        "nhtsaItemNumber": {
+          "type": "string"
+        },
+        "modelYearId": {
+          "type": "string"
+        },
+        "summaryText": {
+          "type": "string"
+        }
+      }
+    },
+    "StyleNote": {
+      "type": "object",
+      "properties": {
+        "style": {
+          "type": "string"
+        }
+      },
       "additionalProperties": true
+    },
+    "TrueCostToOwn": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "any",
+          "location": "json"
+        }
+      }
+    },
+    "ResaleValues": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "location": "json",
+          "items": {
+            "type": "number"
+          }
+        },
+        "total": {
+          "location": "json",
+          "type": "number"
+        }
+      }
+    },
+    "DepreciationRates": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "location": "json",
+          "items": {
+            "type": "number"
+          }
+        },
+        "total": {
+          "location": "json",
+          "type": "number"
+        }
+      }
     },
     "ZipLaborRate": {
       "location": "json",
@@ -1617,6 +1862,67 @@
         },
         "vdpOrder": {
           "type": "number"
+        }
+      }
+    },
+    "Review": {
+      "type": "object",
+      "properties": {
+        "consumerName": {
+          "type": "string"
+        },
+        "styleId": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "totalRating": {
+          "type": "number"
+        },
+        "favorites": {
+          "type": "string"
+        },
+        "suggestions": {
+          "type": "string"
+        },
+        "date": {
+          "type": "any"
+        },
+        "ratings": {
+          "type": "object",
+          "properties": {
+            "fuelEconomy": {
+              "type": "number"
+            },
+            "buildQuality": {
+              "type": "number"
+            },
+            "comfort": {
+              "type": "number"
+            },
+            "performance": {
+              "type": "number"
+            },
+            "realiability": {
+              "type": "number"
+            },
+            "exteriorDesign": {
+              "type": "number"
+            },
+            "funToDrive": {
+              "type": "number"
+            },
+            "interiorDesign": {
+              "type": "number"
+            }
+          }
+        },
+        "review": {
+          "type": "string"
         }
       }
     }
