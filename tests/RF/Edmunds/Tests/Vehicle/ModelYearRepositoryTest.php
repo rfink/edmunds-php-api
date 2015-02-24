@@ -2,139 +2,67 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class ModelYearRepositoryTest extends GuzzleTestCase
+class ModelYearRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
+        parent::setUp();
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
         $this->client = null;
+        parent::tearDown();
     }
 
-    public function testFindById()
+    public function testGetByMakeAndModel()
     {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('id' => '100533210');
-        $response = $this->client->getCommand('modelYear.findById', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    public function testFindDistinctYearWithNew()
-    {
-        $this->setMockResponse($this->client, 'model_years.txt');
-        $response = $this->client->getCommand('modelYear.findDistinctYearWithNew')->execute();
+        $this->setMockResponse(__DIR__ . '/mocks/model_year_holder.txt');
+        $args = array('makeNiceName' => 'honda', 'modelNiceName' => 'accord');
+        $response = $this->client->getModelYearsByMakeAndModel($args);
         $this->assertTrue(is_array($response));
-        $this->assertTrue(in_array(2014, $response));
+        $this->assertTrue(is_array($response['years']));
+        $this->assertTrue(is_array($response['years'][0]));
+        $this->assertEquals($response['years'][0]['id'], '100537293');
+        $this->assertTrue(is_array($response['years'][0]['styles']));
+        $this->assertTrue(is_array($response['years'][0]['styles'][0]));
+        $this->assertEquals($response['years'][0]['styles'][0]['id'], '200434889');
+        $this->assertTrue(is_array($response['years'][0]['styles'][0]['submodel']));
     }
 
-    public function testFindDistinctYearWithNewOrUsed()
+    public function testGetByMakeAndModelAndYear()
     {
-        $this->setMockResponse($this->client, 'model_years.txt');
-        $response = $this->client->getCommand('modelYear.findDistinctYearWithNewOrUsed')->execute();
+        $this->setMockResponse(__DIR__ . '/mocks/model_year.txt');
+        $args = array('makeNiceName' => 'honda', 'modelNiceName' => 'accord', 'year' => 2013);
+        $response = $this->client->getModelYearByMakeAndModelAndYear($args);
         $this->assertTrue(is_array($response));
-        $this->assertTrue(in_array(2014, $response));
+        $this->assertEquals($response['id'], '200442557');
+        $this->assertTrue(is_array($response['styles']));
+        $this->assertTrue(is_array($response['styles'][0]));
+        $this->assertEquals($response['styles'][0]['id'], '200460762');
+        $this->assertTrue(is_array($response['styles'][0]['submodel']));
     }
 
-    public function testFindDistinctYearWithUsed()
+    public function testGetModelYearsCount()
     {
-        $this->setMockResponse($this->client, 'model_years.txt');
-        $response = $this->client->getCommand('modelYear.findDistinctYearWithUsed')->execute();
+        $this->setMockResponse(__DIR__ . '/mocks/model_year_count.txt');
+        $args = array('makeNiceName' => 'honda', 'modelNiceName' => 'accord');
+        $response = $this->client->getModelYearsCount($args);
         $this->assertTrue(is_array($response));
-        $this->assertTrue(in_array(2014, $response));
-    }
-
-    public function testFindFutureModelYearsByModelId()
-    {
-        $this->setMockResponse($this->client, 'model_years.txt');
-        $args = array('modelId' => 'Honda_Civic');
-        $response = $this->client->getCommand('modelYear.findFutureModelYearsByModelId', $args)->execute();
-        $this->assertTrue(is_array($response));
-        $this->assertTrue(in_array(2014, $response));
-    }
-
-    public function testFindModelYearsByMakeAndYear()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('make' => 'honda', 'year' => 2013);
-        $response = $this->client->getCommand('modelYear.findModelYearsByMakeAndYear', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    public function testFindModelYearsByMakeModel()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('make' => 'honda', 'model' => 'accord');
-        $response = $this->client->getCommand('modelYear.findModelYearsByMakeModel', $args)->execute()->toArray();
-        $this->assertModelYear($response);   
-    }
-
-    public function testFindNewAndUsedModelYearsByMakeIdAndYear()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('makeid' => '200001444', 'year' => '2013');
-        $response = $this->client->getCommand('modelYear.findNewAndUsedModelYearsByMakeIdAndYear', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    public function testFindNewModelYearsByModelId()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('modelid' => 'Acura_MDX');
-        $response = $this->client->getCommand('modelYear.findNewModelYearsByModelId', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    public function testFindUsedModelYearsByModelId()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('modelid' => 'Acura_MDX');
-        $response = $this->client->getCommand('modelYear.findUsedModelYearsByModelId', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    public function testFindYearsByCategoryAndPublicationState()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('category' => 'sedan', 'state' => 'new');
-        $response = $this->client->getCommand('modelYear.findYearsByCategoryAndPublicationState', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    public function testForModelId()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('modelid' => 'Acura_MDX');
-        $response = $this->client->getCommand('modelYear.forModelId', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    public function testForYearMakeModel()
-    {
-        $this->setMockResponse($this->client, 'model_year_holder.txt');
-        $args = array('make' => 'acura', 'model' => 'mdx', 'year' => 2011);
-        $response = $this->client->getCommand('modelYear.forYearMakeModel', $args)->execute()->toArray();
-        $this->assertModelYear($response);
-    }
-
-    private function assertModelYear($response)
-    {
-        $this->assertTrue(is_array($response));
-        $this->assertTrue(is_array($response['modelYearHolder']));
-        $this->assertTrue(is_array($response['modelYearHolder'][0]));
-        $this->assertEquals($response['modelYearHolder'][0]['id'], 100533210);
+        $this->assertTrue(is_array($response['years']));
+        $this->assertTrue(is_array($response['years'][0]));
+        $this->assertEquals($response['years'][0]['id'], '200477462');
+        $this->assertEquals($response['years'][0]['year'], 2014);
+        $this->assertEquals($response['years'][0]['stylesCount'], 8);
     }
 }

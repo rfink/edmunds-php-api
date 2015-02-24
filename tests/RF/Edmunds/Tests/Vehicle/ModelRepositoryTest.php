@@ -2,114 +2,65 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class ModelRepositoryTest extends GuzzleTestCase
+class ModelRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
+        parent::setUp();
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
         $this->client = null;
+        parent::tearDown();
     }
 
-    public function testFindById()
+    public function testGetByMakeAndModel()
     {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('id' => 'AM_General_Hummer');
-        $response = $this->client->getCommand('model.findById', $args)->execute()->toArray();
-        $this->assertModelData($response);
+        $this->setMockResponse(__DIR__ . '/mocks/model_holder.txt');
+        $args = array('makeNiceName' => 'AM_General_Hummer', 'modelNiceName' => 'Hummer');
+        $response = $this->client->getModelByMakeAndModel($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['id'], 'Honda_Accord');
+        $this->assertEquals($response['name'], 'Accord');
+        $this->assertEquals($response['niceName'], 'accord');
+        $this->assertTrue(is_array($response['years']));
+        $this->assertTrue(is_array($response['years'][0]));
+        $this->assertEquals($response['years'][0]['id'], '200487197');
+        $this->assertTrue(is_array($response['years'][0]['styles']));
     }
 
-    public function testFindByMakeId()
+    public function testGetByMake()
     {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('makeid' => 'AM_General_Hummer');
-        $response = $this->client->getCommand('model.findByMakeId', $args)->execute()->toArray();
-        $this->assertModelData($response);
+        $this->setMockResponse(__DIR__ . '/mocks/models.txt');
+        $args = array('makeNiceName' => 'bmw');
+        $response = $this->client->getModelsByMake($args);
+        $this->assertTrue(is_array($response));
+        $this->assertTrue(is_array($response['models']));
+        $this->assertEquals($response['models'][0]['id'], 'BMW_1_Series');
+        $this->assertEquals($response['models'][0]['name'], '1 Series');
+        $this->assertEquals($response['models'][0]['niceName'], '1-series');
+        $this->assertTrue(is_array($response['models'][0]['years']));
+        $this->assertEquals($response['models'][0]['years'][0]['id'], '100524709');
+        $this->assertEquals($response['models'][0]['years'][0]['styles'][0]['id'], '100994560');
     }
 
-    public function testFindFutureModelsByMakeId()
+    public function testGetModelsCount()
     {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('makeId' => 'AM_General_Hummer');
-        $response = $this->client->getCommand('model.findFutureModelsByMakeId', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    public function testFindModelByMakeModelName()
-    {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('model' => 'hummer', 'make' => 'amgeneral');
-        $response = $this->client->getCommand('model.findModelByMakeModelName', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    public function testFindModelsByMake()
-    {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('make' => 'amgeneral');
-        $response = $this->client->getCommand('model.findModelsByMake', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    public function testFindModelsByMakeAndPublicationState()
-    {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('make' => 'amgeneral', 'state' => 'new');
-        $response = $this->client->getCommand('model.findModelsByMakeAndPublicationState', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    public function testFindModelsByMakeAndYear()
-    {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('make' => 'amgeneral', 'year' => 2013);
-        $response = $this->client->getCommand('model.findModelsByMakeAndYear', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    public function testFindNewAndUsedModelsByMakeId()
-    {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('makeId' => '200347864');
-        $response = $this->client->getCommand('model.findNewAndUsedModelsByMakeId', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    public function testFindNewModelsByMakeId()
-    {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('makeId' => '200347864');
-        $response = $this->client->getCommand('model.findNewModelsByMakeId', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    public function testFindUsedModelsByMakeId()
-    {
-        $this->setMockResponse($this->client, 'model_holder.txt');
-        $args = array('makeId' => '200347864');
-        $response = $this->client->getCommand('model.findUsedModelsByMakeId', $args)->execute()->toArray();
-        $this->assertModelData($response);
-    }
-
-    private function assertModelData($response)
-    {
-        $this->assertTrue(is_array($response[ 'modelHolder' ]));
-        $model = $response[ 'modelHolder' ][ 0 ];
-        $this->assertEquals($model[ 'makeId' ], 200347864);
-        $this->assertEquals($model[ 'id' ], 'AM_General_Hummer');
+        $this->setMockResponse(__DIR__ . '/mocks/model_count.txt');
+        $args = array('make' => 'honda');
+        $response = $this->client->getModelsCount($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['modelsCount'], 2);
     }
 }

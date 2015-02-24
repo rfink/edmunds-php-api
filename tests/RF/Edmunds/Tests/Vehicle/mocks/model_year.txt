@@ -1,0 +1,296 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "id": 200442557,
+    "make": {
+        "id": 200001444,
+        "name": "Honda",
+        "niceName": "honda"
+    },
+    "model": {
+        "id": "Honda_Civic",
+        "name": "Civic",
+        "niceName": "civic"
+    },
+    "year": 2013,
+    "styles": [{
+        "id": 200460762,
+        "name": "Hybrid PZEV 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid PZEV",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443449,
+        "name": "EX-L 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX-L",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460761,
+        "name": "Hybrid w/Navigation 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid w/Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443450,
+        "name": "EX-L PZEV w/Navigation 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX-L PZEV w/Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460764,
+        "name": "Hybrid PZEV w/Leather, Navigation 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid PZEV w/Leather and Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443451,
+        "name": "LX PZEV 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "LX PZEV",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200696740,
+        "name": "Natural Gas 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Natural Gas",
+            "modelName": "Civic Natural Gas",
+            "niceName": "natural-gas"
+        },
+        "trim": "Natural Gas",
+        "states": ["NEW"]
+    }, {
+        "id": 200460763,
+        "name": "Hybrid PZEV w/Leather 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid PZEV w/Leather",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443452,
+        "name": "EX PZEV 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX PZEV",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200696741,
+        "name": "Natural Gas w/Navigation 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Natural Gas",
+            "modelName": "Civic Natural Gas",
+            "niceName": "natural-gas"
+        },
+        "trim": "Natural Gas w/Navigation",
+        "states": ["NEW"]
+    }, {
+        "id": 200443453,
+        "name": "EX w/Navigation 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX w/Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200442558,
+        "name": "LX 4dr Sedan (1.8L 4cyl 5M)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "LX",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460765,
+        "name": "Hybrid PZEV w/Navigation 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid PZEV w/Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443454,
+        "name": "EX-L PZEV 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX-L PZEV",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443455,
+        "name": "EX-L w/Navigation 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX-L w/Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460756,
+        "name": "Si w/Navigation 4dr Sedan (2.4L 4cyl 6M)",
+        "submodel": {
+            "body": "Sedan",
+            "tuner": "Si w/Navigation",
+            "modelName": "Civic Si w/Navigation",
+            "niceName": "si-wnavigation"
+        },
+        "trim": "Si w/Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460755,
+        "name": "Si 4dr Sedan (2.4L 4cyl 6M)",
+        "submodel": {
+            "body": "Sedan",
+            "tuner": "Si",
+            "modelName": "Civic Si",
+            "niceName": "si"
+        },
+        "trim": "Si",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460758,
+        "name": "Hybrid 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460757,
+        "name": "Si w/Summer Tires 4dr Sedan (2.4L 4cyl 6M)",
+        "submodel": {
+            "body": "Sedan",
+            "tuner": "Si w/Summer Tires",
+            "modelName": "Civic Si w/Summer Tires",
+            "niceName": "si-wsummer-tires"
+        },
+        "trim": "Si w/Summer Tires",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443446,
+        "name": "EX 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460760,
+        "name": "Hybrid w/Leather, Navigation 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid w/Leather and Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443447,
+        "name": "LX 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "LX",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200460759,
+        "name": "Hybrid w/Leather 4dr Sedan (1.5L 4cyl gas/electric hybrid CVT)",
+        "submodel": {
+            "body": "Sedan",
+            "fuel": "Hybrid",
+            "modelName": "Civic Hybrid",
+            "niceName": "hybrid"
+        },
+        "trim": "Hybrid w/Leather",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200443448,
+        "name": "EX PZEV w/Navigation 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "EX PZEV w/Navigation",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200463192,
+        "name": "HF 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "HF",
+        "states": ["USED", "NEW"]
+    }, {
+        "id": 200463193,
+        "name": "HF PZEV 4dr Sedan (1.8L 4cyl 5A)",
+        "submodel": {
+            "body": "Sedan",
+            "modelName": "Civic Sedan",
+            "niceName": "sedan"
+        },
+        "trim": "HF PZEV",
+        "states": ["USED", "NEW"]
+    }],
+    "states": ["USED", "NEW"]
+}

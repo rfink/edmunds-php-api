@@ -1,15 +1,10 @@
 {
   "name": "Edmunds.com HTTP API - Inventory",
-  "apiVersion": "1.0",
+  "baseUrl": "http://api.edmunds.com",
   "operations": {
     "abstractService": {
       "httpMethod": "GET",
       "parameters": {
-        "version": {
-          "location": "uri",
-          "description": "API version",
-          "required": true
-        },
         "api_key": {
           "location": "query",
           "description": "API key",
@@ -21,15 +16,124 @@
         }
       }
     },
-    "inventory.getInventoryByVin": {
+    "getByVin": {
       "extends": "abstractService",
-      "uri": "/{version}/api/inventory/getinventorybyvin",
+      "uri": "/api/inventory/v1/lookup",
       "responseClass": "inventoryHolderModel",
-      "summary": "Return a filtered list of dealers",
+      "summary": "Look up a car available for sale by its VIN, zip code and range",
       "parameters": {
         "vin": {
           "location": "query",
           "required": true
+        },
+        "zipcode": {
+          "location": "query",
+          "required": true
+        },
+        "range": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getAllByDealerId": {
+      "extends": "abstractService",
+      "uri": "/api/inventory/v1/getall",
+      "responseClass": "inventoryDealerHolderModel",
+      "summary": "Get cars available for sale at a specific dealership by providing the dealership ID",
+      "parameters": {
+        "dealerId": {
+          "location": "query",
+          "required": true
+        },
+        "types": {
+          "location": "query",
+          "required": true,
+          "type": "string",
+          "enum": [ "ALL", "NEW", "USED", "CPO" ]
+        },
+        "sort": {
+          "location": "query",
+          "required": false
+        },
+        "pageNumber": {
+          "location": "query",
+          "required": false
+        },
+        "pageSize": {
+          "location": "query",
+          "required": false
+        },
+        "basicFilter": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getByZip": {
+      "extends": "abstractService",
+      "uri": "/api/inventory/v1/getall",
+      "responseClass": "inventoryDealerHolderModel",
+      "summary": "Get cars available for sale within a specific area by supplying a five-digit ZIP code.",
+      "parameters": {"zipcode": {
+        "required": true,
+        "location": "query"
+      },
+        "range": {
+          "required": true,
+          "location": "query"
+        },
+        "radius": {
+          "required": true,
+          "location": "query"
+        },
+        "make": {
+          "required": true,
+          "location": "query"
+        },
+        "types": {
+          "required": false,
+          "location": "query"
+        },
+        "sort": {
+          "required": false,
+          "location": "query"
+        },
+        "pageNumber": {
+          "required": false,
+          "location": "query"
+        },
+        "pageSize": {
+          "required": false,
+          "location": "query"
+        },
+        "pagenum": {
+          "required": false,
+          "location": "query"
+        },
+        "pagesize": {
+          "required": false,
+          "location": "query"
+        },
+        "basicFilter": {
+          "required": false,
+          "location": "query"
+        },
+        "model": {
+          "required": false,
+          "location": "query"
+        },
+        "submodel": {
+          "required": false,
+          "location": "query"
+        },
+        "priceRange": {
+          "required": false,
+          "location": "query"
+        },
+        "dealerId": {
+          "required": false,
+          "location": "query"
         }
       }
     }
@@ -37,75 +141,56 @@
   "models": {
     "inventoryHolderModel": {
       "type": "object",
+      "location": "json",
       "properties": {
+        "resultsList": {
+          "type": "array",
+          "location": "json",
+          "items": {
+            "type": "object",
+            "location": "json",
+            "properties": {
+              "year": {
+                "type": "string",
+                "location": "json"
+              }
+            }
+          }
+        }
+      }
+    },
+    "inventoryDealerHolderModel": {
+      "type": "object",
+      "location": "json",
+      "properties": {
+        "totalCount": {
+          "type": "number"
+        },
         "resultsList": {
           "$ref": "inventoryHolder"
         }
       }
     },
     "inventoryHolder": {
-      "location": "json",
       "type": "array",
+      "location": "json",
       "items": {
         "$ref": "Inventory"
       }
     },
     "Inventory": {
       "type": "object",
+      "location": "json",
       "properties": {
-        "model": {
-          "type": "string"
+        "year": {
+          "location": "json",
+          "type": "number"
         },
-        "interiorColor": {
-          "type": "string"
-        },
-        "msrpPrice": {
-          "type": "string"
-        },
-        "exteriorColor": {
-          "type": "string"
-        },
-        "dealerSaleRating": {
-          "type": "string"
-        },
-        "dealerPhone": {
-          "type": "string"
-        },
-        "photoUrlsT": {
+        "features": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "any"
           }
-        },
-        "submodel": {
-          "type": "string"
-        },
-        "driveTrain": {
-          "type": "string"
-        },
-        "vin": {
-          "type": "string"
-        },
-        "tmvPrice": {
-          "type": "string"
-        },
-        "trim": {
-          "type": "string"
-        },
-        "photoUrlsST": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "dealerLatitude": {
-          "type": "string"
-        },
-        "dealerDistance": {
-          "type": "string"
-        },
-        "f34PhotoUrlT": {
-          "type": "string"
         },
         "options": {
           "type": "array",
@@ -113,53 +198,194 @@
             "type": "any"
           }
         },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "bodyType": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "string"
+        },
+        "modelYearId": {
+          "type": "number"
+        },
         "styleId": {
-          "type": "string"
-        },
-        "dealerId": {
-          "type": "string"
-        },
-        "dealerInPDP": {
-          "type": "boolean"
-        },
-        "dealerLongitude": {
-          "type": "string"
-        },
-        "countAllVehicles": {
-          "type": "string"
-        },
-        "engineSize": {
-          "type": "string"
-        },
-        "dealerName": {
-          "type": "string"
-        },
-        "dealerAddress": {
-          "type": "string"
-        },
-        "franchiseId": {
-          "type": "string"
+          "type": "number"
         },
         "transmission": {
           "type": "string"
         },
+        "modelLinkCode": {
+          "type": "string"
+        },
+        "submodelId": {
+          "type": "number"
+        },
+        "combinedMpg": {
+          "type": "number"
+        },
         "styleName": {
           "type": "string"
         },
-        "hasBuildDataAndFullyMatches": {
+        "submodel": {
+          "type": "string"
+        },
+        "inventoryType": {
+          "type": "string"
+        },
+        "engineSize": {
+          "type": "number"
+        },
+        "driveTrain": {
+          "type": "string"
+        },
+        "franchiseId": {
+          "type": "number"
+        },
+        "exteriorColor": {
+          "type": "string"
+        },
+        "interiorColor": {
+          "type": "string"
+        },
+        "carfaxes": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "hasBuildDataAndFullyMatched": {
           "type": "boolean"
         },
-        "dealerServiceRating": {
+        "vin": {
           "type": "string"
         },
-        "f34PhotoUrlST": {
+        "mileage": {
+          "type": "number"
+        },
+        "inventoryId": {
+          "type": "number"
+        },
+        "cityMpg": {
+          "type": "number"
+        },
+        "hwyMpg": {
+          "type": "number"
+        },
+        "msrpPrice": {
+          "type": "number"
+        },
+        "inventoryPrice": {
+          "type": "number"
+        },
+        "stockNumber": {
           "type": "string"
+        },
+        "vehicleComments": {
+          "type": "string"
+        },
+        "exteriorGenericColor": {
+          "type": "string"
+        },
+        "interiorGenericColor": {
+          "type": "string"
+        },
+        "guaranteedPrice": {
+          "type": "number"
+        },
+        "gpexperiationDate": {
+          "type": "string"
+        },
+        "tmvinventoryPrice": {
+          "type": "number"
+        },
+        "tmvdealerCash": {
+          "type": "number"
+        },
+        "tmvcustomerIncentives": {
+          "type": "number"
+        },
+        "invoicePrice": {
+          "type": "number"
+        },
+        "dealerInPDP": {
+          "type": "boolean"
+        },
+        "dealerName": {
+          "type": "string"
+        },
+        "dealerPhone": {
+          "type": "string"
+        },
+        "dealerLatitude": {
+          "type": "number"
+        },
+        "dealerLongitude": {
+          "type": "number"
+        },
+        "dealerDistance": {
+          "type": "number"
+        },
+        "dealerServiceRating": {
+          "type": "number"
+        },
+        "dealerSaleRating": {
+          "type": "number"
         },
         "countMatchedVehicles": {
+          "type": "number"
+        },
+        "countAllVehicles": {
+          "type": "number"
+        },
+        "dealerLocationId": {
+          "type": "number"
+        },
+        "dealerSalesReviewsCount": {
+          "type": "number"
+        },
+        "dealerServiceReviewsCount": {
+          "type": "number"
+        },
+        "dealerMake": {
           "type": "string"
         },
-        "make": {
+        "f34PhotoUrlsE": {
           "type": "string"
+        },
+        "f34PhotoUrlsSE": {
+          "type": "string"
+        },
+        "f34PhotoUrlsT": {
+          "type": "string"
+        },
+        "photoUrlsE": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "photoUrlsST": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "photoUrlsT": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "tmvPrice": {
+          "type": "number"
+        },
+        "premierDealer": {
+          "type": "boolean"
         }
       },
       "additionProperties": true

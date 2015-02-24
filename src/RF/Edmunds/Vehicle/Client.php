@@ -2,8 +2,9 @@
 
 namespace RF\Edmunds\Vehicle;
 
-use RF\Edmunds\AbstractClient;
-use Guzzle\Service\Description\ServiceDescription;
+use GuzzleHttp\Client as GuzzleHttpClient;
+use GuzzleHttp\Command\Guzzle\GuzzleClient;
+use GuzzleHttp\Command\Guzzle\Description;
 
 /**
  * TODO
@@ -11,22 +12,18 @@ use Guzzle\Service\Description\ServiceDescription;
  * @author Ryan Fink <ryanjfink@gmail.com>
  * @since  March 18, 2013
  */
-class Client extends AbstractClient
+class Client
 {
     /**
      * {@inheritDoc}
      */
     public static function factory($config = array())
     {
-        $config = self::prepareConfig($config);
-        $client = new static(
-            $config->get('base_url'),
-            $config->get('api_key'),
-            $config->get('version')
-        );
-        $description = ServiceDescription::factory(__DIR__ . DIRECTORY_SEPARATOR . 'service.json');
-        $client->setDescription($description);
+        $client = new GuzzleHttpClient();
+        $serviceDesc = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'service.json'), true);
+        $description = new Description($serviceDesc);
+        $opts = ['defaults' => array_merge($config, ['fmt' => 'json'])];
 
-        return $client;
+        return new GuzzleClient($client, $description, $opts);
     }
 }

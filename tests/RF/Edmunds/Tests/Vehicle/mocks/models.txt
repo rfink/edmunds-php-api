@@ -6,374 +6,435 @@ Transfer-Encoding: chunked
 Content-Type: application/json
 
 {
-  "models":{
-    "accord:Coupe":{
-      "id":"Honda_Accord",
-      "name":"Accord Coupe",
-      "link":"/honda/accord",
-      "submodel":"Coupe",
-      "nicesubmodel":"coupe",
-      "model":"Accord",
-      "nicemodel":"accord",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "accord:Sedan":{
-      "id":"Honda_Accord",
-      "name":"Accord Sedan",
-      "link":"/honda/accord",
-      "submodel":"Sedan",
-      "nicesubmodel":"sedan",
-      "model":"Accord",
-      "nicemodel":"accord",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "accordcrosstour:Hatchback":{
-      "id":"Honda_Accord_Crosstour",
-      "name":"Accord Crosstour Hatchback",
-      "link":"/honda/accordcrosstour",
-      "submodel":"Hatchback",
-      "nicesubmodel":"hatchback",
-      "model":"Accord Crosstour",
-      "nicemodel":"accordcrosstour",
-      "years":{
-        "USED":[
-          2010,
-          2011
-        ]
-      }
-    },
-    "civic:Coupe":{
-      "id":"Honda_Civic",
-      "name":"Civic Coupe",
-      "link":"/honda/civic",
-      "submodel":"Coupe",
-      "nicesubmodel":"coupe",
-      "model":"Civic",
-      "nicemodel":"civic",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "NEW_USED":[
-          2012
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011
-        ]
-      }
-    },
-    "civic:Hybrid":{
-      "id":"Honda_Civic",
-      "name":"Civic Hybrid",
-      "link":"/honda/civic",
-      "submodel":"Hybrid",
-      "nicesubmodel":"hybrid",
-      "model":"Civic",
-      "nicemodel":"civic",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "NEW_USED":[
-          2012
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011
-        ]
-      }
-    },
-    "civic:MUGEN Si":{
-      "id":"Honda_Civic",
-      "name":"Civic MUGEN Si",
-      "link":"/honda/civic",
-      "submodel":"MUGEN Si",
-      "nicesubmodel":"mugensi",
-      "model":"Civic",
-      "nicemodel":"civic",
-      "years":{
-        "USED":[
-          2008
-        ]
-      }
-    },
-    "civic:Sedan":{
-      "id":"Honda_Civic",
-      "name":"Civic Sedan",
-      "link":"/honda/civic",
-      "submodel":"Sedan",
-      "nicesubmodel":"sedan",
-      "model":"Civic",
-      "nicemodel":"civic",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "NEW_USED":[
-          2012
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011
-        ]
-      }
-    },
-    "civic:Si":{
-      "id":"Honda_Civic",
-      "name":"Civic Si",
-      "link":"/honda/civic",
-      "submodel":"Si",
-      "nicesubmodel":"si",
-      "model":"Civic",
-      "nicemodel":"civic",
-      "years":{
-        "NEW_USED":[
-          2012
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011
-        ]
-      }
-    },
-    "crosstour:Hatchback":{
-      "id":"Honda_Crosstour",
-      "name":"Crosstour Hatchback",
-      "link":"/honda/crosstour",
-      "submodel":"Hatchback",
-      "nicesubmodel":"hatchback",
-      "model":"Crosstour",
-      "nicemodel":"crosstour",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2012
-        ]
-      }
-    },
-    "crv:SUV":{
-      "id":"Honda_CR_V",
-      "name":"CR-V SUV",
-      "link":"/honda/crv",
-      "submodel":"SUV",
-      "nicesubmodel":"suv",
-      "model":"CR-V",
-      "nicemodel":"crv",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "crz:Hatchback":{
-      "id":"Honda_CR_Z",
-      "name":"CR-Z Hatchback",
-      "link":"/honda/crz",
-      "submodel":"Hatchback",
-      "nicesubmodel":"hatchback",
-      "model":"CR-Z",
-      "nicemodel":"crz",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "NEW_USED":[
-          2012
-        ],
-        "USED":[
-          2011
-        ]
-      }
-    },
-    "element:SUV":{
-      "id":"Honda_Element",
-      "name":"Element SUV",
-      "link":"/honda/element",
-      "submodel":"SUV",
-      "nicesubmodel":"suv",
-      "model":"Element",
-      "nicemodel":"element",
-      "years":{
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011
-        ]
-      }
-    },
-    "fit:Hatchback":{
-      "id":"Honda_Fit",
-      "name":"Fit Hatchback",
-      "link":"/honda/fit",
-      "submodel":"Hatchback",
-      "nicesubmodel":"hatchback",
-      "model":"Fit",
-      "nicemodel":"fit",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "insight:Hatchback":{
-      "id":"Honda_Insight",
-      "name":"Insight Hatchback",
-      "link":"/honda/insight",
-      "submodel":"Hatchback",
-      "nicesubmodel":"hatchback",
-      "model":"Insight",
-      "nicemodel":"insight",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "odyssey:Minivan":{
-      "id":"Honda_Odyssey",
-      "name":"Odyssey Minivan",
-      "link":"/honda/odyssey",
-      "submodel":"Minivan",
-      "nicesubmodel":"minivan",
-      "model":"Odyssey",
-      "nicemodel":"odyssey",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "pilot:SUV":{
-      "id":"Honda_Pilot",
-      "name":"Pilot SUV",
-      "link":"/honda/pilot",
-      "submodel":"SUV",
-      "nicesubmodel":"suv",
-      "model":"Pilot",
-      "nicemodel":"pilot",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "ridgeline:Crew Cab":{
-      "id":"Honda_Ridgeline",
-      "name":"Ridgeline Crew Cab",
-      "link":"/honda/ridgeline",
-      "submodel":"Crew Cab",
-      "nicesubmodel":"crewcab",
-      "model":"Ridgeline",
-      "nicemodel":"ridgeline",
-      "years":{
-        "NEW":[
-          2013
-        ],
-        "USED":[
-          2008,
-          2009,
-          2010,
-          2011,
-          2012
-        ]
-      }
-    },
-    "s2000:CR":{
-      "id":"Honda_S2000",
-      "name":"S2000 CR",
-      "link":"/honda/s2000",
-      "submodel":"CR",
-      "nicesubmodel":"cr",
-      "model":"S2000",
-      "nicemodel":"s2000",
-      "years":{
-        "USED":[
-          2008,
-          2009
-        ]
-      }
-    },
-    "s2000:Convertible":{
-      "id":"Honda_S2000",
-      "name":"S2000 Convertible",
-      "link":"/honda/s2000",
-      "submodel":"Convertible",
-      "nicesubmodel":"convertible",
-      "model":"S2000",
-      "nicemodel":"s2000",
-      "years":{
-        "USED":[
-          2008,
-          2009
-        ]
-      }
-    }
-  }
+    "models": [{
+        "id": "BMW_1_Series",
+        "name": "1 Series",
+        "niceName": "1-series",
+        "years": [{
+            "id": 100524709,
+            "year": 2008,
+            "styles": [{
+                "id": 100994560,
+                "name": "128i 2dr Convertible (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "128i"
+            }, {
+                "id": 100974974,
+                "name": "128i 2dr Coupe (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "128i"
+            }, {
+                "id": 100974975,
+                "name": "135i 2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "135i"
+            }, {
+                "id": 100994561,
+                "name": "135i 2dr Convertible (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "135i"
+            }]
+        }, {
+            "id": 100503222,
+            "year": 2009,
+            "styles": [{
+                "id": 101082656,
+                "name": "135i 2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "135i"
+            }, {
+                "id": 101082655,
+                "name": "128i 2dr Coupe (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "128i"
+            }, {
+                "id": 101082663,
+                "name": "135i 2dr Convertible (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "135i"
+            }, {
+                "id": 101082662,
+                "name": "128i 2dr Convertible (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "128i"
+            }]
+        }, {
+            "id": 100529091,
+            "year": 2010,
+            "styles": [{
+                "id": 101200599,
+                "name": "128i 2dr Coupe (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "128i"
+            }, {
+                "id": 101200600,
+                "name": "135i 2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "135i"
+            }, {
+                "id": 101200607,
+                "name": "135i 2dr Convertible (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "135i"
+            }, {
+                "id": 101200601,
+                "name": "128i 2dr Convertible (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "128i"
+            }]
+        }, {
+            "id": 100531309,
+            "year": 2011,
+            "styles": [{
+                "id": 101288165,
+                "name": "128i 2dr Coupe (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "128i"
+            }, {
+                "id": 101288166,
+                "name": "135i 2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "135i"
+            }, {
+                "id": 101288298,
+                "name": "135i 2dr Convertible (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "135i"
+            }, {
+                "id": 101288297,
+                "name": "128i 2dr Convertible (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "128i"
+            }]
+        }, {
+            "id": 100534729,
+            "year": 2012,
+            "styles": [{
+                "id": 101381667,
+                "name": "128i 2dr Convertible (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "128i"
+            }, {
+                "id": 101381668,
+                "name": "135i 2dr Convertible (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "135i"
+            }, {
+                "id": 101381665,
+                "name": "128i 2dr Coupe (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "128i"
+            }, {
+                "id": 101381666,
+                "name": "135i 2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "135i"
+            }]
+        }, {
+            "id": 200421700,
+            "year": 2013,
+            "styles": [{
+                "id": 200428722,
+                "name": "128i 2dr Coupe (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "128i"
+            }, {
+                "id": 200428721,
+                "name": "128i 2dr Convertible (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "128i"
+            }, {
+                "id": 200421701,
+                "name": "135is 2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "135is"
+            }, {
+                "id": 200428724,
+                "name": "135i 2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "135i"
+            }, {
+                "id": 200428723,
+                "name": "135i 2dr Convertible (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "135i"
+            }, {
+                "id": 200428726,
+                "name": "128i SULEV 2dr Coupe (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "128i SULEV"
+            }, {
+                "id": 200428725,
+                "name": "128i SULEV 2dr Convertible (3.0L 6cyl 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "128i SULEV"
+            }, {
+                "id": 200428727,
+                "name": "135is 2dr Convertible (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "1 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "135is"
+            }]
+        }]
+    }, {
+        "id": "BMW_1_Series_M",
+        "name": "1 Series M",
+        "niceName": "1-series-m",
+        "years": [{
+            "id": 100534409,
+            "year": 2011,
+            "styles": [{
+                "id": 101351633,
+                "name": "2dr Coupe (3.0L 6cyl Turbo 6M)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "1 Series M Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "Base"
+            }]
+        }]
+    }, {
+        "id": "BMW_2_Series",
+        "name": "2 Series",
+        "niceName": "2-series",
+        "years": [{
+            "id": 200467976,
+            "year": 2014,
+            "styles": [{
+                "id": 200467979,
+                "name": "M235i 2dr Coupe (3.0L 6cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "M235i"
+            }, {
+                "id": 200689047,
+                "name": "228i 2dr Coupe (2.0L 4cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "228i"
+            }]
+        }, {
+            "id": 200676054,
+            "year": 2015,
+            "styles": [{
+                "id": 200676055,
+                "name": "228i 2dr Convertible (2.0L 4cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "2 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "228i"
+            }, {
+                "id": 200707505,
+                "name": "M235i xDrive 2dr Coupe AWD (3.0L 6cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "M235i xDrive"
+            }, {
+                "id": 200721943,
+                "name": "228i xDrive 2dr Convertible AWD (2.0L 4cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "2 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "228i xDrive"
+            }, {
+                "id": 200707500,
+                "name": "228i 2dr Coupe (2.0L 4cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "228i"
+            }, {
+                "id": 200721944,
+                "name": "M235i 2dr Convertible (3.0L 6cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Convertible",
+                    "modelName": "2 Series Convertible",
+                    "niceName": "convertible"
+                },
+                "trim": "M235i"
+            }, {
+                "id": 200707503,
+                "name": "228i xDrive 2dr Coupe AWD (2.0L 4cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "228i xDrive"
+            }, {
+                "id": 200707504,
+                "name": "M235i 2dr Coupe (3.0L 6cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "M235i"
+            }, {
+                "id": 200707501,
+                "name": "228i SULEV 2dr Coupe (2.0L 4cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "228i SULEV"
+            }, {
+                "id": 200707502,
+                "name": "228i xDrive SULEV 2dr Coupe AWD (2.0L 4cyl Turbo 8A)",
+                "submodel": {
+                    "body": "Coupe",
+                    "modelName": "2 Series Coupe",
+                    "niceName": "coupe"
+                },
+                "trim": "228i xDrive SULEV"
+            }]
+        }]
+    }, {
+        "id": "BMW_2_Series_Active_Tourer",
+        "name": "2 Series Active Tourer",
+        "niceName": "2-series-active-tourer",
+        "years": [{
+            "id": 200678226,
+            "year": 2016,
+            "styles": [{
+                "id": 200678227,
+                "name": "218i 4dr Hatchback (1.5L 3cyl Turbo gas/electric hybrid 6A)",
+                "submodel": {
+                    "body": "Hatchback",
+                    "modelName": "2 Series Active Tourer Hatchback",
+                    "niceName": "hatchback"
+                },
+                "trim": "218i"
+            }]
+        }]
+    }],
+    "modelsCount": 4
 }

@@ -1,15 +1,10 @@
 {
   "name": "Edmunds.com HTTP API - Vehicles",
-  "apiVersion": "v1",
+  "baseUrl": "http://api.edmunds.com",
   "operations": {
     "abstractService": {
       "httpMethod": "GET",
       "parameters": {
-        "version": {
-          "location": "uri",
-          "description": "API version",
-          "required": true
-        },
         "api_key": {
           "location": "query",
           "description": "API key",
@@ -21,373 +16,721 @@
         }
       }
     },
-    "tools.vinDecoder": {
+    "decodeVin": {
       "extends": "abstractService",
-      "uri": "/{version}/api/toolsrepository/vindecoder",
-      "responseClass": "styleHolderModel",
-      "summary": "Return a style object for a given vin",
+      "uri": "/api/vehicle/v2/vins/{vin}",
+      "responseClass": "DecodedVin",
+      "summary": "Return vehicle details for a given vin",
       "parameters": {
         "vin": {
+          "location": "uri",
+          "required": true
+        },
+        "manufacturerCode": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getVinConfiguration": {
+      "extends": "abstractService",
+      "uri": "/api/v1/vehicle/vin/{vin}/configuration",
+      "responseClass": "VinConfiguration",
+      "summary": "Get basic information from a VIN (new cars only)",
+      "parameters": {
+        "vin": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getDetailsBySquishVin": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/squishvins/{squishVin}",
+      "responseClass": "DecodedVin",
+      "parameters": {
+        "squishVin": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+
+    "getPhotosByStyleId": {
+      "extends": "abstractService",
+      "uri": "/v1/api/vehiclephoto/service/findphotosbystyleid",
+      "responseClass": "photoHolderModel",
+      "parameters": {
+        "styleId": {
           "location": "query",
           "required": true
         }
       }
     },
-    "make.findAll": {
+
+    "getAllMakes": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findall",
+      "uri": "/api/vehicle/v2/makes",
       "responseClass": "makeHolderModel",
       "summary": "Find All Makes"
     },
-    "make.findById": {
+    "calculateNewTmvByMakeAndYearAndZip": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findbyid",
-      "responseClass": "makeHolderModel",
+      "uri": "/api/v1/vehicle/{makeNiceName}/{year}/price",
+      "responseClass": "tmvV2",
       "parameters": {
-        "id": {
-          "location": "query",
-          "require": true
-        }
-      }
-    },
-    "make.findFutureMakes": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findfuturemakes",
-      "responseClass": "makeHolderModel"
-    },
-    "make.findMakeByName": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findmakebyname",
-      "responseClass": "makeHolderModel",
-      "parameters": {
-        "name": {
-          "location": "query",
+        "makeNiceName": {
+          "location": "uri",
           "required": true
-        }
-      }
-    },
-    "make.findMakesByModelYear": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findmakesbymodelyear",
-      "responseClass": "makeHolderModel",
-      "parameters": {
+        },
         "year": {
+          "location": "uri",
+          "required": true
+        },
+        "msrp": {
           "location": "query",
           "required": true
-        }
-      }
-    },
-    "make.findMakesByPublicationState": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findmakesbypublicationstate",
-      "responseClass": "makeHolderModel",
-      "parameters": {
-        "state": {
-          "location": "query",
-          "required": true,
-          "type": "string",
-          "enum": [ "new", "used", "future" ]
-        }
-      }
-    },
-    "make.findNewAndUsed": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findnewandused",
-      "responseClass": "makeHolderModel"
-    },
-    "make.findNewAndUsedMakesByModelYear": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findnewandusedmakesbymodelyear",
-      "responseClass": "makeHolderModel",
-      "parameters": {
-        "year": {
+        },
+        "zip": {
           "location": "query",
           "required": true
-        }
-      }
-    },
-    "make.findNewMakes": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findnewmakes",
-      "responseClass": "makeHolderModel"
-    },
-    "make.findUsedMakes": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/makerepository/findusedmakes",
-      "responseClass": "makeHolderModel"
-    },
-    "model.findById": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findbyid",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "id": {
+        },
+        "color": {
           "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findByMakeId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findbymakeid",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "makeid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findFutureModelsByMakeId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findfuturemodelsbymakeid",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "makeId": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findModelByMakeModelName": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findmodelbymakemodelname",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "make": {
-          "location": "query",
-          "required": true
+          "required": false
         },
         "model": {
           "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findModelsByMake": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymake",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "make": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findModelsByMakeAndPublicationState": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymakeandpublicationstate",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "make": {
-          "location": "query",
-          "required": true,
-          "type": "string"
+          "required": false
         },
-        "state": {
+        "vehicleStyle": {
           "location": "query",
-          "required": true,
-          "type": "string",
-          "enum": [ "new", "used", "future" ]
+          "required": false
+        },
+        "drivenWheels": {
+          "location": "query",
+          "required": false
+        },
+        "fuelType": {
+          "location": "query",
+          "required": false
+        },
+        "cylinders": {
+          "location": "query",
+          "required": false
+        },
+        "compressorType": {
+          "location": "query",
+          "required": false
+        },
+        "trim": {
+          "location": "query",
+          "required": false
         }
       }
     },
-    "model.findModelsByMakeAndYear": {
+    "calculateNewTmvByVinAndMsrpAndZip": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findmodelsbymakeandyear",
-      "responseClass": "modelHolderModel",
+      "uri": "/api/v1/vehicle/vin/{vin}/price",
+      "responseClass": "tmvV2Holder",
       "parameters": {
-        "make": {
-          "location": "query",
+        "vin": {
+          "location": "uri",
           "required": true
         },
-        "year": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findNewAndUsedModelsByMakeId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findnewandusedmodelsbymakeid",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "makeId": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findNewModelsByMakeId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findnewmodelsbymakeid",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "makeId": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "model.findUsedModelsByMakeId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelrepository/findusedmodelsbymakeid",
-      "responseClass": "modelHolderModel",
-      "parameters": {
-        "makeId": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "modelYear.findById": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findbyid",
-      "responseClass": "modelYearHolderModel",
-      "parameters": {
-        "id": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "modelYear.findDistinctYearWithNew": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithnew",
-      "responseType": "modelYearList"
-    },
-    "modelYear.findDistinctYearWithNewOrUsed": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithneworused",
-      "responseType": "modelYearList"
-    },
-    "modelYear.findDistinctYearWithUsed": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/finddistinctyearwithused",
-      "responseType": "modelYearList"
-    },
-    "modelYear.findFutureModelYearsByModelId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findfuturemodelyearsbymodelid",
-      "responseType": "modelYearList",
-      "parameters": {
-        "modelId": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "modelYear.findModelYearsByMakeAndYear": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakeandyear",
-      "responseClass": "modelYearHolderModel",
-      "parameters": {
-        "make": {
+        "zip": {
           "location": "query",
           "required": true
         },
-        "year": {
-          "location": "query",
-          "required": true
-        }  
-      }
-    },
-    "modelYear.findModelYearsByMakeModel": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findmodelyearsbymakemodel",
-      "responseClass": "modelYearHolderModel",
-      "parameters": {
-        "make": {
+        "msrp": {
           "location": "query",
           "required": true
         },
-        "model": {
+        "color": {
           "location": "query",
-          "required": true
+          "required": false
         }
       }
     },
-    "modelYear.findNewAndUsedModelYearsByMakeIdAndYear": {
+    "calculateNewTmvByStyleAndZip": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findnewandusedmodelyearsbymakeidandyear",
-      "responseClass": "modelYearHolderModel",
+      "uri": "/v1/api/tmv/tmvservice/calculatenewtmv",
+      "responseClass": "tmvHolder",
       "parameters": {
-        "makeid": {
+        "styleid": {
           "location": "query",
           "required": true
         },
-        "year": {
+        "zip": {
+          "location": "query",
+          "required": true
+        },
+        "colorid": {
           "location": "query"
-        }  
+        },
+        "optionid": {
+          "location": "query"
+        }
       }
     },
-    "modelYear.findNewModelYearsByModelId": {
+    "calculateUsedTmv": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findnewmodelyearsbymodelid",
-      "responseClass": "modelYearHolderModel",
+      "uri": "/v1/api/tmv/tmvservice/calculateusedtmv",
+      "responseClass": "tmvHolder",
       "parameters": {
-        "modelid": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "condition": {
+          "location": "query",
+          "required": true,
+          "type": "string",
+          "enum": [ "Outstanding", "Clean", "Average", "Rough", "Damaged" ]
+        },
+        "mileage": {
+          "location": "query",
+          "required": true
+        },
+        "zip": {
+          "location": "query",
+          "required": true
+        },
+        "colorid": {
+          "location": "query"
+        },
+        "optionid": {
+          "location": "query"
+        }
+      }
+    },
+    "calculateTypicallyEquippedUsedTmv": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tmv/tmvservice/calculatetypicallyequippedusedtmv",
+      "responseClass": "tmvHolder",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "zip": {
           "location": "query",
           "required": true
         }
       }
     },
-    "modelYear.findUsedModelYearsByModelId": {
+    "getCertifiedPriceForStyle": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findusedmodelyearsbymodelid",
-      "responseClass": "modelYearHolderModel",
+      "uri": "/v1/api/tmv/tmvservice/findcertifiedpriceforstyle",
+      "responseClass": "certifiedPrice",
       "parameters": {
-        "modelid": {
+        "styleid": {
           "location": "query",
           "required": true
-        } 
+        },
+        "zip": {
+          "location": "query",
+          "required": true
+        }
       }
     },
-    "modelYear.findYearsByCategoryAndPublicationState": {
+
+    "getIncentiveById": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/findyearsbycategoryandpublicationstate",
-      "responseClass": "modelYearHolderModel",
+      "uri": "/v1/api/incentive/incentiverepository/findbyid",
+      "responseClass": "incentiveHolderModel",
+      "parameters": {
+        "id": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getIncentivesByCategoryAndZipCode": {
+      "extends": "abstractService",
+      "uri": "/v1/api/incentive/incentiverepository/findincentivesbycategoryandzipcode",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
         "category": {
           "location": "query",
           "required": true
         },
-        "state": {
-          "location": "query"
-        }
-      }
-    },
-    "modelYear.forModelId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/formodelid",
-      "responseClass": "modelYearHolderModel",
-      "parameters": {
-        "modelid": {
+        "zipcode": {
           "location": "query",
           "required": true
         }
       }
     },
-    "modelYear.forYearMakeModel": {
+    "getIncentivesByMakeId": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/modelyearrepository/foryearmakemodel",
-      "responseClass": "modelYearHolderModel",
+      "uri": "/v1/api/incentive/incentiverepository/findincentivesbymakeid",
+      "responseClass": "incentiveHolderModel",
       "parameters": {
-        "make": {
+        "makeid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getIncentivesByMakeIdAndZipCode": {
+      "extends": "abstractService",
+      "uri": "/v1/api/incentive/incentiverepository/findincentivesbymakeidandzipcode",
+      "responseClass": "incentiveHolderModel",
+      "parameters": {
+        "makeid": {
           "location": "query",
           "required": true
         },
-        "model": {
+        "zipcode": {
           "location": "query",
           "required": true
+        }
+      }
+    },
+    "getIncentivesByModelYearIdAndZipCode": {
+      "extends": "abstractService",
+      "uri": "/v1/api/incentive/incentiverepository/findincentivesbymodelyearidandzipcode",
+      "responseClass": "incentiveHolderModel",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        },
+        "zipcode": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getIncentivesByStyleId": {
+      "extends": "abstractService",
+      "uri": "/v1/api/incentive/incentiverepository/findincentivebystyleid",
+      "responseClass": "incentiveHolderModel",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getIncentivesByStyleIdAndZipCode": {
+      "extends": "abstractService",
+      "uri": "/v1/api/incentive/incentiverepository/findincentivesbystyleidandzipcode",
+      "responseClass": "incentiveHolderModel",
+      "parameters": {
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "zipcode": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getMaintenanceActionById": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/action/{id}",
+      "responseClass": "actionHolderModel",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getMaintenanceActionByModelYearId": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/actionrepository/findbymodelyearid",
+      "responseClass": "actionHolderModel",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getModelYearIdsWithMaintenanceSchedule": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/actionrepository/findmodelyearidswithmaintenanceschedule",
+      "responseClass": "longListHolder"
+    },
+    "getRecallById": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/recall/{id}",
+      "responseClass": "recallHolderModel",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getRecallByModelYearId": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/recallrepository/findbymodelyearid",
+      "responseClass": "recallHolderModel",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getServiceBulletinById": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/servicebulletin/{id}",
+      "responseClass": "serviceBulletinHolderModel",
+      "parameters": {
+        "id": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getServiceBulletinByModelYearId": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/servicebulletinrepository/findbymodelyearid",
+      "responseClass": "serviceBulletinHolderModel",
+      "parameters": {
+        "modelyearid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getStyleNotesById": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/stylesnotes/{id}",
+      "responseClass": "styleNotesHolderModel",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getLaborRateByZip": {
+      "extends": "abstractService",
+      "uri": "/v1/api/maintenance/ziplaborrate/{zip}",
+      "responseClass": "zipLaborRateHolderModel",
+      "parameters": {
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+
+    "getAllMakes": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/makes",
+      "responseClass": "makeHolder",
+      "parameters": {
+        "state": {
+          "location": "query",
+          "required": false
         },
         "year": {
           "location": "query",
-          "required": true
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
         }
       }
     },
+    "getMakeByName": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}",
+      "responseClass": "Make",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "year": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getMakesCount": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/makes/count",
+      "responseClass": "makesCount",
+      "parameters": {
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "year": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getModelByMakeAndModel": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}/{modelNameName}",
+      "responseClass": "Model",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "year": {
+          "location": "query",
+          "required": false
+        },
+        "submodel": {
+          "location": "query",
+          "required": false
+        },
+        "category": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getModelsByMake": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}/models",
+      "responseClass": "modelHolder",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "year": {
+          "location": "query",
+          "required": false
+        },
+        "submodel": {
+          "location": "query",
+          "required": false
+        },
+        "category": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getModelsCount": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{make}/models/count",
+      "responseClass": "modelsCount",
+      "parameters": {
+        "make": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "year": {
+          "location": "query",
+          "required": false
+        },
+        "submodel": {
+          "location": "query",
+          "required": false
+        },
+        "category": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+
+    "getModelYearsByMakeAndModel": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}/{modelNiceName}/years",
+      "responseClass": "modelYearHolder",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "submodel": {
+          "location": "query",
+          "required": false
+        },
+        "category": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getModelYearByMakeAndModelAndYear": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}/{modelNiceName}/{year}",
+      "responseClass": "ModelYear",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "year": {
+          "location": "uri",
+          "required": true
+        },
+        "submodel": {
+          "location": "query",
+          "required": false
+        },
+        "category": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getModelYearsCount": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}/{modelNiceName}/years/count",
+      "responseClass": "modelYearsCount",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+
+    "getEdmundsRatingsByMakeAndModelAndYear": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/grade/{makeNiceName}/{modelNiceName}/{year}",
+      "responseClass": "EdmundsReview",
+      "parameters": {
+        
+      }
+    },
+
+    "getConsumerRatingsAndReviewsByMakeAndModelAndYear": {
+      "extends": "abstractService",
+      "uri": "/api/vehiclereviews/v2/{makeNiceName}/{modelNiceName}/{year}",
+      "responseClass": "ConsumerReview",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "year": {
+          "location": "uri",
+          "required": true
+        },
+        "sortby": {
+          "location": "query",
+          "required": false
+        },
+        "pagenum": {
+          "location": "query",
+          "required": false
+        },
+        "pagesize": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getConsumerRatingsAndReviewsByStyleId": {
+      "extends": "abstractService",
+      "uri": "/api/vehiclereviews/v2/styles/{styleId}",
+      "responseClass": "ConsumerReview",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "sortby": {
+          "location": "query",
+          "required": false
+        },
+        "pagenum": {
+          "location": "query",
+          "required": false
+        },
+        "pagesize": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+
     "style.findById": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findbyid",
@@ -424,99 +767,6 @@
       "responseClass": "styleHolderModel",
       "parameters": {
         "modelyearid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "tmv.calculateNewTmv": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tmv/tmvservice/calculatenewtmv",
-      "responseClass": "tmvHolder",
-      "parameters": {
-        "styleid": {
-          "location": "query",
-          "required": true
-        },
-        "zip": {
-          "location": "query",
-          "required": true
-        },
-        "colorid": {
-          "location": "query"
-        },
-        "optionid": {
-          "location": "query"
-        }
-      }
-    },
-    "tmv.calculateUsedTmv": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tmv/tmvservice/calculateusedtmv",
-      "responseClass": "tmvHolder",
-      "parameters": {
-        "styleid": {
-          "location": "query",
-          "required": true
-        },
-        "condition": {
-          "location": "query",
-          "required": true,
-          "type": "string",
-          "enum": [ "Outstanding", "Clean", "Average", "Rough", "Damaged" ]
-        },
-        "mileage": {
-          "location": "query",
-          "required": true
-        },
-        "zip": {
-          "location": "query",
-          "required": true
-        },
-        "colorid": {
-          "location": "query"
-        },
-        "optionid": {
-          "location": "query"
-        }
-      }
-    },
-    "tmv.calculateTypicallyEquippedUsedTmv": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tmv/tmvservice/calculatetypicallyequippedusedtmv",
-      "responseClass": "tmvHolder",
-      "parameters": {
-        "styleid": {
-          "location": "query",
-          "required": true
-        },
-        "zip": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "tmv.findCertifiedPriceForStyle": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tmv/tmvservice/findcertifiedpriceforstyle",
-      "responseClass": "number",
-      "parameters": {
-        "styleid": {
-          "location": "query",
-          "required": true
-        },
-        "zip": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "tmv.findCpoYearsByMake": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tmv/tmvservice/findcpoyearsbymake",
-      "responseClass": "array",
-      "parameters": {
-        "makeid": {
           "location": "query",
           "required": true
         }
@@ -668,253 +918,307 @@
           "location": "query"
         }
       }
-    },
-    "maintenance.findActionById": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/action/{id}",
-      "responseClass": "actionHolderModel",
-      "parameters": {
-        "id": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "maintenance.findActionByModelYearId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/actionrepository/findbymodelyearid",
-      "responseClass": "actionHolderModel",
-      "parameters": {
-        "modelyearid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "maintenance.findModelYearIdsWithMaintenanceSchedule": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/actionrepository/findmodelyearidswithmaintenanceschedule",
-      "responseClass": "longListHolder"
-    },
-    "maintenance.findRecallById": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/recall/{id}",
-      "responseClass": "recallHolderModel",
-      "parameters": {
-        "id": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "maintenance.findRecallByModelYearId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/recallrepository/findbymodelyearid",
-      "responseClass": "recallHolderModel",
-      "parameters": {
-        "modelyearid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "maintenance.findServiceBulletinById": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/servicebulletin/{id}",
-      "responseClass": "serviceBulletinHolderModel",
-      "parameters": {
-        "id": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "maintenance.findServiceBulletinByModelYearId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/servicebulletinrepository/findbymodelyearid",
-      "responseClass": "serviceBulletinHolderModel",
-      "parameters": {
-        "modelyearid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "maintenance.findStyleNotesById": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/stylesnotes/{id}",
-      "responseClass": "styleNotesHolderModel",
-      "parameters": {
-        "id": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "maintenance.findLaborRateByZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/maintenance/ziplaborrate/{zip}",
-      "responseClass": "zipLaborRateHolderModel",
-      "parameters": {
-        "zip": {
-          "location": "uri",
-          "required": true  
-        }
-      }
-    },
-    "incentive.findById": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/incentive/incentiverepository/findbyid",
-      "responseClass": "incentiveHolderModel",
-      "parameters": {
-        "id": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "incentive.findIncentivesByCategoryAndZipCode": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbycategoryandzipcode",
-      "responseClass": "incentiveHolderModel",
-      "parameters": {
-        "category": {
-          "location": "query",
-          "required": true
-        },
-        "zipcode": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "incentive.findIncentivesByMakeId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeid",
-      "responseClass": "incentiveHolderModel",
-      "parameters": {
-        "makeid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "incentive.findIncentivesByMakeIdAndZipCode": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymakeidandzipcode",
-      "responseClass": "incentiveHolderModel",
-      "parameters": {
-        "makeid": {
-          "location": "query",
-          "required": true
-        },
-        "zipcode": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "incentive.findIncentivesByModelYearIdAndZipCode": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbymodelyearidandzipcode",
-      "responseClass": "incentiveHolderModel",
-      "parameters": {
-        "modelyearid": {
-          "location": "query",
-          "required": true
-        },
-        "zipcode": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "incentive.findIncentivesByStyleId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/incentive/incentiverepository/findincentivebystyleid",
-      "responseClass": "incentiveHolderModel",
-      "parameters": {
-        "styleid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "incentive.findIncentivesByStyleIdAndZipCode": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/incentive/incentiverepository/findincentivesbystyleidandzipcode",
-      "responseClass": "incentiveHolderModel",
-      "parameters": {
-        "styleid": {
-          "location": "query",
-          "required": true
-        },
-        "zipcode": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "photo.findPhotosByStyleId": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/vehiclephoto/service/findphotosbystyleid",
-      "responseClass": "photoHolderModel",
-      "parameters": {
-        "styleId": {
-          "location": "query",
-          "required": true
-        },
-        "vdpOrder": {
-          "location": "query",
-          "required": false
-        }
-      }
-    },
-    "ratingsAndReviews.getForMakeModelYear": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/crrrepository/getcrrformakemodelyear",
-      "responseClass": "reviewHolderModel",
-      "parameters": {
-        "make": {
-          "location": "query",
-          "required": true
-        },
-        "model": {
-          "location": "query",
-          "required": true
-        },
-        "year": {
-          "location": "query",
-          "required": true
-        }
-      }
     }
   },
   "models": {
-    "makeHolderModel": {
+    "DecodedVin": {
+      "location": "json",
       "type": "object",
+      "additionalProperties": true,
       "properties": {
-        "makeHolder": {
-          "$ref": "makeHolder"
+        "make": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
+        },
+        "model": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
+        },
+        "transmission": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "equipmentType": {
+              "type": "string"
+            },
+            "availability": {
+              "type": "string"
+            },
+            "transmissionType": {
+              "type": "string"
+            },
+            "numberOfSpeeds": {
+              "type": "string"
+            }
+          }
+        },
+        "drivenWheels": {
+          "type": "string"
+        },
+        "numOfDoors": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "colors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "manufacturerCode": {
+          "type": "string"
+        },
+        "price": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "baseMSRP": {
+              "type": "numeric"
+            },
+            "baseInvoice": {
+              "type": "numeric"
+            },
+            "deliveryCharges": {
+              "type": "numeric"
+            },
+            "usedTmvRetail": {
+              "type": "numeric"
+            },
+            "usedPrivateParty": {
+              "type": "numeric"
+            },
+            "usedTradeIn": {
+              "type": "numeric"
+            },
+            "estimateTmv": {
+              "type": "numeric"
+            },
+            "tmvRecommendedRating": {
+              "type": "numeric"
+            }
+          }
+        },
+        "categories": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "market": {
+              "type": "string"
+            },
+            "EPAClass": {
+              "type": "string"
+            },
+            "vehicleSize": {
+              "type": "string"
+            },
+            "primaryBodyType": {
+              "type": "string"
+            },
+            "vehicleStyle": {
+              "type": "string"
+            },
+            "vehicleType": {
+              "type": "string"
+            }
+          }
+        },
+        "vin": {
+          "type": "string"
+        },
+        "squishVin": {
+          "type": "string"
+        },
+        "years": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "submodel": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "body": {
+                    "type": "string"
+                  },
+                  "modelName": {
+                    "type": "string"
+                  },
+                  "niceName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "trim": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "matchingType": {
+          "type": "string"
+        },
+        "MPG": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "highway": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            }
+          }
         }
       }
     },
-    "modelHolderModel": {
+    "VinConfiguration": {
+      "location": "json",
       "type": "object",
+      "additionalProperties": true,
       "properties": {
-        "modelHolder": {
-          "$ref": "modelHolder"
+        "link": {
+          "type": "object",
+          "properties": {
+            "rel": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            }
+          }
+        },
+        "year": {
+          "type": "numeric"
+        },
+        "make": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "link": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "rel": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "vinModelGroup": {
+          "type": "any"
+        },
+        "model": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "link": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "rel": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "vehicleStyle": {
+          "type": "string"
+        },
+        "drivenWheels": {
+          "type": "string"
+        },
+        "fuelType": {
+          "type": "string"
+        },
+        "compressorType": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "object",
+          "addtionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "specialIdentifier": {
+              "type": "string"
+            }
+          }
+        },
+        "cylinders": {
+          "type": "any"
+        },
+        "styles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "link": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "rel": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
-    "modelYearHolderModel": {
-      "type": "object",
-      "properties": {
-        "modelYearHolder": {
-          "$ref": "modelYearHolder"
-        }
-      }
-    },
+
+
+
+
     "styleHolderModel": {
       "type": "object",
       "properties": {
@@ -934,7 +1238,7 @@
     "styleNotesHolderModel": {
       "type": "object",
       "properties": {
-        "styleNotesHolder": {
+        "maintenanceStyleNotesHolder": {
           "$ref": "styleNotesHolder"
         }
       }
@@ -973,44 +1277,50 @@
     },
     "makeHolder": {
       "location": "json",
-      "type": "array",
-      "items": {
-        "$ref": "Make"
-      }
-    },
-    "makesModel": {
       "type": "object",
       "properties": {
-        "make": {
-          "$ref": "makes"
+        "makes": {
+          "type": "array",
+          "items": {
+            "$ref": "Make"
+          }
+        },
+        "makesCount": {
+          "type": "numeric"
         }
       }
     },
-    "makes": {
+    "makesCount": {
       "location": "json",
       "type": "object",
-      "additionalProperties": true
+      "properties": {
+        "makesCount": {
+          "type": "number"
+        }
+      }
     },
     "modelHolder": {
       "location": "json",
-      "type": "array",
-      "items": {
-        "$ref": "Model"
-      }
-    },
-    "modelsModel": {
       "type": "object",
       "properties": {
         "models": {
-          "$ref": "models"
+          "type": "array",
+          "items": {
+            "$ref": "Model"
+          }
         }
       }
     },
-    "models": {
+    "modelsCount": {
       "location": "json",
       "type": "object",
-      "additionalProperties": true
+      "properties": {
+        "modelsCount": {
+          "type": "number"
+        }
+      }
     },
+
     "stylesModel": {
       "type": "object",
       "properties": {
@@ -1031,16 +1341,43 @@
     },
     "modelYearHolder": {
       "location": "json",
-      "type": "array",
-      "items": {
-        "$ref": "ModelYear"
+      "type": "object",
+      "properties": {
+        "years": {
+          "type": "array",
+          "items": {
+            "$ref": "ModelYear"
+          }
+        },
+        "yearsCount": {
+          "type": "numeric"
+        }
       }
     },
-    "modelYearList": {
+    "modelYearsCount": {
       "location": "json",
-      "type": "array",
-      "items": {
-        "type": "integer"
+      "type": "object",
+      "properties": {
+        "yearsCount": {
+          "type": "numeric"
+        },
+        "years": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "year": {
+                "type": "numeric"
+              },
+              "stylesCount": {
+                "type": "numeric"
+              }
+            }
+          }
+        }
       }
     },
     "styleHolder": {
@@ -1113,16 +1450,109 @@
         }
       }
     },
-    "photoHolderModel": {
+    "tmvV2Holder": {
+      "location": "json",
       "type": "object",
       "properties": {
-        "photos": {
-          "type": "array",
-          "location": "json",
-          "items": {
-            "$ref": "Photo"
+        "pricing": {
+          "$ref": "tmvV2"
+        },
+        "configuration": {
+          "type": "object",
+          "properties": {
+            "link": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                }
+              }
+            },
+            "year": {
+              "type": "number"
+            },
+            "make": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "object",
+                  "properties": {
+                    "rel": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "vinModelGroup": {
+              "type": "string"
+            },
+            "model": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "object",
+                  "properties": {
+                    "rel": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "vehicleStyle": {
+              "type": "string"
+            },
+            "drivenWheels": {
+              "type": "string"
+            },
+            "fuelType": {
+              "type": "string"
+            },
+            "compressorType": {
+              "type": "string"
+            },
+            "trim": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "specialIdentifier": {
+                  "type": "any"
+                }
+              }
+            },
+            "cylinders": {
+              "type": "any"
+            },
+            "styles": {
+              "type": "any"
+            }
           }
         }
+      }
+    },
+    "photoHolderModel": {
+      "type": "array",
+      "location": "json",
+      "items": {
+        "$ref": "Photo"
       }
     },
     "reviewHolderModel": {
@@ -1155,10 +1585,6 @@
         },
         "niceName": {
           "type": "string"
-        },
-        "attributeGroups": {
-          "type": "object",
-          "additionalProperties": true
         }
       }
     },
@@ -1166,15 +1592,6 @@
       "location": "json",
       "type": "object",
       "properties": {
-        "makeId": {
-          "type": "integer"
-        },
-        "makeName": {
-          "type": "string"
-        },
-        "makeNiceName": {
-          "type": "string"
-        },
         "id": {
           "type": "string"
         },
@@ -1184,39 +1601,17 @@
         "niceName": {
           "type": "string"
         },
-        "make": {
-          "type": "object",
-          "properties": {
-            "link": {
-              "type": "string"
-            }
-          }
-        },
-        "modelYears": {
+        "years": {
           "type": "array",
           "items": {
             "$ref": "modelYearShort"
           }
-        },
-        "attributeGroups": {
-          "type": "object",
-          "additionalProperties": true
-        },
-        "categories": {
-          "type": "object",
-          "additionalProperties": true
-        },
-        "publicationStates": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "subModels": {
-          "type": "object",
-          "additionalProperties": true
         }
       }
+    },
+    "certifiedPrice": {
+      "location": "json",
+      "type": "number"
     },
     "modelShort": {
       "location": "json",
@@ -1237,82 +1632,75 @@
       "location": "json",
       "type": "object",
       "properties": {
-        "makeId": {
+        "id": {
           "type": "integer"
         },
-        "makeName": {
-          "type": "string"
+        "make": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
         },
-        "makeNiceName": {
-          "type": "string"
+        "model": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
         },
-        "modelId": {
-          "type": "string"
-        },
-        "modelName": {
-          "type": "string"
-        },
-        "modelNiceName": {
-          "type": "string"
-        },
-        "id": {
+        "year": {
           "type": "integer"
         },
         "styles": {
           "type": "array",
           "items": {
-            "$ref": "style"
-          }
-        },
-        "newDefaultStyles": {
-          "type": "object",
-          "additionalProperties": true
-        },
-        "usedDefaultStyle": {
-          "type": "object",
-          "additionalProperties": true
-        },
-        "equipment": {
-          "type": "array",
-          "items": {
             "type": "object",
-            "additionalProperties": true
-          }
-        },
-        "subModels": {
-          "type": "array",
-          "items": {
-            "$ref": "SubModel"
-          }
-        },
-        "midYear": {
-          "type": "boolean"
-        },
-        "year": {
-          "type": "integer"
-        },
-        "dateAvailable": {
-          "type": "any"
-        },
-        "model": {
-          "$ref": "modelShort"
-        },
-        "name": {
-          "type": "string"
-        },
-        "attributeGroups": {
-          "type": "object",
-          "additionalProperties": true
-        },
-        "categories": {
-          "type": "object",
-          "additionalProperties": true
-        },
-        "publicationStates": {
-          "type": "array",
-          "items": {
-            "location": "json",
-            "type": "string"
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "submodel": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "string"
+                  },
+                  "modelName": {
+                    "type": "string"
+                  },
+                  "niceName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "trim": {
+                "type": "string"
+              },
+              "states": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -1321,14 +1709,42 @@
       "location": "json",
       "type": "object",
       "properties": {
-        "link": {
-          "type": "string"
-        },
         "id": {
           "type": "integer"
         },
         "year": {
           "type": "string"
+        },
+        "styles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "submodel": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "string"
+                  },
+                  "modelName": {
+                    "type": "string"
+                  },
+                  "niceName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "trim": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },
@@ -1569,6 +1985,80 @@
         "totalWithOptions": {
           "type": "object",
           "additionalProperties": true
+        }
+      }
+    },
+    "tmvV2": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "tmvUsd": {
+          "type": "numeric"
+        },
+        "dealerCashUsd": {
+          "type": "number"
+        },
+        "customerIncentiveUsd": {
+          "type": "number"
+        },
+        "destinationFeeUsd": {
+          "type": "number"
+        },
+        "gasGuzzlerTaxUsd": {
+          "type": "number"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "rel": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            }
+          }
+        },
+        "corePercent": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "priceUsd": {
+              "type": "number"
+            },
+            "percent": {
+              "type": "any"
+            },
+            "link": {
+              "type": "string"
+            }
+          }
+        },
+        "regionAdjustment": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "adjustmentUsd": {
+              "type": "number"
+            },
+            "dmaAdjustment": {
+              "type": "any"
+            }
+          }
+        },
+        "colorAdjustment": {
+          "adjustmentUsd": {
+            "type": "number"
+          },
+          "percent": {
+            "type": "any"
+          },
+          "link": {
+            "type": "string"
+          },
+          "state": {
+            "type": "any"
+          }
         }
       }
     },
@@ -1865,64 +2355,116 @@
         }
       }
     },
-    "Review": {
+    "ConsumerReview": {
+      "location": "json",
       "type": "object",
+      "additionalProperties": true,
       "properties": {
-        "consumerName": {
-          "type": "string"
-        },
-        "styleId": {
-          "type": "integer"
-        },
-        "title": {
-          "type": "string"
-        },
-        "likes": {
-          "type": "integer"
-        },
-        "totalRating": {
-          "type": "number"
-        },
-        "favorites": {
-          "type": "string"
-        },
-        "suggestions": {
-          "type": "string"
-        },
-        "date": {
-          "type": "any"
-        },
-        "ratings": {
-          "type": "object",
-          "properties": {
-            "fuelEconomy": {
-              "type": "number"
-            },
-            "buildQuality": {
-              "type": "number"
-            },
-            "comfort": {
-              "type": "number"
-            },
-            "performance": {
-              "type": "number"
-            },
-            "realiability": {
-              "type": "number"
-            },
-            "exteriorDesign": {
-              "type": "number"
-            },
-            "funToDrive": {
-              "type": "number"
-            },
-            "interiorDesign": {
-              "type": "number"
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rel": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
             }
           }
         },
-        "review": {
+        "averageRating": {
           "type": "string"
+        },
+        "reviewsCount": {
+          "type": "numeric"
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "legacyId": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "rel": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  }
+                }
+              },
+              "author": {
+                "type": "object",
+                "properties": {
+                  "authorName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "created": {
+                "type": "numeric"
+              },
+              "updated": {
+                "type": "numeric"
+              },
+              "title": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "favoriteFeatures": {
+                "type": "string"
+              },
+              "suggestedImprovements": {
+                "type": "string"
+              },
+              "thumbsUpDownCounter": {
+                "type": "object",
+                "properties": {
+                  "thumbsDown": {
+                    "type": "numeric"
+                  },
+                  "thumbsUp": {
+                    "type": "numeric"
+                  }
+                }
+              },
+              "ratings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "commentsCount": {
+                "type": "numeric"
+              },
+              "averageRating": {
+                "type": "string"
+              },
+              "styleId": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     }

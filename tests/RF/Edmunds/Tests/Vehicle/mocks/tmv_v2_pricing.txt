@@ -1,0 +1,67 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "pricing": {
+        "tmvUsd": 27835,
+        "dealerCashUsd": 0.00,
+        "customerIncentiveUsd": 0.00,
+        "destinationFeeUsd": 895.00,
+        "gasGuzzlerTaxUsd": 0.00,
+        "link": {
+            "rel": "full",
+            "href": "/api/v1/vehicle/audi/2013/price?zip=90404&msrp=47000&color=white&model=a5&vehicleStyle=convertible&drivenWheels=all-wheel-drive&fuelType=gas&cylinders=4&compressorType=turbocharger&trim=20t-premium-quattro&styles=200421366"
+        },
+        "corePercent": {
+            "priceUsd": 40726.50,
+            "percent": null,
+            "link": null
+        },
+        "regionAdjustment": {
+            "adjustmentUsd": -162.84,
+            "dmaAdjustment": null
+        },
+        "colorAdjustment": {
+            "adjustmentUsd": -84.30,
+            "percent": null,
+            "link": null,
+            "state": null
+        }
+    },
+    "configuration": {
+        "link": {
+            "rel": "full",
+            "href": "/api/v1/vehicle/vin/WAUCFAFH2DN018228/configuration"
+        },
+        "year": 2013,
+        "make": {
+            "name": "Audi",
+            "link": {
+                "rel": "full",
+                "href": "/api/vehicle/audi?fmt=json"
+            }
+        },
+        "vinModelGroup": null,
+        "model": {
+            "name": "A5",
+            "link": {
+                "rel": "full",
+                "href": "/api/vehicle/audi/a5?fmt=json"
+            }
+        },
+        "vehicleStyle": "Convertible",
+        "drivenWheels": "all wheel drive",
+        "fuelType": "gas",
+        "compressorType": "turbocharger",
+        "trim": {
+            "name": "2.0T Premium quattro",
+            "specialIdentifier": null
+        },
+        "cylinders": 4,
+        "styles": null
+    }
+}

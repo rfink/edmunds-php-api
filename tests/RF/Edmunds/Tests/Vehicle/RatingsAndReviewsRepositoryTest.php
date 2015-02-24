@@ -2,38 +2,53 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class RatingsAndReviewsRepositoryTest extends GuzzleTestCase
+class RatingsAndReviewsRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
+        parent::setUp();
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
         $this->client = null;
+        parent::tearDown();
     }
 
     public function testGetForMakeModelYear()
     {
-        $this->setMockResponse($this->client, 'ratings_and_reviews.txt');
-        $args = array('make' => 'Honda', 'model' => 'Accord', 'year' => 2005);
-        $response = $this->client->getCommand('ratingsAndReviews.getForMakeModelYear', $args)->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/ratings_and_reviews.txt');
+        $args = array('makeNiceName' => 'honda', 'modelNiceName' => 'accord', 'year' => 2005);
+        $response = $this->client->getConsumerRatingsAndReviewsByMakeAndModelAndYear($args);
+        $this->assertRatings($response);
+    }
+
+    public function testGetByStyleId()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/ratings_and_reviews.txt');
+        $args = array('styleId' => 'SOME_ID');
+        $response = $this->client->getConsumerRatingsAndReviewsByStyleId($args);
+        $this->assertRatings($response);
+    }
+
+    private function assertRatings($response)
+    {
         $this->assertTrue(is_array($response));
+        $this->assertTrue(is_array($response['links']));
+        $this->assertEquals($response['averageRating'], '4.156');
         $this->assertTrue(is_array($response['reviews']));
-        $this->assertEquals(count($response['reviews']), 2);
-        $this->assertEquals($response['reviews'][0]['styleId'], 100001207);
+        $this->assertTrue(is_array($response['reviews'][0]));
         $this->assertTrue(is_array($response['reviews'][0]['ratings']));
+        $this->assertTrue(is_array($response['reviews'][0]['ratings'][0]));
     }
 }

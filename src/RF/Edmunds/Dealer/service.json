@@ -1,15 +1,10 @@
 {
   "name": "Edmunds.com HTTP API - Dealers",
-  "apiVersion": "1.0",
+  "baseUrl": "http://api.edmunds.com",
   "operations": {
     "abstractService": {
       "httpMethod": "GET",
       "parameters": {
-        "version": {
-          "location": "uri",
-          "description": "API version",
-          "required": true
-        },
         "api_key": {
           "location": "query",
           "description": "API key",
@@ -21,9 +16,25 @@
         }
       }
     },
-    "dealer.get": {
+    "getDealerDetails": {
       "extends": "abstractService",
-      "uri": "/{version}/api/dealer",
+      "uri": "/api/dealer/v2/dealers/{dealerId}",
+      "responseClass": "Dealer",
+      "summary": "Return a specific dealer",
+      "parameters": {
+        "dealerId": {
+          "location": "uri",
+          "required": true
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "searchDealers": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/dealers",
       "responseClass": "dealerHolderModel",
       "summary": "Return a filtered list of dealers",
       "parameters": {
@@ -31,19 +42,63 @@
           "location": "query",
           "required": true
         },
-        "makeName": {
+        "radius": {
           "location": "query",
           "required": false
         },
-        "model": {
+        "make": {
           "location": "query",
           "required": false
         },
-        "styleid": {
+        "state": {
           "location": "query",
           "required": false
+        },
+        "pageNum": {
+          "location": "query",
+          "required": false
+        },
+        "pageSize": {
+          "location": "query",
+          "required": false
+        },
+        "sortby": {
+          "location": "query",
+          "required": false
+        },
+        "keyword": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getDealerCount": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/dealers/count",
+      "responseClass": "dealerCountModel",
+      "summary": "Return a count of a filtered list of dealers",
+      "parameters": {
+        "zipcode": {
+          "location": "query",
+          "required": true
         },
         "radius": {
+          "location": "query",
+          "required": false
+        },
+        "make": {
+          "location": "query",
+          "required": false
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "keyword": {
           "location": "query",
           "required": false
         }
@@ -54,7 +109,7 @@
     "dealerHolderModel": {
       "type": "object",
       "properties": {
-        "dealerHolder": {
+        "dealers": {
           "$ref": "dealerHolder"
         }
       }
@@ -66,10 +121,20 @@
         "$ref": "Dealer"
       }
     },
-    "Dealer": {
+    "dealerCountModel": {
+      "location": "json",
       "type": "object",
       "properties": {
-        "id": {
+        "dealersCount": {
+          "type": "number"
+        }
+      }
+    },
+    "Dealer": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "dealerId": {
           "type": "string"
         },
         "address": {
@@ -78,10 +143,7 @@
         "name": {
           "type": "string"
         },
-        "logicalName": {
-          "type": "string"
-        },
-        "syndicationPartner": {
+        "niceName": {
           "type": "string"
         },
         "type": {
@@ -94,39 +156,150 @@
           "type": "object",
           "additionalProperties": true
         },
-        "contactinfo": {
-          "type": "object",
-          "properties": {
-            "dealer_website": {
-              "type": "string"
-            },
-            "email_address": {
-              "type": "string"
-            },
-            "phone_areacode": {
-              "type": "string"
-            },
-            "phone_postfix": {
-              "type": "string"
-            },
-            "phone_prefix": {
-              "type": "string"
-            },
-            "phone": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": true
-        },
-        "publishDate": {
-          "type": "string"
-        },
         "active": {
           "type": "boolean"
         },
-        "ratings": {
+        "franchises": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "$ref": "Address"
+              },
+              "active": {
+                "type": "boolean"
+              },
+              "franchiseId": {
+                "type": "string"
+              },
+              "make": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "niceName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "tier": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "contactInfo": {
+                "$ref": "ContactInfo"
+              },
+              "status": {
+                "type": "string"
+              },
+              "lpStatus": {
+                "type": "string"
+              },
+              "ppStatus": {
+                "type": "string"
+              },
+              "upStatus": {
+                "type": "string"
+              },
+              "cpStatus": {
+                "type": "string"
+              },
+              "premier": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "contactInfo": {
+          "$ref": "ContactInfo"
+        },
+        "reviews": {
           "type": "object",
-          "additionalProperties": true
+          "properties": {
+            "sales": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "overallRating": {
+                  "type": "number"
+                },
+                "count": {
+                  "type": "number"
+                },
+                "recommendedCount": {
+                  "type": "number"
+                },
+                "notRecommendedCount": {
+                  "type": "number"
+                }
+              }
+            },
+            "service": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "overallRating": {
+                  "type": "number"
+                },
+                "count": {
+                  "type": "number"
+                },
+                "recommendedCount": {
+                  "type": "number"
+                },
+                "notRecommendedCount": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "repairshops": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "$ref": "Address"
+              },
+              "active": {
+                "type": "boolean"
+              },
+              "repairshopId": {
+                "type": "string"
+              },
+              "make": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "niceName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "status": {
+          "type": ["array", "any"],
+          "items": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "type": "string"
         }
       }
     },
@@ -164,6 +337,18 @@
           "type": "string"
         }
       }
+    },
+    "ContactInfo": {
+      "type": "object",
+      "properties": {
+        "website": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
     }
   }
 }

@@ -2,126 +2,116 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class MakeRepositoryTest extends GuzzleTestCase
+class MakeRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
+        parent::setUp();
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
+        parent::tearDown();
         $this->client = null;
     }
     
     public function testVinDecoder()
     {
-        $this->setMockResponse($this->client, 'vin_decoder.txt');
-        $args = array('vin' => 'JTEBU17R848028574');
-        $response = $this->client->getCommand('tools.vinDecoder', $args)->execute()->toArray();
-        $this->assertTrue(is_array($response[ 'styleHolder' ]));
-        $this->assertEquals(count($response[ 'styleHolder' ]), 1);
-        $style = $response[ 'styleHolder' ][0];
-        $this->assertEquals($style[ 'id' ], 100336294);
-        $this->assertTrue(is_array($style[ 'price' ]));
-        $this->assertEquals($style[ 'price' ][ 'baseMSRP' ], 35820.0);
+        $this->setMockResponse(__DIR__ . '/mocks/vin_decoder.txt');
+        $args = ['vin' => '2G1FC3D33C9165616'];
+        $response = $this->client->decodeVin($args);
+        $this->assertVinDecoded($response);
     }
 
-    public function testFindAll()
+    public function testSquishVins()
     {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $response = $this->client->getCommand('make.findAll')->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/vin_decoder.txt');
+        $args = ['squishVin' => '2G1FC3D33'];
+        $response = $this->client->getDetailsBySquishVin($args);
+        $this->assertVinDecoded($response);
+    }
+
+    public function testVinConfiguration()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/vin_configuration.txt');
+        $args = ['vin' => '2G1FC3D33C9165616'];
+        $response = $this->client->getVinConfiguration($args);
+        $this->assertArrayHasKey('link', $response);
+        $this->assertEquals($response['year'], 2012);
+        $this->assertArrayHasKey('make', $response);
+        $this->assertArrayHasKey('model', $response);
+        $this->assertEquals($response['vehicleStyle'], 'Convertible');
+        $this->assertEquals($response['drivenWheels'], 'rear wheel drive');
+        $this->assertEquals($response['fuelType'], 'gas');
+        $this->assertArrayHasKey('trim', $response);
+        $this->assertEquals($response['cylinders'], 6);
+        $this->assertArrayHasKey('styles', $response);
+    }
+
+    public function testGetAll()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/makes.txt');
+        $response = $this->client->getAllMakes();
+        $this->assertTrue(is_array($response));
+        $this->assertTrue(is_array($response['makes']));
+        $this->assertEquals(count($response['makes']), 2);
+        $this->assertEquals($response['makes'][0]['id'], 200002305);
+        $this->assertEquals($response['makes'][0]['name'], 'MINI');
+        $this->assertEquals($response['makes'][0]['niceName'], 'mini');
+        $this->assertTrue(is_array($response['makes'][0]['models']));
+        $this->assertEquals(count($response['makes'][0]['models']), 1);
+    }
+
+    public function testGetByName()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/make_holder.txt');
+        $args = array('makeNiceName' => 'amgeneral');
+        $response = $this->client->getMakeByName($args);
         $this->assertMakeData($response);
     }
 
-    public function testFindById()
+    public function testGetMakesCount()
     {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $args = array('id' => '200347864');
-        $response = $this->client->getCommand('make.findById', $args)->execute()->toArray();
-        $this->assertMakeData($response);
+        $this->setMockResponse(__DIR__ . '/mocks/make_count.txt');
+        $response = $this->client->getMakesCount();
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['makesCount'], 25);
     }
 
-    public function testFindFutureMakes()
+    private function assertMakeData($make)
     {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $response = $this->client->getCommand('make.findFutureMakes')->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    public function testFindMakeByName()
-    {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $args = array('name' => 'amgeneral');
-        $response = $this->client->getCommand('make.findMakeByName', $args)->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    public function testFindMakesByModelYear()
-    {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $args = array('year' => '2013');
-        $response = $this->client->getCommand('make.findMakesByModelYear', $args)->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    public function testFindMakesByPublicationState()
-    {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $args = array('state' => 'used');
-        $response = $this->client->getCommand('make.findMakesByPublicationState', $args)->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    public function testFindNewAndUsed()
-    {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $response = $this->client->getCommand('make.findNewAndUsed')->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    public function testFindNewAndUsedMakesByModelYear()
-    {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $args = array('year' => '2013');
-        $response = $this->client->getCommand('make.findNewAndUsedMakesByModelYear', $args)->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    public function testFindNewMakes()
-    {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $response = $this->client->getCommand('make.findNewMakes')->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    public function testFindUsedMakes()
-    {
-        $this->setMockResponse($this->client, 'make_holder.txt');
-        $response = $this->client->getCommand('make.findUsedMakes')->execute()->toArray();
-        $this->assertMakeData($response);
-    }
-
-    private function assertMakeData($response)
-    {
-        $this->assertTrue(is_array($response[ 'makeHolder' ]));
-        $this->assertEquals(count($response[ 'makeHolder' ]), 2);
-        $make = $response[ 'makeHolder' ][ 0 ];
-        $this->assertEquals($make[ 'id' ], 200347864);
-        $this->assertTrue(is_array($make[ 'models' ]));
-        $model = $make[ 'models' ][ 0 ];
+        $this->assertEquals($make['id'], 200347864);
+        $this->assertTrue(is_array($make['models']));
+        $model = $make['models'][0];
         $this->assertTrue(is_array($model));
-        $this->assertEquals($model[ 'link' ], '/api/vehicle/am-general/hummer');
+    }
+
+    private function assertVinDecoded($response)
+    {
+        $this->assertArrayHasKey('make', $response);
+        $this->assertArrayHasKey('model', $response);
+        $this->assertArrayHasKey('transmission', $response);
+        $this->assertArrayHasKey('drivenWheels', $response);
+        $this->assertArrayHasKey('numOfDoors', $response);
+        $this->assertArrayHasKey('options', $response);
+        $this->assertArrayHasKey('colors', $response);
+        $this->assertEquals($response['manufacturerCode'], '1EH67');
+        $this->assertArrayHasKey('price', $response);
+        $this->assertArrayHasKey('categories', $response);
+        $this->assertEquals($response['vin'], '2G1FC3D33C9165616');
+        $this->assertEquals($response['squishVin'], '2G1FC3D3C9');
+        $this->assertArrayHasKey('years', $response);
+        $this->assertEquals($response['matchingType'], 'SQUISHVIN');
+        $this->assertArrayHasKey('MPG', $response);
     }
 }

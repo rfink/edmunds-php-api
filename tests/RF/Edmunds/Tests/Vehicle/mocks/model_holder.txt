@@ -6,29 +6,201 @@ Transfer-Encoding: chunked
 Content-Type: application/json
 
 {
-  "modelHolder": [
-    {
-      "makeId": "200347864",
-      "makeName": "AM General",
-      "makeNiceName": "amgeneral",
-      "id": "AM_General_Hummer",
-      "name": "Hummer",
-      "niceName": "hummer",
-      "modelLinkCode": "M030013",
-      "make": {
-        "link": "/api/vehicle/am-general"
-      },
-      "modelYears": [
-        {
-          "link": "/api/vehicle/am-general/hummer/2000",
-          "id": "305",
-          "year": 2000
-        }
-      ],
-      "attributeGroups": {},
-      "categories": {},
-      "publicationStates": [ "USED" ],
-      "subModels": {}
-    }
-  ]
+    "id": "Honda_Accord",
+    "name": "Accord",
+    "niceName": "accord",
+    "years": [{
+        "id": 200487197,
+        "year": 2014,
+        "styles": [{
+            "id": 200487198,
+            "name": "EX-L w/Navigation 2dr Coupe (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX-L w/Navigation"
+        }, {
+            "id": 200487199,
+            "name": "EX-L V6 w/Navigation 4dr Sedan (3.5L 6cyl 6A)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "EX-L V-6 w/Navigation"
+        }, {
+            "id": 200487218,
+            "name": "LX-S 2dr Coupe (2.4L 4cyl 6M)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "LX-S"
+        }, {
+            "id": 200487216,
+            "name": "EX 2dr Coupe (2.4L 4cyl 6M)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX"
+        }, {
+            "id": 200487217,
+            "name": "LX-S 2dr Coupe (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "LX-S"
+        }, {
+            "id": 200487211,
+            "name": "EX-L V-6 4dr Sedan (3.5L 6cyl 6A)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "EX-L V-6"
+        }, {
+            "id": 200487210,
+            "name": "EX-L V-6 2dr Coupe (3.5L 6cyl 6A)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX-L V-6"
+        }, {
+            "id": 200487209,
+            "name": "EX-L w/Navigation 4dr Sedan (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "EX-L w/Navigation"
+        }, {
+            "id": 200487208,
+            "name": "EX-L V6 w/Navigation 2dr Coupe (3.5L 6cyl 6M)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX-L V-6 w/Navigation"
+        }, {
+            "id": 200487215,
+            "name": "EX 4dr Sedan (2.4L 4cyl 6M)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "EX"
+        }, {
+            "id": 200487214,
+            "name": "LX 4dr Sedan (2.4L 4cyl 6M)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "LX"
+        }, {
+            "id": 200487213,
+            "name": "Sport 4dr Sedan (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "Sport"
+        }, {
+            "id": 200487212,
+            "name": "Sport 4dr Sedan (2.4L 4cyl 6M)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "Sport"
+        }, {
+            "id": 200487203,
+            "name": "EX-L 2dr Coupe (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX-L"
+        }, {
+            "id": 200487202,
+            "name": "EX 2dr Coupe (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX"
+        }, {
+            "id": 200487201,
+            "name": "Touring V-6 4dr Sedan (3.5L 6cyl 6A)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "Touring V-6"
+        }, {
+            "id": 200487200,
+            "name": "EX-L V-6 2dr Coupe (3.5L 6cyl 6M)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX-L V-6"
+        }, {
+            "id": 200487207,
+            "name": "EX-L 4dr Sedan (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "EX-L"
+        }, {
+            "id": 200487206,
+            "name": "LX 4dr Sedan (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "LX"
+        }, {
+            "id": 200487205,
+            "name": "EX 4dr Sedan (2.4L 4cyl CVT)",
+            "submodel": {
+                "body": "Sedan",
+                "modelName": "Accord Sedan",
+                "niceName": "sedan"
+            },
+            "trim": "EX"
+        }, {
+            "id": 200487204,
+            "name": "EX-L V6 w/Navigation 2dr Coupe (3.5L 6cyl 6A)",
+            "submodel": {
+                "body": "Coupe",
+                "modelName": "Accord Coupe",
+                "niceName": "coupe"
+            },
+            "trim": "EX-L V-6 w/Navigation"
+        }]
+    }]
 }

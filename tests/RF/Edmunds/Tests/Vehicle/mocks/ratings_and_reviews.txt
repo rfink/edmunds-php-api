@@ -6,46 +6,494 @@ Transfer-Encoding: chunked
 Content-Type: application/json
 
 {
-  "reviews": [{
-    "consumerName": "mc1223",
-    "styleId": 100001207,
-    "title": "An awesom car!",
-    "likes": 0,
-    "totalRating": 5.0,
-    "favorites": "I love it all!!",
-    "suggestions": "More power in the 4cyl models.",
-    "date": "",
-    "ratings": {
-      "fuelEconomy": 5.0,
-      "buildQuality": 5.0,
-      "comfort": 5.0,
-      "performance": 5.0,
-      "realiability": 5.0,
-      "exteriorDesign": 5.0,
-      "funToDrive": 5.0,
-      "interiorDesign": 5.0
-    },
-    "review": "I used to drive a Jetta which I loved, \r\nbut decided to go with a Honda after my \r\nfriend put 179k on her \u002789 Accord, \r\nwhich ran incredible. I have a \u002702 \r\nAccord EX Coupe (only 4cyl), which \r\ncould be faster, but thats what \r\nperformance intakes and exhaust systems \r\nare for. Its extremely comfortable and \r\nrides very smooth. Gas mileage is good, \r\nwhich helps me with the amount of miles \r\nI put on it. The car is good looking, \r\nwhich will turn heads once I finish \r\nwith the work I am doing to it. Bottom \r\nline...this car will run forever if you \r\ntake car of it and is one of the most \r\nreliable cars out there. Resale value \r\nis also excellent."
-  }, 
-  {
-    "consumerName": "boisedogmom",
-    "styleId": 100001207,
-    "title": "Love my Honda!",
-    "likes": 0,
-    "totalRating": 4.8,
-    "favorites": "The acceleration is excellent with the \r\nV-6 engine.  Very happy with the ride \r\nand the solid feel of the vehicle.  \r\nLike having both CD and cassette \r\noptions in the dash.",
-    "suggestions": "Definitely heated seats!  The Canadian \r\nmodel did have them, and that would be \r\na huge plus.  Driver\u0027s seat needs to \r\nmove further to allow better access to \r\nback seat.",
-    "date": {},
-    "ratings": {
-      "fuelEconomy": 4.0,
-      "buildQuality": 5.0,
-      "comfort": 4.0,
-      "performance": 5.0,
-      "realiability": 5.0,
-      "exteriorDesign": 5.0,
-      "funToDrive": 5.0,
-      "interiorDesign": 5.0
-    },
-    "review": "I used to drive a Jetta which I loved, \r\nbut decided to go with a Honda after my \r\nfriend put 179k on her \u002789 Accord, \r\nwhich ran incredible. I have a \u002702 \r\nAccord EX Coupe (only 4cyl), which \r\ncould be faster, but thats what \r\nperformance intakes and exhaust systems \r\nare for. Its extremely comfortable and \r\nrides very smooth. Gas mileage is good, \r\nwhich helps me with the amount of miles \r\nI put on it. The car is good looking, \r\nwhich will turn heads once I finish \r\nwith the work I am doing to it. Bottom \r\nline...this car will run forever if you \r\ntake car of it and is one of the most \r\nreliable cars out there. Resale value \r\nis also excellent."
-  }]
+    "links": [{
+        "rel": "next",
+        "href": "/api/vehiclereviews/v2/audi/a4/2013?pagenum=2&pagesize=10"
+    }, {
+        "rel": "last",
+        "href": "/api/vehiclereviews/v2/audi/a4/2013?pagenum=2&pagesize=10"
+    }],
+    "averageRating": "4.156",
+    "reviewsCount": 12,
+    "reviews": [{
+        "id": "417283697465712640",
+        "legacyId": "417283697465712640",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/417283697465712640"
+        },
+        "author": {
+            "authorName": "spockweb"
+        },
+        "created": 1406771293098,
+        "updated": 1406816281584,
+        "title": "My engine is gone!!! fabric defect very Sad",
+        "text": "I have an Audi A4 (VIN: WAUAFAFL9DA143522 / IEN913) bought on April 25, 2013. Recently, I took the car to the service area due to the fact that it was vibrating vigorously while driving. The diagnosis was that a piston was broken and a whole engine replacement was required. In conversation with my service advisor,he informs me that etiology of the damage is related to a factory defect. The car has a current mileage of 21,997 and I have been most responsible with the recommended service schedule, including oil and filter changes.\n\nThe car has been going through many issues since I bought. I left it in the service area, with the keys, I didn't wanted again!!! \n",
+        "favoriteFeatures": "",
+        "suggestedImprovements": "",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 1,
+            "thumbsUp": 4
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 3.0
+        }, {
+            "type": "COMFORT",
+            "value": 3.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 3.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 3.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 3.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 3.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 3.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 3.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "3",
+        "styleId": "200421517"
+    }, {
+        "id": "260500280154947584",
+        "legacyId": "260500280154947584",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/260500280154947584"
+        },
+        "author": {
+            "authorName": "rkelsey"
+        },
+        "created": 1388081253319,
+        "updated": 1388436552486,
+        "title": "Want a dipstick?",
+        "text": "Drove 75 miles to get car we wanted.\nReplaced wife's 2006 Saab 9-3 Sportcombi; would have bought another Saab 9-3 if company hadn't gone belly up.\nPremium Plus is a well damped firm/rough ride over potmarked New England backroads; highway ride is excellent.\nNot a big fan of the electronic steering at highway speeds; poor feedback through steering wheel.\nWife drives the car and gets 23-24 mpg; I drive and get 28-29 mpg. On the all highway drive home from dealership, trip computer showed 31.7 mpg with cruise at 75 mph; mpg ranges above are using miles driven/gallons to fill tank calculation.\nIf we could afford a Q5 TDI, would get that for the wife, and take the A4 for myself.\n",
+        "favoriteFeatures": "The ZF 8 speed auto transmission, can leave in lower gears for braking on hills.\nGorgeous beige/brown interior.\nIce silver paint with multi coats of \"Liquid Glass\" polish/sealant.\nXenon headlights.\nMpg potential;\nI say \"potential\" because of the disparity in mpg between 2 different drivers.\nUsing cruise control whenever possible can make a significant difference in mpg.\nGuess what I am anal about. ",
+        "suggestedImprovements": "Seeing that fold down rear seats can now be had in the \"Cold Weather\" package with Premium for 2014; also Xenon headlights in the S-Line package for Premium.\nThere is no oil dipstick; there's a plug in the top of the dipstick tube.\nDealership oil changes are done through the dipstick tube using\na vacuum device.\nAn electronic readout of the oil level tells you just that, the level.\nCall me old school, but a dipstick allows you to see, and smell the oil. If a head gasket blows, you'll see white blobs/streaks in the oil from leaking coolant.\nVW sells a dipstick, part # 06J115611E, that fits; calibrate the stick by noting where the oil level is when the MMI shows oil level as full. ",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 0,
+            "thumbsUp": 7
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 5.0
+        }, {
+            "type": "COMFORT",
+            "value": 4.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 4.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 5.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 5.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "4.75",
+        "styleId": "200421519"
+    }, {
+        "id": "207545023573950464",
+        "legacyId": "207545023573950464",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/207545023573950464"
+        },
+        "author": {
+            "authorName": "zoeman21"
+        },
+        "created": 1381768494802,
+        "updated": 1381768982213,
+        "title": "Loyal A4 driver disappointed",
+        "text": "This will be my 5th A4 in either a sedan or wagon version.\nWhile the car looks great inside and out and the improved HP over the years has added to the thrill of driving the new electronic steering has certainly been a negative.\nIf you are looking for a soft feel to lumber off to the grocery store the steering is fine but push it a bit or take a long highway trek and you will notice the floaty feel.\nOverall the car is fine but if your a searching for a tight steering / handling feel you may want to give the car a good test drive before you purchase.\nAfter this lease is up I will definetly look at a tighter car like the BMW.",
+        "favoriteFeatures": "Interior and exterior design, AWD system",
+        "suggestedImprovements": "Offer an option to the electronic steering that was introduced in 2013.\nOffer Blind Spot on the Premium as an option.",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 1,
+            "thumbsUp": 2
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 3.0
+        }, {
+            "type": "COMFORT",
+            "value": 4.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 4.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 3.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 3.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "4",
+        "styleId": "200421519"
+    }, {
+        "id": "455092725",
+        "legacyId": "455092725",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/455092725"
+        },
+        "author": {
+            "authorName": "hobbes944"
+        },
+        "created": 1370144150323,
+        "updated": 0,
+        "title": "Exceptional car, exceptional quality -- poor sound system",
+        "text": "I love this car -- it looks great inside and out, the build quality is extraordinarily high, and it offers just the right balance of tight handling, comfort, and size.\nPersonally, I find the engine to be more than up to the task for fun driving (especially when combined with the sport suspension, which I also have), although if you're after raw horsepower you should probably look for something other than the A4 at this price.",
+        "favoriteFeatures": "The car feels as though it's on rails around tight turns -- you'd struggle to get it to lose its composure in any sort of normal driving.\nThe interior is beautiful and oozes quality and class (I have the two-tone gray leather with black carpeting).\nThe MMI system is a bit complex, but helpful once you get the hang of it.",
+        "suggestedImprovements": "The sound system on the A4 is a joke for a car of this quality and price.\nI had the base system on my old 2003 A4, which was also disappointing -- so I had high hopes when I sprung for the Bang & Olufsen system on the 2013.\nMajor letdown.\nThe highs are relatively clear, but the sound is thin and lacking in depth at the low to mid ranges.\nI listen to a lot of classical music, and it has absolutely no life when you listen to it in this car.\nSave your money and spend it on aftermarket upgrades if you are an audiophile of any kind.\nBMW and Mercedes are embarrassing Audi in this category.",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 0,
+            "thumbsUp": 4
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 5.0
+        }, {
+            "type": "COMFORT",
+            "value": 5.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 4.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 5.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 5.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "4.875",
+        "styleId": "200421518"
+    }, {
+        "id": "1823865957",
+        "legacyId": "1823865957",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/1823865957"
+        },
+        "author": {
+            "authorName": "mugman1"
+        },
+        "created": 1369534314593,
+        "updated": 0,
+        "title": "8000 mile update",
+        "text": "Wanted to update my review first made shortly after purchase.\nHave owned the vehicle for 8 months now and continue to be impressed by it.\nNo problems after 8000 miles.\nCar was virtually unstopable in heavy snow (with 4 Pirelli snows mounted) this past winter.\nI average 26-28 mpg in mixed drving; best tank 34 mpg highway at 70 mph.\nDespite what some others have noticed, the engine has not consumed any oil in its first 8000 miles.\nBreak the engine in as directed in the manual and there should not be any problem.\n",
+        "favoriteFeatures": "8 speed automatic is intuitive and responsive; \"S\" mode livens the car up dramatically by holding lower gears and speeding up throttle response making the driving experience that much more fun; beautiful, high quality interior; complete keyless access with push button start; voice commands that work seamlessly",
+        "suggestedImprovements": "spring loaded fuel filler door is cheap; HVAC controls more cumbersome for manual control than they need to be; that's about it",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 0,
+            "thumbsUp": 2
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 5.0
+        }, {
+            "type": "COMFORT",
+            "value": 5.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 5.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 5.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 5.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "5",
+        "styleId": "200421519"
+    }, {
+        "id": "1149426285",
+        "legacyId": "1149426285",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/1149426285"
+        },
+        "author": {
+            "authorName": "docjay123"
+        },
+        "created": 1369340817273,
+        "updated": 0,
+        "title": "Love it!",
+        "text": "I bought an Audi A4 2.0T a month ago and have loved the short time I've owned this car.\nI switched from a BMW 325.\nMy wife has previously had an Audi Q7 and currently drives the Infiniti QX56.\n\nI think this car has the best styling both inside and out compared to any car in its class.\nIt is fun to drive and nimble although I must admit that my 3 series gets a little bit of an edge in the driving department (that's what bimmers are known for).\nBut overall, in my opinion, the audi a4 is a more complete car than the 3 series if you take everything into account.\n\nI have 1500 miles on the car and am averaging between 29 and 30 mpg based on mostly highway driving.",
+        "favoriteFeatures": "Styling\nMMI",
+        "suggestedImprovements": "None",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 0,
+            "thumbsUp": 2
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 5.0
+        }, {
+            "type": "COMFORT",
+            "value": 5.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 5.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 5.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 5.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "5",
+        "styleId": "200421517"
+    }, {
+        "id": "760135352",
+        "legacyId": "760135352",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/760135352"
+        },
+        "author": {
+            "authorName": "dale49"
+        },
+        "created": 1357057868651,
+        "updated": 0,
+        "title": "Our First Audi",
+        "text": "After buying a 2013 VW Passat TDI in October for myself, it was my wife's turn for a new car. She had her heart set on a BMW 328i...until she got in one. Too small, too confining, truly baffling ergonomics. We then looked at another Passat TDI(too big), a Jetta TDI(too sparse), a Volvo S80(too something), and finally the Audi A4. We were both sold on it right away due to the Quattro and Nav systems. We immediately put 3,000 miles on it in the first week with a trip to Washington State. Handled perfectly on wet, icy and snowy roads, and was a really comfortable ride. No sign at all of the oil burning issue others have had after 3k miles, so hopefully that's a good sign.",
+        "favoriteFeatures": "The MMI...the Nav system is a thing of beauty, way better than my Passat's. The 8 speed is seamless, and a blast in Sport mode. The LEDs are amazing to look at, and really enhance the overall apperance of an already great looking car.",
+        "suggestedImprovements": "The only thing I miss between the Passat and the A4 is a place to store my sunglasses where they are easily accessible. Other than that, it's a great car. A bit more expensive than we were planning on, but you get your money's worth.",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 0,
+            "thumbsUp": 18
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 5.0
+        }, {
+            "type": "COMFORT",
+            "value": 5.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 4.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 5.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 5.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "4.875",
+        "styleId": "200421519"
+    }, {
+        "id": "792056813",
+        "legacyId": "792056813",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/792056813"
+        },
+        "author": {
+            "authorName": "eric141"
+        },
+        "created": 1354455301094,
+        "updated": 0,
+        "title": "Car burns oil",
+        "text": "My 2013 Audi A4 2.0T burns about 1 quart of oil every 2000 miles.\nI had read about this issue with older A4, but the dealer had sworn that the problem had been resolved.\nApparently not!",
+        "favoriteFeatures": "",
+        "suggestedImprovements": "",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 41,
+            "thumbsUp": 18
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 2.0
+        }, {
+            "type": "COMFORT",
+            "value": 2.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 1.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 3.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 2.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 2.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 1.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 1.0
+        }],
+        "commentsCount": 2,
+        "averageRating": "1.75",
+        "styleId": "200421518"
+    }, {
+        "id": "1622528127",
+        "legacyId": "1622528127",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/1622528127"
+        },
+        "author": {
+            "authorName": "bchguy111"
+        },
+        "created": 1354163622006,
+        "updated": 0,
+        "title": "Best bang for your buck for an AWD luxury sedan",
+        "text": "This is my second Audi. I upgraded from a 2012 Audi A4 2.0T FWD with CVT. It was a great car. Great performance and gas mileage.\nHowever, I had an opportunity to upgrade to a quattro with the light package and 2013 upgrades. So far, the car is awesome. Drives even better with the Quattro and suspension and steering upgrades. And those lights, beautiful. The car is even more stricking then my 2012. I also like the 8 speed auto better then the CVT.",
+        "favoriteFeatures": "Love the Quattro. It feels so planted. I also love the LED light package. And it's a great design for a\nsedan;better then both the BMW and Mercedes. Neither can beat the interior design and it's fit and finish. Great gas mileage too. Oh, and that turbo, so much fun to drive.\nGreat all around car.",
+        "suggestedImprovements": "I wish it had BT audio and USB port. ",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 2,
+            "thumbsUp": 6
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 5.0
+        }, {
+            "type": "COMFORT",
+            "value": 5.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 5.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 5.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 5.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "5",
+        "styleId": "200421519"
+    }, {
+        "id": "704157948",
+        "legacyId": "704157948",
+        "link": {
+            "rel": "_self",
+            "href": "/api/vehiclereviews/v2/704157948"
+        },
+        "author": {
+            "authorName": "mugman1"
+        },
+        "created": 1353118708704,
+        "updated": 0,
+        "title": "Fantastic Vehicle",
+        "text": "Traded an '11 Acura TSX for this 2013 A4 Premium Plus and so glad I did!!\nCould not get comfortable in the Acura, and too little rear seat room for the family.\nThis Audi is \"right sized\" for a family of 4.\nPlenty of useable trunk space.\nRide is composed but comfortable, 18 inch wheels help the car stick around corners, powerful brakes to haul the car down from speed which it gains easily from the 2.0 turbo running through 8 gears.\nExcellent fit and finish and an attractive sedan from any angle in my opinion.\nElectric power steering gives up some feel, but is far superior to that found in the Acura. I\ncompared with BMW 3, Mercedes C class, Infiniti, and new Lexus ES.\nA4 was superior!",
+        "favoriteFeatures": "Interior quality, fit and finish.\nAlso love the clarity of\nthe gauges, interior and exterior lighting, especially the LED light tubes in the headlights and taillights which are new for 2013.\nGas mileage has been a plus (getting 29-33 highway running at 75-80 mph and 25-28 around town).\nVery easy to find a comfortable driving position in this car.\nMMI interface is actually fairly intuitive to use, blue tooth works well, Nav screen has excellent graphics, and can use the car as a WiFi Hot Spot--excellent for the kids electronics when traveling.",
+        "suggestedImprovements": "HVAC controls are a bit more complicated than they need to be but are learned farily easily with a bit of practice; would prefer a true tire pressure monitoring system that displays tire pressures individually (Audi's is an indirect system relying on hub sensors to detect differences in speed and hence potential pressure differences). A real dipstick in the engine to check the oil would be nice--the only way to check oil level is through a gauge in the MMI nav display.\nThat's about it and those are small complaints.",
+        "thumbsUpDownCounter": {
+            "thumbsDown": 0,
+            "thumbsUp": 8
+        },
+        "ratings": [{
+            "type": "PERFORMANCE",
+            "value": 5.0
+        }, {
+            "type": "COMFORT",
+            "value": 5.0
+        }, {
+            "type": "FUEL_ECONOMY",
+            "value": 4.0
+        }, {
+            "type": "FUN_TO_DRIVE",
+            "value": 5.0
+        }, {
+            "type": "INTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "EXTERIOR_DESIGN",
+            "value": 5.0
+        }, {
+            "type": "BUILD_QUALITY",
+            "value": 5.0
+        }, {
+            "type": "RELIABILITY",
+            "value": 5.0
+        }],
+        "commentsCount": 0,
+        "averageRating": "4.875",
+        "styleId": "200421519"
+    }]
 }

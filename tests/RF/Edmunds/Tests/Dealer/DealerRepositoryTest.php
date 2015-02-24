@@ -3,38 +3,57 @@
 namespace RF\Edmunds\Tests\Dealer;
 
 use RF\Edmunds\Dealer\Client;
-use Guzzle\Tests\GuzzleTestCase;
+use RF\Edmunds\Tests\TestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class DealerRepositoryTest extends GuzzleTestCase
+class DealerRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
+        parent::setUp();
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
+        parent::tearDown();
         $this->client = null;
     }
 
-    public function testGet()
+    public function testGetDealerDetails()
     {
-        $this->setMockResponse($this->client, 'dealer_holder.txt');
-        $args = array('zipcode' => '28226');
-        $response = $this->client->getCommand('dealer.get', $args)->execute()->toArray();
-        $this->assertTrue(is_array($response));
-        $this->assertEquals(count($response[ 'dealerHolder' ]), 2);
-        $dealer = $response[ 'dealerHolder' ][ 0 ];
+        $this->setMockResponse(__DIR__ . '/mocks/dealer.txt');
+        $args = ['dealerId' => '3742'];
+        $dealer = $this->client->getDealerDetails($args);
         $this->assertTrue(is_array($dealer));
-        $this->assertEquals($dealer[ 'locationId' ], '10691');
-        $this->assertTrue(is_array($dealer[ 'address' ]));
+        $this->assertEquals($dealer['dealerId'], '3742');
+        $this->assertTrue(is_array($dealer['address']));
+    }
+
+    public function testSearchDealers()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/dealer_holder.txt');
+        $args = ['zipcode' => '90210'];
+        $response = $this->client->searchDealers($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals(count($response['dealers']), 10);
+        $dealer = $response['dealers'][0];
+        $this->assertTrue(is_array($dealer));
+        $this->assertEquals($dealer['dealerId'], '867459');
+        $this->assertTrue(is_array($dealer['address']));
+    }
+
+    public function testGetDealerCount()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/dealer_count.txt');
+        $args = ['zipcode' => '90210'];
+        $response = $this->client->getDealerCount($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['dealersCount'], 20);
     }
 }

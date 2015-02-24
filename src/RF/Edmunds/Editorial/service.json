@@ -1,15 +1,10 @@
 {
   "name": "Edmunds.com HTTP API - Editorials",
-  "apiVersion": "1.0",
+  "baseUrl": "http://api.edmunds.com",
   "operations": {
     "abstractService": {
       "httpMethod": "GET",
       "parameters": {
-        "version": {
-          "location": "uri",
-          "description": "API version",
-          "required": true
-        },
         "api_key": {
           "location": "query",
           "description": "API key",
@@ -21,9 +16,9 @@
         }
       }
     },
-    "editorial.get": {
+    "getContent": {
       "extends": "abstractService",
-      "uri": "/{version}/content",
+      "uri": "/v1/content",
       "responseClass": "contentHolderModel",
       "summary": "Return a filtered list of editorials",
       "parameters": {
@@ -46,26 +41,61 @@
         "limit": {
           "location": "query",
           "required": false
+        },
+        "pagenum": {
+          "required": false,
+          "location": "query"
+        },
+        "pagesize": {
+          "required": false,
+          "location": "query"
+        }
+      }
+    },
+    "getReviewByMakeModelYear": {
+      "extends": "abstractService",
+      "uri": "/v1/content/editorreviews",
+      "responseClass": "editorReviewModel",
+      "summary": "Returns an editor review",
+      "parameters": {
+        "make": {
+          "location": "query",
+          "required": true
+        },
+        "model": {
+          "location": "query",
+          "required": true
+        },
+        "year": {
+          "location": "query",
+          "required": true
         }
       }
     }
   },
   "models": {
     "contentHolderModel": {
+      "type": "array",
+      "location": "json",
+      "items": {
+        "$ref": "Content"
+      }
+    },
+    "editorReviewModel": {
       "type": "object",
+      "location": "json",
       "properties": {
-        "contents": {
-          "type": "array",
-          "location": "json",
-          "items": {
-            "$ref": "Content"
-          }
+        "editorial": {
+          "$ref": "EditorReview"
         }
       }
     },
     "Content": {
       "type": "object",
       "properties": {
+        "summary": {
+          "type": "string"
+        },
         "link": {
           "type": "string"
         },
@@ -82,6 +112,60 @@
           "type": "string"
         },
         "content": {
+          "type": "string"
+        }
+      }
+    },
+    "EditorReview": {
+      "type": "object",
+      "location": "json",
+      "properties": {
+        "con": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "interior": {
+          "type": "string"
+        },
+        "legacy-id": {
+          "type": "number"
+        },
+        "metaKeywords": {
+          "type": "string"
+        },
+        "metaDescription": {
+          "type": "string"
+        },
+        "driving": {
+          "type": "string"
+        },
+        "whatsNew": {
+          "type": "string"
+        },
+        "videoReview": {
+          "type": "string"
+        },
+        "powertrain": {
+          "type": "string"
+        },
+        "fvEdmundsSays": {
+          "type": "string"
+        },
+        "safety": {
+          "type": "string"
+        },
+        "pro": {
+          "type": "string"
+        },
+        "edmundsSays": {
+          "type": "string"
+        },
+        "introduction": {
+          "type": "string"
+        },
+        "review": {
           "type": "string"
         }
       }

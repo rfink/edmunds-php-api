@@ -2,38 +2,38 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class PhotoRepositoryTest extends GuzzleTestCase
+class PhotoRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
+        parent::setUp();
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
         $this->client = null;
+        parent::tearDown();
     }
 
-    public function testFindPhotosByStyleId()
+    public function testGetPhotosByStyleId()
     {
-        $this->setMockResponse($this->client, 'photo_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/photo_holder.txt');
         $args = array('styleId' => '101200938');
-        $response = $this->client->getCommand('photo.findPhotosByStyleId', $args)->execute()->toArray();
+        $response = $this->client->getPhotosByStyleId($args);
         $this->assertTrue(is_array($response));
         $this->assertEquals(count($response), 2);
-        $photo = $response[ 0 ];
-        $this->assertNotNull($photo[ 'id' ]);
-        $this->assertTrue(is_array($photo[ 'photoSrcs' ]));
+        $photo = $response[0];
+        $this->assertNotNull($photo['id']);
+        $this->assertTrue(is_array($photo['photoSrcs']));
     }
 }

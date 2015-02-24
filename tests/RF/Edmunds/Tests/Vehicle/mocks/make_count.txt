@@ -6,10 +6,5 @@ Transfer-Encoding: chunked
 Content-Type: application/json
 
 {
-  "longListHolder": [
-    100523189,
-    100523198,
-    100533909,
-    100505725
-  ]
+  "makesCount": 25
 }

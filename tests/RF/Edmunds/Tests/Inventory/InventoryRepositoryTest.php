@@ -3,37 +3,41 @@
 namespace RF\Edmunds\Tests\Inventory;
 
 use RF\Edmunds\Inventory\Client;
-use Guzzle\Tests\GuzzleTestCase;
+use RF\Edmunds\Tests\TestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class InventoryRepositoryTest extends GuzzleTestCase
+class InventoryRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'https://api.edmunds.com'
         ));
+        parent::setUp();
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
+        parent::tearDown();
         $this->client = null;
     }
 
     public function testGetInventoryByVin()
     {
-        $this->setMockResponse($this->client, 'inventory_holder.txt');
-        $args = array('vin' => 'WAUAFAFL0AN012824');
-        $response = $this->client->getCommand('inventory.getInventoryByVin', $args)->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/inventory_holder.txt');
+        $args = [
+            'vin' => 'WAUAFAFL0AN012824',
+            'zipcode' => 99999,
+            'range' => 25
+        ];
+        $response = $this->client->getByVin($args);
         $this->assertTrue(is_array($response));
-        $this->assertTrue(is_array($response[ 'resultsList' ]));
-        $inventory = $response[ 'resultsList' ][ 0 ];
+        $this->assertTrue(is_array($response['resultsList']));
+        $inventory = $response['resultsList'][0];
         $this->assertArrayHasKey('vin', $inventory);
-        $this->assertTrue(is_array($inventory[ 'photoUrlsST' ]));
+        $this->assertTrue(is_array($inventory['photoUrlsST']));
     }
 }

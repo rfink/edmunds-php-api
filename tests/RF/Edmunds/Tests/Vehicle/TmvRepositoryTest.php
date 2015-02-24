@@ -2,73 +2,93 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class TmvRepositoryTest extends GuzzleTestCase
+class TmvRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
+        parent::setUp();
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
         $this->client = null;
+        parent::tearDown();
     }
 
-    public function testCalculateNewTmv()
+    public function testCalculateNewTmvByMakeAndYearAndZip()
     {
-        $this->setMockResponse($this->client, 'tmv.txt');
-        $args = array('styleid' => '', 'zip' => 00001);
-        $response = $this->client->getCommand('tmv.calculateNewTmv', $args)->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/tmv_v2.txt');
+        $args = array('makeNiceName' => 'bmw', 'year' => '2000', 'zip' => '00001', 'msrp' => 'somevalue');
+        $response = $this->client->calculateNewTmvByMakeAndYearAndZip($args);
+        $this->assertTmvV2Data($response);
+    }
+
+    public function testCalculateNewTmvByVinAndMsrpAndZip()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/tmv_v2_pricing.txt');
+        $args = array('vin' => '11111111111111111', 'zip' => '00001', 'msrp' => 'somevalue');
+        $response = $this->client->calculateNewTmvByVinAndMsrpAndZip($args);
+        $this->assertTrue(is_array($response));
+        $this->assertTmvV2Data($response['pricing']);
+        $this->assertTrue(is_array($response['configuration']));
+    }
+
+    public function testCalculateNewTmvByStyleAndZip()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/tmv.txt');
+        $args = array('styleid' => '', 'zip' => '00001');
+        $response = $this->client->calculateNewTmvByStyleAndZip($args);
         $this->assertTmvData($response);
     }
 
     public function testCalculateUsedTmv()
     {
-        $this->setMockResponse($this->client, 'tmv.txt');
-        $args = array('styleid' => '', 'zip' => 00001, 'condition' => 'Average', 'mileage' => '50000');
-        $response = $this->client->getCommand('tmv.calculateUsedTmv', $args)->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/tmv.txt');
+        $args = array('styleid' => '', 'zip' => '00001', 'condition' => 'Average', 'mileage' => '50000');
+        $response = $this->client->calculateUsedTmv($args);
         $this->assertTmvData($response);
     }
 
     public function testCalculateTypicallyEquippedUsedTmv()
     {
-        $this->setMockResponse($this->client, 'tmv.txt');
-        $args = array('styleid' => '', 'zip' => 00001, 'condition' => 'Average', 'mileage' => '50000');
-        $response = $this->client->getCommand('tmv.calculateUsedTmv', $args)->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/tmv.txt');
+        $args = array('styleid' => '', 'zip' => '00001', 'condition' => 'Average', 'mileage' => '50000');
+        $response = $this->client->calculateTypicallyEquippedUsedTmv($args);
         $this->assertTmvData($response);
     }
 
-    public function testFindCertifiedPriceForStyle()
+    public function testGetCertifiedPriceForStyle()
     {
-        $this->setMockResponse($this->client, 'certified_price.txt');
-        $args = array('styleid' => '', 'zip' => 00001);
-        $response = $this->client->getCommand('tmv.findCertifiedPriceForStyle', $args)->execute();
+        $this->markTestIncomplete();
+        $this->setMockResponse(__DIR__ . '/mocks/certified_price.txt');
+        $args = array('styleid' => '', 'zip' => '00001');
+        $response = $this->client->getCertifiedPriceForStyle($args);
         $this->assertEquals($response, 33963.32);
-    }
-
-    public function testFindCpoYearsByMake()
-    {
-        $this->setMockResponse($this->client, 'cpo_years.txt');
-        $args = array('makeid' => '');
-        $response = $this->client->getCommand('tmv.findCpoYearsByMake', $args)->execute();
-        $this->assertTrue(is_array($response));
-        $this->assertTrue(in_array(2007, $response));
     }
 
     private function assertTmvData($response)
     {
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['tmv']));
+    }
+
+    private function assertTmvV2Data($response)
+    {
+        $this->assertTrue(is_array($response));
+        $this->assertTrue(is_array($response['link']));
+        $this->assertTrue(is_array($response['corePercent']));
+        $this->assertTrue(is_array($response['regionAdjustment']));
+        $this->assertTrue(is_array($response['colorAdjustment']));
+        $this->assertEquals($response['tmvUsd'], 27835);
     }
 }

@@ -2,120 +2,120 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class MaintenanceRepositoryTest extends GuzzleTestCase
+class MaintenanceRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
+        parent::setUp();
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
+        parent::tearDown();
         $this->client = null;
     }
 
-    public function testFindActionById()
+    public function testGetMaintenanceActionById()
     {
-        $this->setMockResponse($this->client, 'action_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/action_holder.txt');
         $args = array('id' => '1680065');
-        $response = $this->client->getCommand('maintenance.findActionById', $args)->execute()->toArray();
+        $response = $this->client->getMaintenanceActionById($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['actionHolder']));
         $this->assertTrue(is_array($response['actionHolder'][0]));
         $this->assertEquals($response['actionHolder'][0]['id'], 1680065);
     }
 
-    public function testFindActionByModelYearId()
+    public function testGetMaintenanceActionByModelYearId()
     {
-        $this->setMockResponse($this->client, 'action_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/action_holder.txt');
         $args = array('modelyearid' => '1680065');
-        $response = $this->client->getCommand('maintenance.findActionByModelYearId', $args)->execute()->toArray();
+        $response = $this->client->getMaintenanceActionByModelYearId($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['actionHolder']));
         $this->assertTrue(is_array($response['actionHolder'][0]));
         $this->assertEquals($response['actionHolder'][0]['id'], 1680065);
     }
 
-    public function testFindModelYearIdsWithMaintenanceSchedule()
+    public function testGetModelYearIdsWithMaintenanceSchedule()
     {
-        $this->setMockResponse($this->client, 'model_year_ids.txt');
-        $response = $this->client->getCommand('maintenance.findModelYearIdsWithMaintenanceSchedule')->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/model_year_ids.txt');
+        $response = $this->client->getModelYearIdsWithMaintenanceSchedule();
         $this->assertTrue(is_array($response));
         $yearIds = $response[ 'longListHolder' ];
         $this->assertEquals(count($yearIds), 4);
     }
 
-    public function testFindRecallById()
+    public function testGetRecallById()
     {
-        $this->setMockResponse($this->client, 'recall_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/recall_holder.txt');
         $args = array('id' => 177958);
-        $response = $this->client->getCommand('maintenance.findRecallById', $args)->execute()->toArray();
+        $response = $this->client->getRecallById($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['recallHolder']));
         $this->assertTrue(is_array($response['recallHolder'][0]));
         $this->assertEquals($response['recallHolder'][0]['id'], 177958);
     }
 
-    public function testFindRecallByModelYearId()
+    public function testGetRecallByModelYearId()
     {
-        $this->setMockResponse($this->client, 'recall_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/recall_holder.txt');
         $args = array('modelyearid' => '100523189');
-        $response = $this->client->getCommand('maintenance.findRecallByModelYearId', $args)->execute()->toArray();
+        $response = $this->client->getRecallByModelYearId($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['recallHolder']));
         $this->assertTrue(is_array($response['recallHolder'][0]));
         $this->assertEquals($response['recallHolder'][0]['id'], 177958);
     }
 
-    public function testFindServiceBulletinById()
+    public function testGetServiceBulletinById()
     {
-        $this->setMockResponse($this->client, 'service_bulletin_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/service_bulletin_holder.txt');
         $args = array('id' => '210998');
-        $response = $this->client->getCommand('maintenance.findServiceBulletinById', $args)->execute()->toArray();
+        $response = $this->client->getServiceBulletinById($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['serviceBulletinHolder']));
         $this->assertTrue(is_array($response['serviceBulletinHolder'][0]));
         $this->assertEquals($response['serviceBulletinHolder'][0]['id'], 210998);
     }
 
-    public function testFindServiceBulletinByModelYearId()
+    public function testGetServiceBulletinByModelYearId()
     {
-        $this->setMockResponse($this->client, 'service_bulletin_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/service_bulletin_holder.txt');
         $args = array('modelyearid' => '100000241');
-        $response = $this->client->getCommand('maintenance.findServiceBulletinByModelYearId', $args)->execute()->toArray();
+        $response = $this->client->getServiceBulletinByModelYearId($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['serviceBulletinHolder']));
         $this->assertTrue(is_array($response['serviceBulletinHolder'][0]));
         $this->assertEquals($response['serviceBulletinHolder'][0]['id'], 210998);
     }
 
-    public function testFindStyleNotesById()
+    public function testGetStyleNotesById()
     {
-        $this->setMockResponse($this->client, 'style_notes_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/style_notes_holder.txt');
         $args = array('id' => '101287989');
-        $response = $this->client->getCommand('maintenance.findStyleNotesById', $args)->execute()->toArray();
+        $response = $this->client->getStyleNotesById($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['maintenanceStyleNotesHolder']));
         $this->assertTrue(is_array($response['maintenanceStyleNotesHolder'][0]));
         $this->assertEquals($response['maintenanceStyleNotesHolder'][0]['style'], '/api/vehicle/style/101287989');       
     }
 
-    public function testFindLaborRateByZip()
+    public function testGetLaborRateByZip()
     {
-        $this->setMockResponse($this->client, 'zip_labor_rate_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/zip_labor_rate_holder.txt');
         $args = array('zip' => 00001);
-        $response = $this->client->getCommand('maintenance.findLaborRateByZip', $args)->execute()->toArray();
+        $response = $this->client->getLaborRateByZip($args);
         $this->assertTrue(is_array($response));
         $this->assertTrue(is_array($response['zipLaborRateHolder']));
         $this->assertTrue(is_array($response['zipLaborRateHolder'][0]));

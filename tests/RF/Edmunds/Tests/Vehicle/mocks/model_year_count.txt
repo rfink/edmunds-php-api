@@ -1,0 +1,27 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "yearsCount": 4,
+    "years": [{
+        "id": 200477462,
+        "year": 2014,
+        "stylesCount": 8
+    }, {
+        "id": 200721615,
+        "year": 2016,
+        "stylesCount": 8
+    }, {
+        "id": 200422409,
+        "year": 2013,
+        "stylesCount": 7
+    }, {
+        "id": 200703020,
+        "year": 2015,
+        "stylesCount": 8
+    }]
+}

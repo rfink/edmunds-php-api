@@ -6,80 +6,409 @@ Transfer-Encoding: chunked
 Content-Type: application/json
 
 {
-  "dealerHolder": [
-    {
-      "id": "",
-      "locationId": "10691",
-      "address": {
-        "street": "7601 South Blvd",
-        "apartment": "",
-        "city": "Charlotte",
-        "stateCode": "NC",
-        "stateName": "North Carolina",
-        "county": "Mecklenburg",
-        "country": "USA",
-        "zipcode": "28273",
-        "latitude": 35.13182,
-        "longitude": -80.875107
-      },
-      "name": "Keith Hawthorne Ford Lincoln of Charlotte",
-      "logicalName": "KeithHawthorneFordLincolnofCharlotte",
-      "type": "ROOFTOP",
-      "make": "",
-      "operations": {
-        "Wednesday": "08:30 AM-08:00 PM",
-        "Thursday": "08:30 AM-08:00 PM",
-        "Tuesday": "08:30 AM-08:00 PM",
-        "Saturday": "08:30 AM-08:00 PM",
-        "Friday": "08:30 AM-08:00 PM",
-        "Monday": "08:30 AM-08:00 PM",
-        "Sunday": "01:00 PM-06:00 PM"
-      },
-      "contactinfo": {
-        "dealer_website": "http:\/\/www.harrelsonford.com\/",
-        "email_address": "",
-        "phone": "(866) 217-1098"
-      },
-      "publishDate": "2013-05-05",
-      "active": true,
-      "syncPublishDate": "2013-05-05"
-    },
-    {
-      "id": "",
-      "locationId": "739685",
-      "address": {
-        "street": "8201 South Blvd",
-        "apartment": "",
-        "city": "Charlotte",
-        "stateCode": "NC",
-        "stateName": "North Carolina",
-        "county": "Mecklenburg",
-        "country": "USA",
-        "zipcode": "28273",
-        "latitude": 35.124801,
-        "longitude": -80.87856
-      },
-      "name": "Williams Buick GMC",
-      "logicalName": "FolgerBuickGMC",
-      "type": "ROOFTOP",
-      "make": "",
-      "operations": {
-        "Wednesday": "09:00 AM-08:00 PM",
-        "Thursday": "09:00 AM-08:00 PM",
-        "Tuesday": "09:00 AM-08:00 PM",
-        "Saturday": "09:00 AM-06:00 PM",
-        "Friday": "09:00 AM-08:00 PM",
-        "Monday": "09:00 AM-08:00 PM",
-        "Sunday": ""
-      },
-      "contactinfo": {
-        "dealer_website": "http:\/\/www.folgerbuickgmc.com\/",
-        "email_address": "",
-        "phone": "(704) 522-8422, (888) 929-6351, (888) 929-7012, (888) 928-4453"
-      },
-      "publishDate": "2013-05-05",
-      "active": true,
-      "syncPublishDate": "2013-05-05"
-    }
-  ]
+    "dealers": [{
+        "dealerId": "867459",
+        "name": "AMERICAN ADVENTURE INC",
+        "niceName": "AMERICANADVENTUREINC_867459",
+        "distance": 1.268266097337068,
+        "address": {
+            "street": "4765 South Blvd",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.174072,
+            "longitude": -80.875915,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "825541",
+        "name": "Keffer Pre-Owned South",
+        "niceName": "KefferPreOwnedSouth",
+        "distance": 1.586176750180128,
+        "operations": {
+            "Wednesday": "09:00 AM-09:00 PM",
+            "Tuesday": "09:00 AM-09:00 PM",
+            "Thursday": "09:00 AM-09:00 PM",
+            "Saturday": "09:00 AM-08:00 PM",
+            "Friday": "09:00 AM-09:00 PM",
+            "Monday": "09:00 AM-09:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "1001 Tyvola Rd",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.165608,
+            "longitude": -80.879354,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED", "NEW"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "830665",
+        "name": "Southend Auto Exchange",
+        "niceName": "SouthendAutoExchange_1",
+        "distance": 2.0778020837563815,
+        "operations": {
+            "Wednesday": "08:00 AM-06:00 PM",
+            "Tuesday": "08:00 AM-06:00 PM",
+            "Thursday": "08:00 AM-06:00 PM",
+            "Saturday": "Day off",
+            "Friday": "08:00 AM-06:00 PM",
+            "Monday": "08:00 AM-06:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "3138 S Tryon St",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.199089,
+            "longitude": -80.874657,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 5.0,
+                "count": 1,
+                "recommendedCount": 1,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED", "NEW"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "731341",
+        "name": "Foreign Cars Italia of Charlotte",
+        "niceName": "ForeignCarsItaliaofCharlotte_2",
+        "distance": 2.1047638552310715,
+        "operations": {
+            "Wednesday": "09:00 AM-07:00 PM",
+            "Tuesday": "09:00 AM-07:00 PM",
+            "Thursday": "09:00 AM-07:00 PM",
+            "Saturday": "09:00 AM-05:00 PM",
+            "Friday": "09:00 AM-07:00 PM",
+            "Monday": "09:00 AM-07:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "416 Tyvola Rd",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.162782,
+            "longitude": -80.88786,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["NEW", "USED"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "10693",
+        "name": "Scott Jaguar",
+        "niceName": "ScottJaguar",
+        "distance": 2.10969849247906,
+        "operations": {
+            "Wednesday": "8:30 AM-6:00 PM",
+            "Thursday": "8:30 AM-6:00 PM",
+            "Tuesday": "8:30 AM-6:00 PM",
+            "Saturday": "9:00 AM-6:00 PM",
+            "Friday": "8:30 AM-6:00 PM",
+            "Monday": "8:30 AM-6:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "400 Tyvola Rd",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.162767,
+            "longitude": -80.887947,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "contactInfo": {
+            "phone": "(888) 737-6958",
+            "website": "http://www.scottjaguar.net/index.htm"
+        },
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 1,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED", "NEW"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "852301",
+        "name": "Salinas A & V Auto Sales",
+        "niceName": "SalinasAVAutoSales_852301",
+        "distance": 2.128677909561292,
+        "address": {
+            "street": "4825 S Tryon St",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.179119,
+            "longitude": -80.890732,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "889277",
+        "name": "Hypnotic Motors",
+        "niceName": "HypnoticMotors_889277",
+        "distance": 2.2401198901219637,
+        "address": {
+            "street": "6010 Kenley Ln",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.157139,
+            "longitude": -80.886956,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "770300",
+        "name": "Mazda of South Charlotte",
+        "niceName": "MazdaofSouthCharlotte",
+        "distance": 2.33007008462579,
+        "operations": {
+            "Wednesday": "09:00 AM-09:00 PM",
+            "Tuesday": "09:00 AM-09:00 PM",
+            "Thursday": "09:00 AM-09:00 PM",
+            "Saturday": "09:00 AM-09:00 PM",
+            "Friday": "09:00 AM-09:00 PM",
+            "Monday": "09:00 AM-09:00 PM",
+            "Sunday": "11:00 AM-06:00 PM"
+        },
+        "address": {
+            "street": "6501 South Blvd",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.146484,
+            "longitude": -80.876417,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "contactInfo": {
+            "phone": "(888) 695-7075",
+            "website": "http://www.mazdaofsouthcharlotte.com/index.htm"
+        },
+        "reviews": {
+            "sales": {
+                "overallRating": 3.909,
+                "count": 12,
+                "recommendedCount": 8,
+                "notRecommendedCount": 3
+            },
+            "service": {
+                "overallRating": 5.0,
+                "count": 4,
+                "recommendedCount": 3,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED", "NEW"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "882973",
+        "name": "South Charlotte Pre-Owned Auto Warehouse",
+        "niceName": "SouthCharlottePreOwnedAutoWarehouse_882973",
+        "distance": 2.425995670198726,
+        "address": {
+            "street": "6500 South Blvd",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.144834,
+            "longitude": -80.876429,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED"],
+        "type": "ROOFTOP"
+    }, {
+        "dealerId": "883121",
+        "name": "Rock Hill Public Auction Charlotte",
+        "niceName": "RockHillPublicAuctionCharlotte_883121",
+        "distance": 2.4318978573975687,
+        "address": {
+            "street": "6543 South Blvd",
+            "apartment": "",
+            "city": "Charlotte",
+            "stateCode": "NC",
+            "stateName": "North Carolina",
+            "county": "Mecklenburg",
+            "country": "USA",
+            "latitude": 35.144734,
+            "longitude": -80.876431,
+            "zipcode": "28217"
+        },
+        "active": true,
+        "reviews": {
+            "sales": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            },
+            "service": {
+                "overallRating": 0.0,
+                "count": 0,
+                "recommendedCount": 0,
+                "notRecommendedCount": 0
+            }
+        },
+        "states": ["USED"],
+        "type": "ROOFTOP"
+    }],
+    "dealersCount": 1269,
+    "links": [{
+        "rel": "first",
+        "href": "/api/dealer/v2/dealers/?api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=28209&pagesize=10&pagenum=1"
+    }, {
+        "rel": "next",
+        "href": "/api/dealer/v2/dealers/?api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=28209&pagesize=10&pagenum=2"
+    }, {
+        "rel": "last",
+        "href": "/api/dealer/v2/dealers/?api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=28209&pagesize=10&pagenum=127"
+    }]
 }

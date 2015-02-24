@@ -1,0 +1,305 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "dealerId": "3742",
+    "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+    "niceName": "DaytonAndrewsChryslerJeepDodgeRam",
+    "operations": {
+        "Wednesday": "08:00 AM-08:00 PM",
+        "Thursday": "08:00 AM-08:00 PM",
+        "Tuesday": "08:00 AM-08:00 PM",
+        "Saturday": "09:00 AM-06:00 PM",
+        "Friday": "08:00 AM-08:00 PM",
+        "Monday": "08:00 AM-08:00 PM",
+        "Sunday": "10:00 AM-06:00 PM"
+    },
+    "address": {
+        "street": "2388 Gulf To Bay Blvd",
+        "apartment": "",
+        "city": "Clearwater",
+        "stateCode": "FL",
+        "stateName": "Florida",
+        "county": "Pinellas",
+        "country": "USA",
+        "latitude": 27.960626,
+        "longitude": -82.738664,
+        "zipcode": "33765"
+    },
+    "active": true,
+    "contactInfo": {
+        "phone": "(888) 379-3217",
+        "website": "http://WWW.DAYTONANDREWS.NET"
+    },
+    "franchises": [{
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "franchiseId": "31728",
+        "make": {
+            "name": "Chrysler",
+            "niceName": "chrysler"
+        },
+        "tier": {
+            "type": "DIRECT"
+        },
+        "contactInfo": {
+            "phone": "(888) 379-3217",
+            "website": "http://WWW.DAYTONANDREWS.NET"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": true
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "franchiseId": "648757",
+        "make": {
+            "name": "Dodge",
+            "niceName": "dodge"
+        },
+        "tier": {
+            "type": "DIRECT"
+        },
+        "contactInfo": {
+            "phone": "(888) 379-7113",
+            "website": "http://WWW.DAYTONANDREWS.NET"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": true
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "franchiseId": "816091",
+        "make": {
+            "name": "Ram",
+            "niceName": "ram"
+        },
+        "tier": {
+            "type": "DIRECT"
+        },
+        "contactInfo": {
+            "phone": "(888) 380-6991",
+            "website": "http://WWW.DAYTONANDREWS.NET"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": true
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "franchiseId": "746684",
+        "tier": {
+            "type": "REGULAR"
+        },
+        "state": "USED",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram ",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": false,
+        "franchiseId": "832544",
+        "make": {
+            "name": "SRT",
+            "niceName": "srt"
+        },
+        "tier": {
+            "type": "REGULAR"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "franchiseId": "31729",
+        "make": {
+            "name": "Jeep",
+            "niceName": "jeep"
+        },
+        "tier": {
+            "type": "DIRECT"
+        },
+        "contactInfo": {
+            "phone": "(888) 379-9859",
+            "website": "http://WWW.DAYTONANDREWS.NET"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": true
+    }],
+    "repairshops": [{
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "repairshopId": "816093",
+        "make": {
+            "name": "Ram",
+            "niceName": "ram"
+        }
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "repairshopId": "76679",
+        "make": {
+            "name": "Jeep",
+            "niceName": "jeep"
+        }
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "repairshopId": "781193"
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "repairshopId": "76678",
+        "make": {
+            "name": "Chrysler",
+            "niceName": "chrysler"
+        }
+    }, {
+        "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+        "address": {
+            "street": "2388 Gulf To Bay Blvd",
+            "city": "Clearwater",
+            "stateCode": "FL",
+            "stateName": "Florida",
+            "county": "Pinellas",
+            "country": "USA",
+            "zipcode": "33765"
+        },
+        "active": true,
+        "repairshopId": "740339",
+        "make": {
+            "name": "Dodge",
+            "niceName": "dodge"
+        }
+    }],
+    "reviews": {
+        "sales": {
+            "overallRating": 0.0,
+            "count": 2,
+            "recommendedCount": 0,
+            "notRecommendedCount": 0
+        },
+        "service": {
+            "overallRating": 0.0,
+            "count": 1,
+            "recommendedCount": 0,
+            "notRecommendedCount": 0
+        }
+    },
+    "states": ["NEW", "USED"],
+    "type": "ROOFTOP"
+}

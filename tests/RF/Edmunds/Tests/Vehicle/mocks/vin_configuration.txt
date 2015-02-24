@@ -1,0 +1,45 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "link": {
+        "rel": "full",
+        "href": "/api/v1/vehicle/vin/2G1FC3D33C9165616/configuration"
+    },
+    "year": 2012,
+    "make": {
+        "name": "Chevrolet",
+        "link": {
+            "rel": "full",
+            "href": "/api/vehicle/chevrolet?fmt=json"
+        }
+    },
+    "vinModelGroup": null,
+    "model": {
+        "name": "Camaro",
+        "link": {
+            "rel": "full",
+            "href": "/api/vehicle/chevrolet/camaro?fmt=json"
+        }
+    },
+    "vehicleStyle": "Convertible",
+    "drivenWheels": "rear wheel drive",
+    "fuelType": "gas",
+    "compressorType": null,
+    "trim": {
+        "name": "LT",
+        "specialIdentifier": "w/2LT"
+    },
+    "cylinders": 6,
+    "styles": [{
+        "link": {
+            "rel": "full",
+            "href": "/api/vehicle/style/101395591?fmt=json"
+        },
+        "name": "LT 2dr Convertible w/2LT (3.6L 6cyl 6M)"
+    }]
+}

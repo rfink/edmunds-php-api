@@ -6,39 +6,117 @@ Transfer-Encoding: chunked
 Content-Type: application/json
 
 {
-    "styleHolder": [{
-        "id": 100336294,
-        "makeId": 200003381,
-        "year": 2004,
-        "makeName": "Toyota",
-        "makeNiceName": "toyota",
-        "modelId": "Toyota_4Runner",
-        "modelName": "4Runner",
-        "modelNiceName": "4runner",
-        "modelYearId": 100503599,
-        "transmissionType": "AUTOMATIC",
-        "engineCompressorType": "NA",
-        "engineFuelType": "regular unleaded",
-        "engineCylinder": 6,
-        "engineSize": 4.0,
-        "price": {
-            "baseMSRP": 35820.0,
-            "baseInvoice": 31986.0,
-            "deliveryCharges": 540.0,
-            "tmv": 32834.0,
-            "usedTmvRetail": 13367.0,
-            "usedPrivateParty": 12054.0,
-            "usedTradeIn": 10889.0,
-            "estimateTmv": false,
-            "tmvRecommendedRating": 0
-        },
-        "trim": {
-            "name": "Limited",
-            "niceName": "limited"
-        },
-        "specification": {
-            "elements": [],
-            "type": "AND"
-        }
-    }]
+    "make": {
+        "id": 200000404,
+        "name": "Chevrolet",
+        "niceName": "chevrolet"
+    },
+    "model": {
+        "id": "Chevrolet_Camaro",
+        "name": "Camaro",
+        "niceName": "camaro"
+    },
+    "transmission": {
+        "id": "200380856",
+        "name": "6M",
+        "equipmentType": "TRANSMISSION",
+        "availability": "STANDARD",
+        "transmissionType": "MANUAL",
+        "numberOfSpeeds": "6"
+    },
+    "drivenWheels": "rear wheel drive",
+    "numOfDoors": "2",
+    "options": [{
+        "category": "Additional Fees",
+        "options": [{
+            "id": "200381496",
+            "name": "Northeast Emissions",
+            "description": "Arizona, Connecticut, Maine, Maryland, Massachusetts, New Jersey, New York, Oregon, Pennsylvania, Rhode Island, Vermont and Washington state requirements.",
+            "equipmentType": "OPTION",
+            "availability": "All"
+        }]
+    }, {
+        "category": "Package",
+        "options": [{
+            "id": "200381513",
+            "name": "RS Package",
+            "description": "20\" x 8.0\" front and 20\" x 9.0\" rear flangeless, painted aluminum wheels with Midnight Silver finish; P245/45R20 front and P275/40R20 rear summer only tires; Body-color roof ditch molding (coupe only); High intensity discharge headlamps; Body-colored shark-fin antenna (coupe only)",
+            "equipmentType": "OPTION",
+            "availability": "LT"
+        }]
+    }, {
+        "category": "Exterior",
+        "options": [{
+            "id": "200381492",
+            "name": "Compact Spare Tire And Wheel",
+            "description": "Deletes tire sealant and inflator kit.",
+            "equipmentType": "OPTION",
+            "availability": "All Except SS"
+        }]
+    }],
+    "colors": [{
+        "category": "Interior",
+        "options": [{
+            "id": "200381103",
+            "name": "Black",
+            "equipmentType": "COLOR",
+            "availability": "USED"
+        }]
+    }, {
+        "category": "Exterior",
+        "options": [{
+            "id": "200381113",
+            "name": "Silver Ice Metallic",
+            "equipmentType": "COLOR",
+            "availability": "USED"
+        }]
+    }, {
+        "category": "Roof",
+        "options": [{
+            "id": "200381095",
+            "name": "Black",
+            "equipmentType": "COLOR",
+            "availability": "USED"
+        }]
+    }],
+    "manufacturerCode": "1EH67",
+    "price": {
+        "baseMSRP": 34180.0,
+        "baseInvoice": 32813.0,
+        "deliveryCharges": 900.0,
+        "usedTmvRetail": 20609.0,
+        "usedPrivateParty": 19262.0,
+        "usedTradeIn": 17743.0,
+        "estimateTmv": false,
+        "tmvRecommendedRating": 0
+    },
+    "categories": {
+        "market": "Performance",
+        "EPAClass": "Compact Cars",
+        "vehicleSize": "Midsize",
+        "primaryBodyType": "Car",
+        "vehicleStyle": "Convertible",
+        "vehicleType": "Car"
+    },
+    "vin": "2G1FC3D33C9165616",
+    "squishVin": "2G1FC3D3C9",
+    "years": [{
+        "id": 100531911,
+        "year": 2012,
+        "styles": [{
+            "id": 101395591,
+            "name": "LT 2dr Convertible w/2LT (3.6L 6cyl 6M)",
+            "submodel": {
+                "body": "Convertible",
+                "modelName": "Camaro Convertible",
+                "niceName": "convertible"
+            },
+            "trim": "LT"
+        }]
+    }],
+    "matchingType": "SQUISHVIN",
+    "MPG": {
+        "highway": "28",
+        "city": "17"
+    }
 }
