@@ -2,60 +2,107 @@
 
 namespace RF\Edmunds\Tests\Vehicle;
 
+use RF\Edmunds\Tests\TestCase;
 use RF\Edmunds\Vehicle\Client;
-use Guzzle\Tests\GuzzleTestCase;
 
 /**
  * @author Ryan Fink <ryanjfink@gmail.com>
  */
-class StyleRepositoryTest extends GuzzleTestCase
+class StyleRepositoryTest extends TestCase
 {
     public function setUp()
     {
-        self::setMockBasePath(__DIR__ . DIRECTORY_SEPARATOR . 'mocks');
+        parent::setUp();
         $this->client = Client::factory(array(
             'api_key' => 'API KEY GOES HERE',
-            'base_url' => 'http://api.edmunds.com'
+            'baseUrl' => 'http://api.edmunds.com'
         ));
     }
 
     public function tearDown()
     {
-        self::setMockBasePath(null);
         $this->client = null;
+        parent::tearDown();
     }
 
-    public function testFindById()
+    public function testGetStyleById()
     {
-        $this->setMockResponse($this->client, 'style_holder.txt');
+        $this->setMockResponse(__DIR__ . '/mocks/style.txt');
         $args = array('id' => '101200938');
-        $response = $this->client->getCommand('style.findById', $args)->execute()->toArray();
+        $response = $this->client->getStyleById($args);
         $this->assertStyleData($response);
     }
 
-    public function testFindStylesByMakeModelYear()
+    public function testGetStylesByMakeAndModelAndYear()
     {
-        $this->setMockResponse($this->client, 'style_holder.txt');
-        $args = array('make' => 'bmw', 'model' => '3series', 'year' => 2013);
-        $response = $this->client->getCommand('style.findStylesByMakeModelYear', $args)->execute()->toArray();
-        $this->assertStyleData($response);
+        $this->setMockResponse(__DIR__ . '/mocks/style_holder.txt');
+        $args = array('makeNiceName' => 'honda', 'modelNiceName' => 'pilot', 'year' => '2013');
+        $response = $this->client->getStylesByMakeAndModelAndYear($args);
+        $this->assertTrue(is_array($response));
+        $this->assertTrue(is_array($response['styles']));
+        $this->assertStyleData($response['styles'][0]);
     }
 
-    public function testFindStylesByModelYearId()
+    public function testGetStylesCountByMakeAndModelAndYear()
     {
-        $this->setMockResponse($this->client, 'style_holder.txt');
-        $args = array('modelyearid' => '100529029');
-        $response = $this->client->getCommand('style.findStylesByModelYearId', $args)->execute()->toArray();
+        $this->setMockResponse(__DIR__ . '/mocks/style_count.txt');
+        $args = array('makeNiceName' => 'honda', 'modelNiceName' => 'pilot', 'year' => '2013');
+        $response = $this->client->getStylesCountByMakeAndModelAndYear($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['stylesCount'], 45318);
+    }
+
+    public function testGetStylesCountByMakeAndModel()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/style_count.txt');
+        $args = array('makeNiceName' => 'honda', 'modelNiceName' => 'pilot');
+        $response = $this->client->getStylesCountByMakeAndModel($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['stylesCount'], 45318);
+    }
+
+    public function testGetStylesCountByMake()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/style_count.txt');
+        $args = array('makeNiceName' => 'honda');
+        $response = $this->client->getStylesCountByMake($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['stylesCount'], 45318);
+    }
+
+    public function testGetStylesCount()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/style_count.txt');
+        $args = array('makeNiceName' => 'honda');
+        $response = $this->client->getStylesCount($args);
+        $this->assertTrue(is_array($response));
+        $this->assertEquals($response['stylesCount'], 45318);
+    }
+
+    public function testGetStyleByChromeId()
+    {
+        $this->setMockResponse(__DIR__ . '/mocks/style.txt');
+        $args = array('chromeId' => '00000');
+        $response = $this->client->getStyleByChromeId($args);
         $this->assertStyleData($response);
     }
 
     private function assertStyleData($response)
     {
-        $this->assertTrue(is_array($response[ 'styleHolder' ]));
-        $style = $response[ 'styleHolder' ][ 0 ];
-        $this->assertTrue(is_array($style[ 'specification' ]));
-        $this->assertTrue(is_array($style[ 'standardEquipment' ]));
-        $this->assertTrue(is_array($style[ 'optionalEquipment' ]));
-        $this->assertTrue(is_array($style[ 'subModels' ]));
+        $this->assertTrue(is_array($response));
+        $this->assertTrue(is_array($response['make']));
+        $this->assertEquals($response['make']['id'], '200001444');
+        $this->assertTrue(is_array($response['model']));
+        $this->assertTrue(is_array($response['engine']));
+        $this->assertTrue(is_array($response['transmission']));
+        $this->assertTrue(is_array($response['colors']));
+        $this->assertTrue(is_array($response['colors'][0]));
+        $this->assertTrue(is_array($response['price']));
+        $this->assertTrue(is_array($response['categories']));
+        $this->assertTrue(is_array($response['year']));
+        $this->assertTrue(is_array($response['submodel']));
+        $this->assertTrue(is_array($response['MPG']));
+        $this->assertTrue(is_array($response['states']));
+        $this->assertTrue(is_array($response['squishVins']));
     }
 }

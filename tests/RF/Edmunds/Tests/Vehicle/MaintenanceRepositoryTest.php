@@ -52,7 +52,7 @@ class MaintenanceRepositoryTest extends TestCase
         $this->setMockResponse(__DIR__ . '/mocks/model_year_ids.txt');
         $response = $this->client->getModelYearIdsWithMaintenanceSchedule();
         $this->assertTrue(is_array($response));
-        $yearIds = $response[ 'longListHolder' ];
+        $yearIds = $response['longListHolder'];
         $this->assertEquals(count($yearIds), 4);
     }
 

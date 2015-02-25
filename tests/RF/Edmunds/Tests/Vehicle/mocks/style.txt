@@ -1,0 +1,263 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "make": {
+        "id": 200001444,
+        "name": "Honda",
+        "niceName": "honda"
+    },
+    "model": {
+        "id": "Honda_Accord",
+        "name": "Accord",
+        "niceName": "accord"
+    },
+    "engine": {
+        "id": "200487224",
+        "name": "V6",
+        "equipmentType": "ENGINE",
+        "compressionRatio": 10.5,
+        "cylinder": 6,
+        "size": 3.5,
+        "displacement": 3471.0,
+        "configuration": "V",
+        "fuelType": "regular unleaded",
+        "horsepower": 278,
+        "torque": 252,
+        "totalValves": 24,
+        "type": "gas",
+        "code": "6VNAG3.5",
+        "compressorType": "NA"
+    },
+    "transmission": {
+        "id": "200487229",
+        "name": "6A",
+        "equipmentType": "TRANSMISSION",
+        "transmissionType": "AUTOMATIC",
+        "numberOfSpeeds": "6"
+    },
+    "drivenWheels": "front wheel drive",
+    "numOfDoors": "4",
+    "options": [],
+    "colors": [{
+        "category": "Interior",
+        "options": [{
+            "id": "200487235",
+            "name": "Black Leather",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Black",
+            "manufactureOptionCode": "BK",
+            "colorChips": {
+                "primary": {
+                    "r": 25,
+                    "g": 25,
+                    "b": 25,
+                    "hex": "191919"
+                }
+            },
+            "fabricTypes": [{
+                "name": "FABRIC_TYPE_1",
+                "value": "leather"
+            }]
+        }, {
+            "id": "200487247",
+            "name": "Gray Leather",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Gray",
+            "manufactureOptionCode": "GR",
+            "colorChips": {
+                "primary": {
+                    "r": 121,
+                    "g": 121,
+                    "b": 121,
+                    "hex": "797979"
+                }
+            },
+            "fabricTypes": [{
+                "name": "FABRIC_TYPE_1",
+                "value": "leather"
+            }]
+        }, {
+            "id": "200487248",
+            "name": "Ivory Leather",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Ivory",
+            "manufactureOptionCode": "IV/BI",
+            "colorChips": {
+                "primary": {
+                    "r": 156,
+                    "g": 141,
+                    "b": 126,
+                    "hex": "9C8D7E"
+                }
+            },
+            "fabricTypes": [{
+                "name": "FABRIC_TYPE_1",
+                "value": "leather"
+            }]
+        }]
+    }, {
+        "category": "Exterior",
+        "options": [{
+            "id": "200487240",
+            "name": "Hematite Metallic",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Hematite Metallic",
+            "manufactureOptionCode": "GN",
+            "colorChips": {
+                "primary": {
+                    "r": 74,
+                    "g": 73,
+                    "b": 69,
+                    "hex": "4A4945"
+                }
+            },
+            "fabricTypes": []
+        }, {
+            "id": "200487238",
+            "name": "Modern Steel Metallic",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Modern Steel Metallic",
+            "manufactureOptionCode": "GX/GY",
+            "colorChips": {
+                "primary": {
+                    "r": 51,
+                    "g": 59,
+                    "b": 72,
+                    "hex": "333B48"
+                }
+            },
+            "fabricTypes": []
+        }, {
+            "id": "200487234",
+            "name": "Basque Red Pearl II",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Basque Red Pearl II",
+            "manufactureOptionCode": "RA/RB",
+            "colorChips": {
+                "primary": {
+                    "r": 109,
+                    "g": 42,
+                    "b": 49,
+                    "hex": "6D2A31"
+                }
+            },
+            "fabricTypes": []
+        }, {
+            "id": "200487233",
+            "name": "Crystal Black Pearl",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Crystal Black Pearl",
+            "manufactureOptionCode": "BK/BX",
+            "colorChips": {
+                "primary": {
+                    "r": 29,
+                    "g": 29,
+                    "b": 29,
+                    "hex": "1D1D1D"
+                }
+            },
+            "fabricTypes": []
+        }, {
+            "id": "200487243",
+            "name": "Obsidian Blue Pearl",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Obsidian Blue Pearl",
+            "manufactureOptionCode": "BS/BU",
+            "colorChips": {
+                "primary": {
+                    "r": 12,
+                    "g": 34,
+                    "b": 92,
+                    "hex": "0C225C"
+                }
+            },
+            "fabricTypes": []
+        }, {
+            "id": "200487236",
+            "name": "White Orchid Pearl",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "White Orchid Pearl",
+            "manufactureOptionCode": "WA/WB",
+            "colorChips": {
+                "primary": {
+                    "r": 251,
+                    "g": 251,
+                    "b": 240,
+                    "hex": "FBFBF0"
+                }
+            },
+            "fabricTypes": []
+        }, {
+            "id": "200487244",
+            "name": "Champagne Frost Pearl",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Champagne Frost Pearl",
+            "manufactureOptionCode": "BE/BG",
+            "colorChips": {
+                "primary": {
+                    "r": 200,
+                    "g": 167,
+                    "b": 124,
+                    "hex": "C8A77C"
+                }
+            },
+            "fabricTypes": []
+        }, {
+            "id": "200487242",
+            "name": "Alabaster Silver Metallic",
+            "equipmentType": "COLOR",
+            "manufactureOptionName": "Alabaster Silver Metallic",
+            "manufactureOptionCode": "SI/SX",
+            "colorChips": {
+                "primary": {
+                    "r": 203,
+                    "g": 205,
+                    "b": 204,
+                    "hex": "CBCDCC"
+                }
+            },
+            "fabricTypes": []
+        }]
+    }],
+    "manufacturerCode": "CR3F8EKNW",
+    "price": {
+        "baseMSRP": 32120.0,
+        "baseInvoice": 29372.0,
+        "deliveryCharges": 820.0,
+        "usedTmvRetail": 27363.0,
+        "usedPrivateParty": 26068.0,
+        "usedTradeIn": 24351.0,
+        "estimateTmv": false
+    },
+    "categories": {
+        "market": "N/A",
+        "EPAClass": "Midsize Cars",
+        "vehicleSize": "Midsize",
+        "primaryBodyType": "Car",
+        "vehicleStyle": "Sedan",
+        "vehicleType": "Car"
+    },
+    "id": 200487199,
+    "name": "EX-L V6 w/Navigation 4dr Sedan (3.5L 6cyl 6A)",
+    "year": {
+        "id": 200487197,
+        "year": 2014
+    },
+    "submodel": {
+        "body": "Sedan",
+        "modelName": "Accord Sedan",
+        "niceName": "sedan"
+    },
+    "trim": "EX-L V-6 w/Navigation",
+    "states": ["NEW", "USED"],
+    "squishVins": ["1HGCR3F8EA"],
+    "MPG": {
+        "highway": "34",
+        "city": "21"
+    }
+}

@@ -1051,47 +1051,140 @@
       }
     },
 
-    "style.findById": {
+    "getStyleById": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/stylerepository/findbyid",
-      "responseClass": "styleHolderModel",
+      "uri": "/api/vehicle/v2/styles/{id}",
+      "responseClass": "Style",
       "parameters": {
         "id": {
-          "location": "query",
+          "location": "uri",
           "required": true
+        },
+        "view": {
+          "location": "query",
+          "required": false
         }
       }
     },
-    "style.findStylesByMakeModelYear": {
+    "getStylesByMakeAndModelAndYear": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/stylerepository/findstylesbymakemodelyear",
-      "responseClass": "styleHolderModel",
+      "uri": "/api/vehicle/v2/{makeNiceName}/{modelNiceName}/{year}/styles",
+      "responseClass": "styleHolder",
       "parameters": {
-        "make": {
-          "location": "query",
+        "makeNiceName": {
+          "location": "uri",
           "required": true
         },
-        "model": {
-          "location": "query",
+        "modelNiceName": {
+          "location": "uri",
           "required": true
         },
         "year": {
-          "location": "query",
+          "location": "uri",
           "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "submodel": {
+          "location": "query",
+          "required": false
+        },
+        "category": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
         }
       }
     },
-    "style.findStylesByModelYearId": {
+    "getStylesCountByMakeAndModelAndYear": {
       "extends": "abstractService",
-      "uri": "/{version}/api/vehicle/stylerepository/findstylebymakemodelyearid",
-      "responseClass": "styleHolderModel",
+      "uri": "/api/vehicle/v2/{makeNiceName}/{modelNiceName}/{year}/styles/count",
+      "responseClass": "stylesCount",
       "parameters": {
-        "modelyearid": {
-          "location": "query",
+        "makeNiceName": {
+          "location": "uri",
           "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "year": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getStylesCountByMakeAndModel": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}/{modelNiceName}/styles/count",
+      "responseClass": "stylesCount",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getStylesCountByMake": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/{makeNiceName}/styles/count",
+      "responseClass": "stylesCount",
+      "parameters": {
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getStylesCount": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/styles/count",
+      "responseClass": "stylesCount",
+      "parameters": {
+        "state": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getStyleByChromeId": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/partners/chrome/styles/{chromeId}",
+      "responseClass": "Style",
+      "parameters": {
+        "chromeId": {
+          "location": "uri",
+          "required": true
+        },
+        "view": {
+          "location": "query",
+          "required": false
         }
       }
     }
+
   },
   "models": {
     "DecodedVin": {
@@ -1420,18 +1513,6 @@
         }
       }
     },
-
-
-
-
-    "styleHolderModel": {
-      "type": "object",
-      "properties": {
-        "styleHolder": {
-          "$ref": "styleHolder"
-        }
-      }
-    },
     "actionHolderModel": {
       "type": "object",
       "properties": {
@@ -1525,25 +1606,6 @@
         }
       }
     },
-
-    "stylesModel": {
-      "type": "object",
-      "properties": {
-        "styles": {
-          "$ref": "styles"
-        }
-      }
-    },
-    "styles": {
-      "location": "json",
-      "type": "object",
-      "properties": {
-        "styles": {
-          "type": "object",
-          "additionalProperties": true
-        }
-      }
-    },
     "modelYearHolder": {
       "location": "json",
       "type": "object",
@@ -1585,13 +1647,6 @@
         }
       }
     },
-    "styleHolder": {
-      "location": "json",
-      "type": "array",
-      "items": {
-        "$ref": "style"
-      }
-    },
     "actionHolder": {
       "location": "json",
       "type": "array",
@@ -1621,10 +1676,10 @@
       }
     },
     "longListHolder": {
+      "location": "json",
       "type": "object",
       "properties": {
         "longListHolder": {
-          "location": "json",
           "type": "array",
           "items": {
             "type": "string"
@@ -1965,58 +2020,33 @@
         }
       }
     },
-    "style": {
+    "Style": {
       "location": "json",
       "type": "object",
       "properties": {
         "id": {
-          "type": "integer"
+          "type": "string"
         },
-        "makeId": {
-          "type": "integer"
+        "name": {
+          "type": "string"
         },
         "year": {
-          "type": "integer"
-        },
-        "makeName": {
-          "type": "string"
-        },
-        "makeNiceName": {
-          "type": "string"
-        },
-        "modelId": {
-          "type": "string"
-        },
-        "modelName": {
-          "type": "string"
-        },
-        "modelNiceName": {
-          "type": "string"
-        },
-        "modelYearId": {
-          "type": "integer"
-        },
-        "transmissionType": {
-          "type": "string"
-        },
-        "engineCompessorType": {
-          "type": "string"
-        },
-        "engineFuelType": {
-          "type": "string"
-        },
-        "engineCylinder": {
-          "type": "string"
-        },
-        "engineSize": {
-          "type": "string"
-        },
-        "price": {
-          "$ref": "Price"
-        },
-        "trim": {
           "type": "object",
           "properties": {
+            "id": {
+              "type": "string"
+            },
+            "year": {
+              "type": "numeric"
+            }
+          }
+        },
+        "make": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
             "name": {
               "type": "string"
             },
@@ -2025,113 +2055,160 @@
             }
           }
         },
-        "specification": {
+        "model": {
           "type": "object",
           "properties": {
-            "elements": {
-              "type": "array"
-            },
-            "type": {
+            "id": {
               "type": "string"
-            }  
-          }
-        },
-        "standardEquipment": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "link": {
-                "type": "string"
-              }
+            },
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
             }
           }
         },
-        "optionalEquipment": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "link": {
-                "type": "string"
-              }
-            }
-          }
+        "engine": {
+          "$ref": "Engine"
         },
-        "usedEquipment": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "link": {
-                "type": "string"
-              }
-            }
-          }
+        "transmission": {
+          "$ref": "Transmission"
+        },
+        "drivenWheels": {
+          "type": "string"
+        },
+        "numOfDoors": {
+          "type": "string"
         },
         "options": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "colors": {
+          "type": "array",
+          "items": {
+            "$ref": "Color"
+          }
+        },
+        "manufacturerCode": {
+          "type": "string"
+        },
+        "price": {
           "type": "object",
-          "additionalProperties": true
+          "properties": {
+            "baseMSRP": {
+              "type": "numeric"
+            },
+            "baseInvoice": {
+              "type": "numeric"
+            },
+            "deliveryCharges": {
+              "type": "numeric"
+            },
+            "usedTmvRetail": {
+              "type": "numeric"
+            },
+            "usedPrivateParty": {
+              "type": "numeric"
+            },
+            "usedTradeIn": {
+              "type": "numeric"
+            },
+            "estimateTmv": {
+              "type": "boolean"
+            }
+          }
         },
         "categories": {
           "type": "object",
-          "additionalProperties": true
-        },
-        "modelYear": {
-          "type": "object",
+          "additionalProperties": true,
           "properties": {
-            "link": {
+            "market": {
+              "type": "string"
+            },
+            "EPAClass": {
+              "type": "string"
+            },
+            "vehicleSize": {
+              "type": "string"
+            },
+            "primaryBodyType": {
+              "type": "string"
+            },
+            "vehicleStyle": {
+              "type": "string"
+            },
+            "vehicleType": {
               "type": "string"
             }
           }
         },
-        "attributeGroups": {
+        "submodel": {
           "type": "object",
-          "additionalProperties": true
+          "properties": {
+            "body": {
+              "type": "string"
+            },
+            "modelName": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
         },
-        "configurableEquipment": {
-          "type": "object",
-          "additionalProperties": true
+        "trim": {
+          "type": "string"
         },
-        "regionRestrictions": {
-          "location": "json",
-          "type": "object",
-          "additionalProperties": true
-        },
-        "typicallyEquippedSpecifications": {
+        "states": {
           "type": "array",
           "items": {
-            "type": "object",
-            "additionalProperties": true
+            "type": "string"
           }
         },
         "squishVins": {
           "type": "array",
           "items": {
-            "type": "object",
-            "additionalProperties": true
+            "type": "string"
           }
         },
-        "subModels": {
+        "MPG": {
+          "type": "object",
+          "properties": {
+            "highway": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "styleHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "styles": {
           "type": "array",
           "items": {
-            "type": "object",
-            "additionalProperties": true
+            "$ref": "Style"
           }
-        },
-        "name": {
-          "type": "string"
-        },
-        "niceName": {
-          "type": "string"
-        },
-        "publicationState": {
-          "type": "string"
-        }  
-      },
-      "additionalProperties": true
+        }
+      }
     },
-
+    "stylesCount": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "stylesCount": {
+          "type": "numeric"
+        }
+      }
+    },
     "Engine": {
       "location": "json",
       "type": "object",
