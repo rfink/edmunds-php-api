@@ -672,7 +672,33 @@
       "uri": "/api/vehicle/v2/grade/{makeNiceName}/{modelNiceName}/{year}",
       "responseClass": "EdmundsReview",
       "parameters": {
-        
+        "makeNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "modelNiceName": {
+          "location": "uri",
+          "required": true
+        },
+        "year": {
+          "location": "uri",
+          "required": true
+        },
+        "submodel": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getEdmundsRatingsByStyleId": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/grade/{styleId}",
+      "responseClass": "EdmundsReview",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        }
       }
     },
 
@@ -731,6 +757,300 @@
       }
     },
 
+    "getNewTrueCostToOwnByStyleIdAndZip": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tco/newtruecosttoownbystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getUsedTrueCostToOwnByStyleIdAndZip": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tco/usedtruecosttoownbystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+
+    "getNewTotalCashPriceByStyleIdAndZip": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tco/newtotalcashpricebystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getUsedTotalCashPriceByStyleIdAndZip": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tco/usedtotalcashpricebystyleidandzip/{styleId}/{zip}",
+      "responseClass": "TrueCostToOwn",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "zip": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getMakesWithTcoData": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tco/getmakeswithtcodata",
+      "responseClass": "MakesGeneric"
+    },
+    "getModelsWithTcoData": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tco/getmodelswithtcodata",
+      "responseClass": "ModelsGeneric",
+      "parameters": {
+        "makeid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getStylesWithTcoDataBySubModel": {
+      "extends": "abstractService",
+      "uri": "/v1/api/tco/getstyleswithtcodatabysubmodel",
+      "responseClass": "StylesGeneric",
+      "parameters": {
+        "make": {
+          "location": "query",
+          "required": true
+        },
+        "model": {
+          "location": "query",
+          "required": true
+        },
+        "year": {
+          "location": "query",
+          "required": true
+        },
+        "submodel": {
+          "location": "query",
+          "required": true
+        },
+        "makeyear": {
+          "location": "query"
+        }
+      }
+    },
+    "getTcoForNewCar": {
+      "extends": "abstractService",
+      "uri": "/api/tco/v1/details/allnewtcobystyleidzipandstate/{styleId}/{zip}/{state}",
+      "responseClass": "TODO"
+    },
+    "getTcoForUsedCar": {
+      "extends": "abstractService",
+      "uri": "/api/tco/v1/details/allusedtcobystyleidzipandstate/{styleId}/{zip}/{state}",
+      "responseClass": "TODO"
+    },
+
+    "getDefaultVehicleConfiguration": {
+      "extends": "abstractService",
+      "uri": "/v1/api/configurator/default",
+      "responseClass": "Configuration",
+      "parameters": {
+        "zip": {
+          "location": "query",
+          "required": true
+        },
+        "styleid": {
+          "location": "query",
+          "required": true
+        }
+      }
+    },
+    "getVehicleConfigurationWithOptions": {
+      "extends": "abstractService",
+      "uri": "/v1/api/configurator/withOptions",
+      "responseClass": "ConfigurationWithOptions",
+      "parameters": {
+        "zip": {
+          "location": "query",
+          "required": true
+        },
+        "styleid": {
+          "location": "query",
+          "required": true
+        },
+        "selected": {
+          "location": "query",
+          "required": true
+        },
+        "optionid": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+
+    "getEquipmentDetailsByStyleId": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/styles/{styleId}/equipment",
+      "responseClass": "equipmentHolder",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "availability": {
+          "location": "query",
+          "required": false
+        },
+        "equipmentType": {
+          "location": "query",
+          "required": false
+        },
+        "name": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getEquipmentDetailsById": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/equipment/{id}",
+      "responseClass": "Equipment",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+
+    "getEnginesByStyleId": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/styles/{styleId}/engines",
+      "responseClass": "engineHolder",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "availability": {
+          "location": "query",
+          "required": false
+        },
+        "name": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getEngineById": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/engines/{id}",
+      "responseClass": "Engine",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getTransmissionsByStyleId": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/styles/{styleId}/transmissions",
+      "responseClass": "transmissionHolder",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "availability": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getTransmissionById": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/transmissions/{id}",
+      "responseClass": "Transmission",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+
+    "getOptionsByStyleId": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/styles/{styleId}/options",
+      "responseClass": "optionHolder",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getOptionDetailsById": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/options/{id}",
+      "responseClass": "Option",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getColorsByStyleId": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/styles/{styleId}/colors",
+      "responseClass": "colorHolder",
+      "parameters": {
+        "styleId": {
+          "location": "uri",
+          "required": true
+        },
+        "category": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getColorDetailsById": {
+      "extends": "abstractService",
+      "uri": "/api/vehicle/v2/colors/{id}",
+      "responseClass": "Color",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+
     "style.findById": {
       "extends": "abstractService",
       "uri": "/{version}/api/vehicle/stylerepository/findbyid",
@@ -769,153 +1089,6 @@
         "modelyearid": {
           "location": "query",
           "required": true
-        }
-      }
-    },
-    "trueCostToOwn.newTrueCostToOwnByStyleIdAndZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/newtruecosttoownbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "TrueCostToOwn",
-      "parameters": {
-        "styleId": {
-          "location": "uri",
-          "required": true
-        },
-        "zip": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.usedTrueCostToOwnByStyleIdAndZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/usedtruecosttoownbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "TrueCostToOwn",
-      "parameters": {
-        "styleId": {
-          "location": "uri",
-          "required": true
-        },
-        "zip": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.resaleValuesByStyleIdAndZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/resalevaluesbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "ResaleValues",
-      "parameters": {
-        "styleId": {
-          "location": "uri",
-          "required": true
-        },
-        "zip": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.depreciation.usedRatesByStyleIdAndZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/depreciation/usedratesbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "DepreciationRates",
-      "parameters": {
-        "styleId": {
-          "location": "uri",
-          "required": true
-        },
-        "zip": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.depreciation.newRatesByStyleIdAndZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/depreciation/newratesbystyleidandzip/{styleId}/{zip}",
-      "responseClass": "DepreciationRates",
-      "parameters": {
-        "styleId": {
-          "location": "uri",
-          "required": true
-        },
-        "zip": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.newTotalCashPriceByStyleIdAndZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/newtotalcashpricebystyleidandzip/{styleId}/{zip}",
-      "responseClass": "TrueCostToOwn",
-      "parameters": {
-        "styleId": {
-          "location": "uri",
-          "required": true
-        },
-        "zip": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.usedTotalCashPriceByStyleIdAndZip": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/usedtotalcashpricebystyleidandzip/{styleId}/{zip}",
-      "responseClass": "TrueCostToOwn",
-      "parameters": {
-        "styleId": {
-          "location": "uri",
-          "required": true
-        },
-        "zip": {
-          "location": "uri",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.getMakesWithTcoData": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/getmakeswithtcodata",
-      "responseClass": "makesModel"
-    },
-    "trueCostToOwn.getModelsWithTcoData": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/getmodelswithtcodata",
-      "responseClass": "modelsModel",
-      "parameters": {
-        "makeid": {
-          "location": "query",
-          "required": true
-        }
-      }
-    },
-    "trueCostToOwn.getStylesWithTcoDataBySubModel": {
-      "extends": "abstractService",
-      "uri": "/{version}/api/tco/getstyleswithtcodatabysubmodel",
-      "responseClass": "stylesModel",
-      "parameters": {
-        "make": {
-          "location": "query",
-          "required": true
-        },
-        "model": {
-          "location": "query",
-          "required": true
-        },
-        "year": {
-          "location": "query",
-          "required": true
-        },
-        "submodel": {
-          "location": "query",
-          "required": true
-        },
-        "makeyear": {
-          "location": "query"
         }
       }
     }
@@ -1215,6 +1388,38 @@
         }
       }
     },
+    "Generic": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true
+    },
+    "MakesGeneric": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "makes": {
+          "$ref": "Generic"
+        }
+      }
+    },
+    "ModelsGeneric": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "models": {
+          "$ref": "Generic"
+        }
+      }
+    },
+    "StylesGeneric": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "styles": {
+          "$ref": "Generic"
+        }
+      }
+    },
 
 
 
@@ -1439,6 +1644,18 @@
       "type": "array",
       "items": {
         "$ref": "Incentive"
+      }
+    },
+    "equipmentHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "equipment": {
+          "type": "array",
+          "items": {
+            "$ref": "Equipment"
+          }
+        }
       }
     },
     "tmvHolder": {
@@ -1914,6 +2131,269 @@
       },
       "additionalProperties": true
     },
+
+    "Engine": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "equipmentType": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "compressionRatio": {
+          "type": "numeric"
+        },
+        "cylinder": {
+          "type": "numeric"
+        },
+        "size": {
+          "type": "numeric"
+        },
+        "displacement": {
+          "type": "numeric"
+        },
+        "configuration": {
+          "type": "string"
+        },
+        "fuelType": {
+          "type": "string"
+        },
+        "horsepower": {
+          "type": "numeric"
+        },
+        "torque": {
+          "type": "numeric"
+        },
+        "totalValves": {
+          "type": "numeric"
+        },
+        "manufacturerEngineCode": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "compressorType": {
+          "type": "string"
+        }
+      }
+    },
+    "Transmission": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "equipmentType": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "automaticType": {
+          "type": "string"
+        },
+        "transmissionType": {
+          "type": "string"
+        },
+        "numberOfSpeeds": {
+          "type": "string"
+        }
+      }
+    },
+    "engineHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "engines": {
+          "type": "array",
+          "items": {
+            "$ref": "Engine"
+          }
+        },
+        "enginesCount": {
+          "type": "numeric"
+        }
+      }
+    },
+    "transmissionHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "transmissions": {
+          "type": "array",
+          "items": {
+            "$ref": "Transmission"
+          }
+        },
+        "transmissionsCount": {
+          "type": "numeric"
+        }
+      }
+    },
+
+    "optionHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "Option"
+          }
+        }
+      }
+    },
+    "Option": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "equipmentType": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "price": {
+          "type": "object",
+          "properties": {
+            "baseMSRP": {
+              "type": "numeric"
+            },
+            "baseInvoice": {
+              "type": "numeric"
+            },
+            "estimateTmv": {
+              "type": "boolean"
+            }
+          }
+        },
+        "manufactureOptionName": {
+          "type": "string"
+        },
+        "manufactureOptionCode": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "equipment": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        }
+      }
+    },
+    "colorHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "colors": {
+          "type": "array",
+          "items": {
+            "$ref": "Color"
+          }
+        }
+      }
+    },
+    "Color": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "equipmentType": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "manufactureOptionName": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "colorChips": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "type": "object",
+              "properties": {
+                "r": {
+                  "type": "string"
+                },
+                "g": {
+                  "type": "string"
+                },
+                "b": {
+                  "type": "string"
+                },
+                "hex": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "fabricTypes": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        }
+      }
+    },
+
     "Price": {
       "location": "json",
       "type": "object",
@@ -2062,6 +2542,175 @@
         }
       }
     },
+    "Equipment": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "equipmentType": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "Configuration": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+        "pricingAttributeGroup": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "numeric"
+            },
+            "name": {
+              "type": "string"
+            },
+            "attributes": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "featuresMap": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "furtherAdditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "furtherRemovals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requiredItems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includedItems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excludedItems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "tmv": {
+          "$ref": "tmv"
+        }
+      }
+    },
+    "ConfigurationWithOptions": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "zipCode": {
+          "type": "string"
+        },
+        "styleId": {
+          "type": "string"
+        },
+        "colorId": {
+          "type": "string"
+        },
+        "currentOptions": {
+          "type": "array",
+          "items": {
+            "type": "any"
+          }
+        },
+        "selectedOption": {
+          "type": "string"
+        },
+        "deselectedOption": {
+          "type": "string"
+        },
+        "furtherAdditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "furtherRemovals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requiredItems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includedItems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excludedItems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "tmv": {
+          "$ref": "tmv"
+        }
+      }
+    },
+
     "Action": {
       "location": "json",
       "type": "object",
@@ -2180,38 +2829,6 @@
         "value": {
           "type": "any",
           "location": "json"
-        }
-      }
-    },
-    "ResaleValues": {
-      "type": "object",
-      "properties": {
-        "values": {
-          "type": "array",
-          "location": "json",
-          "items": {
-            "type": "number"
-          }
-        },
-        "total": {
-          "location": "json",
-          "type": "number"
-        }
-      }
-    },
-    "DepreciationRates": {
-      "type": "object",
-      "properties": {
-        "values": {
-          "type": "array",
-          "location": "json",
-          "items": {
-            "type": "number"
-          }
-        },
-        "total": {
-          "location": "json",
-          "type": "number"
         }
       }
     },
@@ -2462,6 +3079,129 @@
               },
               "styleId": {
                 "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "EdmundsReview": {
+      "location": "json",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "make": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
+        },
+        "model": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "submodel": {
+              "type": "object",
+              "properties": {
+                "body": {
+                  "type": "string"
+                },
+                "modelName": {
+                  "type": "string"
+                },
+                "niceName": {
+                  "type": "string"
+                }
+              }
+            },
+            "trim": {
+              "type": "string"
+            }
+          }
+        },
+        "year": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "year": {
+              "type": "numeric"
+            }
+          }
+        },
+        "grade": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "ratings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "grade": {
+                "type": "string"
+              },
+              "score": {
+                "type": "numeric"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "subRatings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "grade": {
+                      "type": "string"
+                    },
+                    "score": {
+                      "type": "numeric"
+                    },
+                    "summary": {
+                      "type": "string"
+                    }
+                  }
+                }
               }
             }
           }

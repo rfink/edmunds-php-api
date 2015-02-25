@@ -1,0 +1,95 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "options": [{
+        "id": "200477509",
+        "name": "Front License Plate Holder",
+        "description": "Front license plate holder for states which require front license plates",
+        "equipmentType": "OPTION",
+        "availability": "All",
+        "price": {
+            "baseMSRP": 0.0,
+            "baseInvoice": 0.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Front License Plate Holder",
+        "manufactureOptionCode": "6W3",
+        "category": "Exterior",
+        "attributes": [],
+        "equipment": []
+    }, {
+        "id": "200477510",
+        "name": "Front Grille Filler Panel",
+        "description": "Front grille filler panel with chrome strips for states without license plate requirement",
+        "equipmentType": "OPTION",
+        "availability": "All",
+        "price": {
+            "baseMSRP": 0.0,
+            "baseInvoice": 0.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Front Grille Filler Panel",
+        "manufactureOptionCode": "6W9",
+        "category": "Exterior",
+        "attributes": [],
+        "equipment": []
+    }, {
+        "id": "200477518",
+        "name": "Audi Guard Wheel Lock Kit",
+        "equipmentType": "OPTION",
+        "availability": "All",
+        "price": {
+            "baseMSRP": 105.0,
+            "baseInvoice": 98.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Audi Guard Wheel Lock Kit",
+        "manufactureOptionCode": "WL3",
+        "category": "Exterior",
+        "attributes": [],
+        "equipment": []
+    }, {
+        "id": "200490737",
+        "name": "19\" Summer Tires",
+        "equipmentType": "OPTION",
+        "availability": "All",
+        "price": {
+            "baseMSRP": 0.0,
+            "baseInvoice": 0.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "19\" Summer Tires",
+        "manufactureOptionCode": "HE9",
+        "category": "Exterior",
+        "attributes": [{
+            "name": "Suspension Class",
+            "value": "sport-performance"
+        }],
+        "equipment": []
+    }, {
+        "id": "200477499",
+        "name": "Audi Base Bars",
+        "description": "Base bars; Storage bag",
+        "equipmentType": "OPTION",
+        "availability": "All",
+        "price": {
+            "baseMSRP": 460.0,
+            "baseInvoice": 427.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Audi Base Bars",
+        "manufactureOptionCode": "6BB",
+        "category": "Exterior",
+        "attributes": [{
+            "name": "Roof Rack",
+            "value": "roof rack"
+        }],
+        "equipment": []
+    }],
+    "optionsCount": 5
+}

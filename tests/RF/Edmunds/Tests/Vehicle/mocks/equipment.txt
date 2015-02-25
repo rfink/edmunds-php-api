@@ -1,0 +1,35 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "id": "200477520",
+    "name": "Drivetrain, 4 Years, 50000/L Miles",
+    "equipmentType": "WARRANTY",
+    "availability": "STANDARD",
+    "attributes": [{
+        "name": "Warranty Maximum Mileage",
+        "value": "50000"
+    }, {
+        "name": "Warranty Start Date",
+        "value": "19-Jun-2013"
+    }, {
+        "name": "Warranty End Date",
+        "value": "09-Sep-2099"
+    }, {
+        "name": "Warranty Miles Limited/unlimited",
+        "value": "L"
+    }, {
+        "name": "Warranty Years Limited/unlimited",
+        "value": "L"
+    }, {
+        "name": "Warranty Maximum Years",
+        "value": "4"
+    }, {
+        "name": "Warranty Type",
+        "value": "Drivetrain"
+    }]
+}

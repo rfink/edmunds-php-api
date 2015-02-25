@@ -1,0 +1,72 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "id": "200477503",
+    "name": "Premium Plus ",
+    "description": "18\" 5-spoke-design wheels with 245/45R18 all-season tires; 7\" color Driver Information System; MMI Navigation plus; Audi Connect with 6-month complimentary trial period data contract includes voice-activated Google Earth navigation, Google Local search, Real time Sirius traffic with 3-month complimentary subscription, myAudi destinations and rolling wi-fi hotspot; Power, heated, auto-dimming, manual folding exterior mirrors with memory; HD radio; MMI touch and Jukebox; Audi parking system plus with rearview camera; Audi advance key; Xenon plus headlights with LED daytime running lights",
+    "equipmentType": "OPTION",
+    "availability": "2.0T quattro",
+    "price": {
+        "baseMSRP": 0.0,
+        "baseInvoice": 0.0,
+        "estimateTmv": false
+    },
+    "manufactureOptionName": "Premium Plus ",
+    "manufactureOptionCode": "WPS",
+    "category": "Package",
+    "attributes": [{
+        "name": "Navigation System",
+        "value": "navigation with voice activation"
+    }, {
+        "name": "Real Time Traffic",
+        "value": "real time traffic"
+    }, {
+        "name": "Compass",
+        "value": "compass"
+    }, {
+        "name": "Parking Sensors",
+        "value": "front and rear parking sensors"
+    }, {
+        "name": "Daytime Running Lights",
+        "value": "daytime running lights"
+    }, {
+        "name": "Xenon Headlights",
+        "value": "xenon high intensity discharge"
+    }, {
+        "name": "Exterior Camera",
+        "value": "rear view camera"
+    }, {
+        "name": "Power Door Locks",
+        "value": "remote keyless power door locks"
+    }, {
+        "name": "2 Stage Unlocking",
+        "value": "remote 2-stage unlocking"
+    }, {
+        "name": "Mobile Internet",
+        "value": "mobile internet"
+    }, {
+        "name": "Side Mirror Memory",
+        "value": "includes exterior mirrors"
+    }, {
+        "name": "Auto Dimming Side Mirrors",
+        "value": "electrochromatic"
+    }, {
+        "name": "Passenger Side Mirror Adjustment",
+        "value": "power"
+    }, {
+        "name": "Exterior Mirror Adjustment",
+        "value": "power"
+    }, {
+        "name": "Heated Exterior Mirrors",
+        "value": "heated"
+    }, {
+        "name": "Heated Passenger Side Mirror",
+        "value": "heated"
+    }],
+    "equipment": []
+}

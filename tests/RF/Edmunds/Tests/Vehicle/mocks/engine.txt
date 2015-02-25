@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "id": "200477467",
+    "name": "2.0L Inline4 16 Valve Turbocharger Gas Premium Unleaded (required)",
+    "equipmentType": "ENGINE",
+    "availability": "STANDARD",
+    "compressionRatio": 9.6,
+    "cylinder": 4,
+    "size": 2.0,
+    "displacement": 1984.0,
+    "configuration": "inline",
+    "fuelType": "premium unleaded (required)",
+    "horsepower": 220,
+    "torque": 258,
+    "totalValves": 16,
+    "manufacturerEngineCode": "2.0 TFSI",
+    "type": "gas",
+    "code": "4ITCG2.0",
+    "compressorType": "turbocharger"
+}

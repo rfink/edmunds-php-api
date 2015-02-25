@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "transmissions": [{
+        "id": "200477468",
+        "name": "8A",
+        "equipmentType": "TRANSMISSION",
+        "availability": "STANDARD",
+        "automaticType": "Shiftable automatic",
+        "transmissionType": "AUTOMATIC",
+        "numberOfSpeeds": "8"
+    }],
+    "transmissionsCount": 1
+}

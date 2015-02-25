@@ -1,0 +1,420 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "colors": [{
+        "id": "200477485",
+        "name": "Ibis White",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Ibis White",
+        "manufactureOptionCode": "T9T9",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 250,
+                "g": 250,
+                "b": 250,
+                "hex": "FAFAFA"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477484",
+        "name": "Nougat Brown",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Nougat Brown",
+        "manufactureOptionCode": "VB",
+        "category": "Interior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 93,
+                "g": 69,
+                "b": 57,
+                "hex": "5D4539"
+            }
+        },
+        "fabricTypes": [{
+            "name": "FABRIC_TYPE_1",
+            "value": "leather"
+        }]
+    }, {
+        "id": "200477483",
+        "name": "Black",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Black",
+        "manufactureOptionCode": "FZ",
+        "category": "Interior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 17,
+                "g": 28,
+                "b": 27,
+                "hex": "111C1B"
+            }
+        },
+        "fabricTypes": [{
+            "name": "FABRIC_TYPE_1",
+            "value": "leather"
+        }]
+    }, {
+        "id": "200477482",
+        "name": "Moonlight Blue Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Moonlight Blue Metallic",
+        "manufactureOptionCode": "W1W1",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 64,
+                "g": 79,
+                "b": 97,
+                "hex": "404F61"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477481",
+        "name": "Havanna Black Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Havanna Black Metallic",
+        "manufactureOptionCode": "4J4J",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "hex": "000000"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477480",
+        "name": "Dakota Gray Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Dakota Gray Metallic",
+        "manufactureOptionCode": "Y7Y7",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 132,
+                "g": 119,
+                "b": 100,
+                "hex": "847764"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477488",
+        "name": "Velvet Beige",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Velvet Beige",
+        "manufactureOptionCode": "KP",
+        "category": "Interior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 173,
+                "g": 148,
+                "b": 110,
+                "hex": "AD946E"
+            }
+        },
+        "fabricTypes": [{
+            "name": "FABRIC_TYPE_1",
+            "value": "leather"
+        }]
+    }, {
+        "id": "200477486",
+        "name": "Brilliant Black",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Brilliant Black",
+        "manufactureOptionCode": "A2A2",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "hex": "000000"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477487",
+        "name": "Titanium Gray",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Titanium Gray",
+        "manufactureOptionCode": "KN",
+        "category": "Interior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 176,
+                "g": 176,
+                "b": 169,
+                "hex": "B0B0A9"
+            }
+        },
+        "fabricTypes": [{
+            "name": "FABRIC_TYPE_1",
+            "value": "leather"
+        }]
+    }, {
+        "id": "200477470",
+        "name": "Layered Oak Wood Inlay",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Dark Brown Walnut",
+        "manufactureOptionCode": "5MT",
+        "category": "Interior Trim",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 115,
+                "g": 79,
+                "b": 47,
+                "hex": "734F2F"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477472",
+        "name": "Phantom Black Pearl Effect",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Phantom Black Pearl Effect",
+        "manufactureOptionCode": "L8L8",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "hex": "000000"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477471",
+        "name": "Garnet Red Pearl Effect",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Garnet Red Pearl Effect",
+        "manufactureOptionCode": "9C9C",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 183,
+                "g": 79,
+                "b": 88,
+                "hex": "B74F58"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477474",
+        "name": "Fine Grain Ash Natural Brown Inlay",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Fine Grain Ash Natural Brown",
+        "manufactureOptionCode": "7TL",
+        "category": "Interior Trim",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 71,
+                "g": 51,
+                "b": 40,
+                "hex": "473328"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477473",
+        "name": "Brushed Aluminum",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "manufactureOptionName": "Brushed Aluminum",
+        "manufactureOptionCode": "5TG",
+        "category": "Interior Trim",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 204,
+                "g": 204,
+                "b": 204,
+                "hex": "CCCCCC"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477475",
+        "name": "Quartz Gray Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Quartz Gray Metallic",
+        "manufactureOptionCode": "Q4Q4",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 156,
+                "g": 156,
+                "b": 164,
+                "hex": "9C9CA4"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477476",
+        "name": "Oolong Gray Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Oolong Gray Metallic",
+        "manufactureOptionCode": "4N4N",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 49,
+                "g": 49,
+                "b": 49,
+                "hex": "313131"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477477",
+        "name": "Glacier White Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Glacier White Metallic",
+        "manufactureOptionCode": "2Y2Y",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 189,
+                "g": 194,
+                "b": 198,
+                "hex": "BDC2C6"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477478",
+        "name": "Ice Silver Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Ice Silver Metallic",
+        "manufactureOptionCode": "P5P5",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 190,
+                "g": 190,
+                "b": 190,
+                "hex": "BEBEBE"
+            }
+        },
+        "fabricTypes": []
+    }, {
+        "id": "200477479",
+        "name": "Aviator Blue Metallic",
+        "equipmentType": "COLOR",
+        "availability": "USED",
+        "price": {
+            "baseMSRP": 500.0,
+            "baseInvoice": 467.0,
+            "estimateTmv": false
+        },
+        "manufactureOptionName": "Aviator Blue Metallic",
+        "manufactureOptionCode": "U0U0",
+        "category": "Exterior",
+        "attributes": [],
+        "colorChips": {
+            "primary": {
+                "r": 36,
+                "g": 48,
+                "b": 59,
+                "hex": "24303B"
+            }
+        },
+        "fabricTypes": []
+    }],
+    "colorsCount": 19
+}

@@ -1,0 +1,631 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "models": {
+        "cmaxenergi:Wagon": {
+            "id": "Ford_C_Max_Energi",
+            "name": "C-Max Energi Wagon",
+            "link": "/ford/cmaxenergi",
+            "submodel": "Wagon",
+            "nicesubmodel": "wagon",
+            "model": "C-Max Energi",
+            "nicemodel": "cmaxenergi",
+            "years": {
+                "NEW_USED": [2013, 2014]
+            }
+        },
+        "cmaxhybrid:Wagon": {
+            "id": "Ford_C_Max_Hybrid",
+            "name": "C-Max Hybrid Wagon",
+            "link": "/ford/cmaxhybrid",
+            "submodel": "Wagon",
+            "nicesubmodel": "wagon",
+            "model": "C-Max Hybrid",
+            "nicemodel": "cmaxhybrid",
+            "years": {
+                "NEW_USED": [2013, 2014]
+            }
+        },
+        "econolinecargo:Van": {
+            "id": "Ford_Econoline_Cargo",
+            "name": "Econoline Cargo Van",
+            "link": "/ford/econolinecargo",
+            "submodel": "Van",
+            "nicesubmodel": "van",
+            "model": "Econoline Cargo",
+            "nicemodel": "econolinecargo",
+            "years": {
+                "USED": [2009]
+            }
+        },
+        "econolinewagon:Van": {
+            "id": "Ford_Econoline_Wagon",
+            "name": "Econoline Wagon Van",
+            "link": "/ford/econolinewagon",
+            "submodel": "Van",
+            "nicesubmodel": "van",
+            "model": "Econoline Wagon",
+            "nicemodel": "econolinewagon",
+            "years": {
+                "USED": [2009]
+            }
+        },
+        "edge:SUV": {
+            "id": "Ford_Edge",
+            "name": "Edge SUV",
+            "link": "/ford/edge",
+            "submodel": "SUV",
+            "nicesubmodel": "suv",
+            "model": "Edge",
+            "nicemodel": "edge",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "escape:Hybrid": {
+            "id": "Ford_Escape",
+            "name": "Escape Hybrid",
+            "link": "/ford/escape",
+            "submodel": "Hybrid",
+            "nicesubmodel": "hybrid",
+            "model": "Escape",
+            "nicemodel": "escape",
+            "years": {
+                "USED": [2012]
+            }
+        },
+        "escape:SUV": {
+            "id": "Ford_Escape",
+            "name": "Escape SUV",
+            "link": "/ford/escape",
+            "submodel": "SUV",
+            "nicesubmodel": "suv",
+            "model": "Escape",
+            "nicemodel": "escape",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "escapehybrid:SUV": {
+            "id": "Ford_Escape_Hybrid",
+            "name": "Escape Hybrid SUV",
+            "link": "/ford/escapehybrid",
+            "submodel": "SUV",
+            "nicesubmodel": "suv",
+            "model": "Escape Hybrid",
+            "nicemodel": "escapehybrid",
+            "years": {
+                "USED": [2009, 2010, 2011]
+            }
+        },
+        "eseriesvan": {
+            "id": "Ford_E_Series_Van",
+            "name": "E-Series Van",
+            "link": "/ford/eseriesvan",
+            "model": "E-Series Van",
+            "nicemodel": "eseriesvan",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2010, 2011, 2012]
+            }
+        },
+        "eserieswagon:Van": {
+            "id": "Ford_E_Series_Wagon",
+            "name": "E-Series Wagon Van",
+            "link": "/ford/eserieswagon",
+            "submodel": "Van",
+            "nicesubmodel": "van",
+            "model": "E-Series Wagon",
+            "nicemodel": "eserieswagon",
+            "years": {
+                "NEW_USED": [2013],
+                "USED": [2010, 2011, 2012]
+            }
+        },
+        "expedition:SUV": {
+            "id": "Ford_Expedition",
+            "name": "Expedition SUV",
+            "link": "/ford/expedition",
+            "submodel": "SUV",
+            "nicesubmodel": "suv",
+            "model": "Expedition",
+            "nicemodel": "expedition",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012, 2013]
+            }
+        },
+        "expeditionel:SUV": {
+            "id": "Ford_Expedition_EL",
+            "name": "Expedition EL SUV",
+            "link": "/ford/expeditionel",
+            "submodel": "SUV",
+            "nicesubmodel": "suv",
+            "model": "Expedition EL",
+            "nicemodel": "expeditionel",
+            "years": {
+                "USED": [2009]
+            }
+        },
+        "explorer:SUV": {
+            "id": "Ford_Explorer",
+            "name": "Explorer SUV",
+            "link": "/ford/explorer",
+            "submodel": "SUV",
+            "nicesubmodel": "suv",
+            "model": "Explorer",
+            "nicemodel": "explorer",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "explorersporttrac:Crew Cab": {
+            "id": "Ford_Explorer_Sport_Trac",
+            "name": "Explorer Sport Trac Crew Cab",
+            "link": "/ford/explorersporttrac",
+            "submodel": "Crew Cab",
+            "nicesubmodel": "crewcab",
+            "model": "Explorer Sport Trac",
+            "nicemodel": "explorersporttrac",
+            "years": {
+                "USED": [2009, 2010]
+            }
+        },
+        "f150:Regular Cab": {
+            "id": "Ford_F_150",
+            "name": "F-150 Regular Cab",
+            "link": "/ford/f150",
+            "submodel": "Regular Cab",
+            "nicesubmodel": "regularcab",
+            "model": "F-150",
+            "nicemodel": "f150",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f150:SVT Raptor": {
+            "id": "Ford_F_150",
+            "name": "F-150 SVT Raptor",
+            "link": "/ford/f150",
+            "submodel": "SVT Raptor",
+            "nicesubmodel": "svtraptor",
+            "model": "F-150",
+            "nicemodel": "f150",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2010, 2011, 2012]
+            }
+        },
+        "f150:SuperCab": {
+            "id": "Ford_F_150",
+            "name": "F-150 SuperCab",
+            "link": "/ford/f150",
+            "submodel": "SuperCab",
+            "nicesubmodel": "supercab",
+            "model": "F-150",
+            "nicemodel": "f150",
+            "years": {
+                "NEW": [2014],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f150:SuperCrew": {
+            "id": "Ford_F_150",
+            "name": "F-150 SuperCrew",
+            "link": "/ford/f150",
+            "submodel": "SuperCrew",
+            "nicesubmodel": "supercrew",
+            "model": "F-150",
+            "nicemodel": "f150",
+            "years": {
+                "NEW": [2014],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f250superduty:Crew Cab": {
+            "id": "Ford_F_250_Super_Duty",
+            "name": "F-250 Super Duty Crew Cab",
+            "link": "/ford/f250superduty",
+            "submodel": "Crew Cab",
+            "nicesubmodel": "crewcab",
+            "model": "F-250 Super Duty",
+            "nicemodel": "f250superduty",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f250superduty:Regular Cab": {
+            "id": "Ford_F_250_Super_Duty",
+            "name": "F-250 Super Duty Regular Cab",
+            "link": "/ford/f250superduty",
+            "submodel": "Regular Cab",
+            "nicesubmodel": "regularcab",
+            "model": "F-250 Super Duty",
+            "nicemodel": "f250superduty",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f250superduty:SuperCab": {
+            "id": "Ford_F_250_Super_Duty",
+            "name": "F-250 Super Duty SuperCab",
+            "link": "/ford/f250superduty",
+            "submodel": "SuperCab",
+            "nicesubmodel": "supercab",
+            "model": "F-250 Super Duty",
+            "nicemodel": "f250superduty",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f350superduty:Crew Cab": {
+            "id": "Ford_F_350_Super_Duty",
+            "name": "F-350 Super Duty Crew Cab",
+            "link": "/ford/f350superduty",
+            "submodel": "Crew Cab",
+            "nicesubmodel": "crewcab",
+            "model": "F-350 Super Duty",
+            "nicemodel": "f350superduty",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f350superduty:Regular Cab": {
+            "id": "Ford_F_350_Super_Duty",
+            "name": "F-350 Super Duty Regular Cab",
+            "link": "/ford/f350superduty",
+            "submodel": "Regular Cab",
+            "nicesubmodel": "regularcab",
+            "model": "F-350 Super Duty",
+            "nicemodel": "f350superduty",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "f350superduty:SuperCab": {
+            "id": "Ford_F_350_Super_Duty",
+            "name": "F-350 Super Duty SuperCab",
+            "link": "/ford/f350superduty",
+            "submodel": "SuperCab",
+            "nicesubmodel": "supercab",
+            "model": "F-350 Super Duty",
+            "nicemodel": "f350superduty",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "fiesta:Hatchback": {
+            "id": "Ford_Fiesta",
+            "name": "Fiesta Hatchback",
+            "link": "/ford/fiesta",
+            "submodel": "Hatchback",
+            "nicesubmodel": "hatchback",
+            "model": "Fiesta",
+            "nicemodel": "fiesta",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2011, 2012]
+            }
+        },
+        "fiesta:ST": {
+            "id": "Ford_Fiesta",
+            "name": "Fiesta ST",
+            "link": "/ford/fiesta",
+            "submodel": "ST",
+            "nicesubmodel": "st",
+            "model": "Fiesta",
+            "nicemodel": "fiesta",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2014]
+            }
+        },
+        "fiesta:Sedan": {
+            "id": "Ford_Fiesta",
+            "name": "Fiesta Sedan",
+            "link": "/ford/fiesta",
+            "submodel": "Sedan",
+            "nicesubmodel": "sedan",
+            "model": "Fiesta",
+            "nicemodel": "fiesta",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2011, 2012]
+            }
+        },
+        "flex:Wagon": {
+            "id": "Ford_Flex",
+            "name": "Flex Wagon",
+            "link": "/ford/flex",
+            "submodel": "Wagon",
+            "nicesubmodel": "wagon",
+            "model": "Flex",
+            "nicemodel": "flex",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "focus:Coupe": {
+            "id": "Ford_Focus",
+            "name": "Focus Coupe",
+            "link": "/ford/focus",
+            "submodel": "Coupe",
+            "nicesubmodel": "coupe",
+            "model": "Focus",
+            "nicemodel": "focus",
+            "years": {
+                "USED": [2009, 2010]
+            }
+        },
+        "focus:Electric": {
+            "id": "Ford_Focus",
+            "name": "Focus Electric",
+            "link": "/ford/focus",
+            "submodel": "Electric",
+            "nicesubmodel": "electric",
+            "model": "Focus",
+            "nicemodel": "focus",
+            "years": {
+                "USED": [2012]
+            }
+        },
+        "focus:Hatchback": {
+            "id": "Ford_Focus",
+            "name": "Focus Hatchback",
+            "link": "/ford/focus",
+            "submodel": "Hatchback",
+            "nicesubmodel": "hatchback",
+            "model": "Focus",
+            "nicemodel": "focus",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2012]
+            }
+        },
+        "focus:Sedan": {
+            "id": "Ford_Focus",
+            "name": "Focus Sedan",
+            "link": "/ford/focus",
+            "submodel": "Sedan",
+            "nicesubmodel": "sedan",
+            "model": "Focus",
+            "nicemodel": "focus",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "focusst:Hatchback": {
+            "id": "Ford_Focus_ST",
+            "name": "Focus ST Hatchback",
+            "link": "/ford/focusst",
+            "submodel": "Hatchback",
+            "nicesubmodel": "hatchback",
+            "model": "Focus ST",
+            "nicemodel": "focusst",
+            "years": {
+                "NEW_USED": [2013, 2014]
+            }
+        },
+        "fusion:Hybrid": {
+            "id": "Ford_Fusion",
+            "name": "Fusion Hybrid",
+            "link": "/ford/fusion",
+            "submodel": "Hybrid",
+            "nicesubmodel": "hybrid",
+            "model": "Fusion",
+            "nicemodel": "fusion",
+            "years": {
+                "USED": [2012]
+            }
+        },
+        "fusion:Sedan": {
+            "id": "Ford_Fusion",
+            "name": "Fusion Sedan",
+            "link": "/ford/fusion",
+            "submodel": "Sedan",
+            "nicesubmodel": "sedan",
+            "model": "Fusion",
+            "nicemodel": "fusion",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "fusionenergi:Sedan": {
+            "id": "Ford_Fusion_Energi",
+            "name": "Fusion Energi Sedan",
+            "link": "/ford/fusionenergi",
+            "submodel": "Sedan",
+            "nicesubmodel": "sedan",
+            "model": "Fusion Energi",
+            "nicemodel": "fusionenergi",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014]
+            }
+        },
+        "fusionhybrid:Sedan": {
+            "id": "Ford_Fusion_Hybrid",
+            "name": "Fusion Hybrid Sedan",
+            "link": "/ford/fusionhybrid",
+            "submodel": "Sedan",
+            "nicesubmodel": "sedan",
+            "model": "Fusion Hybrid",
+            "nicemodel": "fusionhybrid",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2010, 2011]
+            }
+        },
+        "mustang:Boss 302": {
+            "id": "Ford_Mustang",
+            "name": "Mustang Boss 302",
+            "link": "/ford/mustang",
+            "submodel": "Boss 302",
+            "nicesubmodel": "boss302",
+            "model": "Mustang",
+            "nicemodel": "mustang",
+            "years": {
+                "NEW_USED": [2013],
+                "USED": [2012]
+            }
+        },
+        "mustang:Convertible": {
+            "id": "Ford_Mustang",
+            "name": "Mustang Convertible",
+            "link": "/ford/mustang",
+            "submodel": "Convertible",
+            "nicesubmodel": "convertible",
+            "model": "Mustang",
+            "nicemodel": "mustang",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "mustang:Coupe": {
+            "id": "Ford_Mustang",
+            "name": "Mustang Coupe",
+            "link": "/ford/mustang",
+            "submodel": "Coupe",
+            "nicesubmodel": "coupe",
+            "model": "Mustang",
+            "nicemodel": "mustang",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "ranger:Regular Cab": {
+            "id": "Ford_Ranger",
+            "name": "Ranger Regular Cab",
+            "link": "/ford/ranger",
+            "submodel": "Regular Cab",
+            "nicesubmodel": "regularcab",
+            "model": "Ranger",
+            "nicemodel": "ranger",
+            "years": {
+                "USED": [2009, 2010, 2011]
+            }
+        },
+        "ranger:SuperCab": {
+            "id": "Ford_Ranger",
+            "name": "Ranger SuperCab",
+            "link": "/ford/ranger",
+            "submodel": "SuperCab",
+            "nicesubmodel": "supercab",
+            "model": "Ranger",
+            "nicemodel": "ranger",
+            "years": {
+                "USED": [2009, 2010, 2011]
+            }
+        },
+        "shelbygt500:Convertible": {
+            "id": "Ford_Shelby_GT500",
+            "name": "Shelby GT500 Convertible",
+            "link": "/ford/shelbygt500",
+            "submodel": "Convertible",
+            "nicesubmodel": "convertible",
+            "model": "Shelby GT500",
+            "nicemodel": "shelbygt500",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "shelbygt500:Coupe": {
+            "id": "Ford_Shelby_GT500",
+            "name": "Shelby GT500 Coupe",
+            "link": "/ford/shelbygt500",
+            "submodel": "Coupe",
+            "nicesubmodel": "coupe",
+            "model": "Shelby GT500",
+            "nicemodel": "shelbygt500",
+            "years": {
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "taurus:SHO": {
+            "id": "Ford_Taurus",
+            "name": "Taurus SHO",
+            "link": "/ford/taurus",
+            "submodel": "SHO",
+            "nicesubmodel": "sho",
+            "model": "Taurus",
+            "nicemodel": "taurus",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2010, 2011, 2012]
+            }
+        },
+        "taurus:Sedan": {
+            "id": "Ford_Taurus",
+            "name": "Taurus Sedan",
+            "link": "/ford/taurus",
+            "submodel": "Sedan",
+            "nicesubmodel": "sedan",
+            "model": "Taurus",
+            "nicemodel": "taurus",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014],
+                "USED": [2009, 2010, 2011, 2012]
+            }
+        },
+        "taurusx:Wagon": {
+            "id": "Ford_Taurus_X",
+            "name": "Taurus X Wagon",
+            "link": "/ford/taurusx",
+            "submodel": "Wagon",
+            "nicesubmodel": "wagon",
+            "model": "Taurus X",
+            "nicemodel": "taurusx",
+            "years": {
+                "USED": [2009]
+            }
+        },
+        "transitconnect:Minivan": {
+            "id": "Ford_Transit_Connect",
+            "name": "Transit Connect Minivan",
+            "link": "/ford/transitconnect",
+            "submodel": "Minivan",
+            "nicesubmodel": "minivan",
+            "model": "Transit Connect",
+            "nicemodel": "transitconnect",
+            "years": {
+                "NEW": [2015],
+                "NEW_USED": [2013, 2014]
+            }
+        }
+    }
+}

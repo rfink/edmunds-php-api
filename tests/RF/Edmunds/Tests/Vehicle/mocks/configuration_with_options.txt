@@ -1,0 +1,115 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "zipCode": "90019",
+    "styleId": "200477465",
+    "colorId": null,
+    "currentOptions": [],
+    "selectedOption": "200477503",
+    "deselectedOption": null,
+    "furtherAdditions": ["200477509"],
+    "furtherRemovals": [],
+    "requiredItems": ["200477509"],
+    "includedItems": ["200477739"],
+    "excludedItems": [],
+    "name": {
+        "200477509": "Front License Plate Holder"
+    },
+    "tmv": {
+        "nationalBasePrice": {
+            "baseMSRP": 45200.0,
+            "baseInvoice": 42036.0,
+            "deliveryCharges": null,
+            "tmv": 38385.0,
+            "usedTmvRetail": null,
+            "usedPrivateParty": null,
+            "usedTradeIn": null,
+            "estimateTmv": null,
+            "tmvRecommendedRating": null
+        },
+        "optionTMVPrices": {
+            "200477503": {
+                "baseMSRP": null,
+                "baseInvoice": null,
+                "deliveryCharges": null,
+                "tmv": 0.0,
+                "usedTmvRetail": null,
+                "usedPrivateParty": null,
+                "usedTradeIn": null,
+                "estimateTmv": null,
+                "tmvRecommendedRating": null
+            },
+            "200477465": {
+                "baseMSRP": null,
+                "baseInvoice": null,
+                "deliveryCharges": null,
+                "tmv": 0.0,
+                "usedTmvRetail": null,
+                "usedPrivateParty": null,
+                "usedTradeIn": null,
+                "estimateTmv": null,
+                "tmvRecommendedRating": null
+            },
+            "200477509": {
+                "baseMSRP": 0.0,
+                "baseInvoice": 0.0,
+                "deliveryCharges": null,
+                "tmv": 0.0,
+                "usedTmvRetail": null,
+                "usedPrivateParty": null,
+                "usedTradeIn": null,
+                "estimateTmv": null,
+                "tmvRecommendedRating": null
+            }
+        },
+        "regionalAdjustment": {
+            "baseMSRP": null,
+            "baseInvoice": null,
+            "deliveryCharges": null,
+            "tmv": -182.0,
+            "usedTmvRetail": null,
+            "usedPrivateParty": null,
+            "usedTradeIn": null,
+            "estimateTmv": null,
+            "tmvRecommendedRating": null
+        },
+        "colorAdjustment": {
+            "baseMSRP": null,
+            "baseInvoice": null,
+            "deliveryCharges": null,
+            "tmv": 0.0,
+            "usedTmvRetail": null,
+            "usedPrivateParty": null,
+            "usedTradeIn": null,
+            "estimateTmv": null,
+            "tmvRecommendedRating": null
+        },
+        "destinationCharge": 895.0,
+        "regionalAdFee": null,
+        "totalWithOptions": {
+            "baseMSRP": 46095.0,
+            "baseInvoice": 42931.0,
+            "deliveryCharges": null,
+            "tmv": 39098.0,
+            "usedTmvRetail": null,
+            "usedPrivateParty": null,
+            "usedTradeIn": null,
+            "estimateTmv": null,
+            "tmvRecommendedRating": null
+        },
+        "incentivesAndRebates": 0.0,
+        "offerPrice": 39098.0,
+        "certifiedUsedPrice": null,
+        "conditionAdjustment": null,
+        "mileageAdjustment": null,
+        "predictedChange": null,
+        "predictedChangeIndicator": null,
+        "gasGuzzlerTax": 0.0,
+        "estimatedTmv": false
+    }
+}
