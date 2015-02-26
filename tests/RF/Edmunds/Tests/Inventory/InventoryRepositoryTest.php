@@ -40,4 +40,9 @@ class InventoryRepositoryTest extends TestCase
         $this->assertArrayHasKey('vin', $inventory);
         $this->assertTrue(is_array($inventory['photoUrlsST']));
     }
+
+    public function testGetInventoryByDealerId()
+    {
+
+    }
 }

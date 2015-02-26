@@ -1,0 +1,46 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "dealerId": "3742",
+    "name": "Dayton Andrews Chrysler Dodge Jeep Ram",
+    "niceName": "DaytonAndrewsChryslerJeepDodgeRam_5",
+    "operations": {
+        "Wednesday": "08:00 AM-08:00 PM",
+        "Thursday": "08:00 AM-08:00 PM",
+        "Tuesday": "08:00 AM-08:00 PM",
+        "Saturday": "09:00 AM-06:00 PM",
+        "Friday": "08:00 AM-08:00 PM",
+        "Monday": "08:00 AM-08:00 PM",
+        "Sunday": "10:00 AM-06:00 PM"
+    },
+    "address": {
+        "street": "2388 Gulf To Bay Blvd",
+        "apartment": "",
+        "city": "Clearwater",
+        "stateCode": "FL",
+        "stateName": "Florida",
+        "county": "Pinellas",
+        "country": "USA",
+        "latitude": 27.960626,
+        "longitude": -82.738664,
+        "zipcode": "33765"
+    },
+    "active": true,
+    "franchiseId": "816091",
+    "make": {
+        "name": "Ram",
+        "niceName": "ram"
+    },
+    "contactInfo": {
+        "phone": "(888) 380-6991",
+        "website": "http://WWW.DAYTONANDREWS.NET"
+    },
+    "state": "NEW",
+    "premier": true,
+    "type": "DEALERFRANCHISE"
+}

@@ -103,6 +103,194 @@
           "required": false
         }
       }
+    },
+    "getFranchiseById": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/franchises/{id}",
+      "responseClass": "Franchise",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getFranchises": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/franchises",
+      "responseClass": "franchiseHolder",
+      "parameters": {
+        "zipcode": {
+          "location": "query",
+          "required": true
+        },
+        "radius": {
+          "location": "query",
+          "required": false
+        },
+        "make": {
+          "location": "query",
+          "required": false
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "pageNum": {
+          "location": "query",
+          "required": false
+        },
+        "pageSize": {
+          "location": "query",
+          "required": false
+        },
+        "sortby": {
+          "location": "query",
+          "required": false
+        },
+        "keyword": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getFranchisesCount": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/franchises/count",
+      "responseClass": "franchiseCount",
+      "parameters": {
+        "zipcode": {
+          "location": "query",
+          "required": true
+        },
+        "radius": {
+          "location": "query",
+          "required": false
+        },
+        "make": {
+          "location": "query",
+          "required": false
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "keyword": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getRepairShopById": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/repairshops/{id}",
+      "responseClass": "RepairShop",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "required": true
+        }
+      }
+    },
+    "getRepairShops": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/repairshops",
+      "responseClass": "repairShopHolder",
+      "parameters": {
+        "zipcode": {
+          "location": "query",
+          "required": true
+        },
+        "radius": {
+          "location": "query",
+          "required": false
+        },
+        "make": {
+          "location": "query",
+          "required": false
+        },
+        "state": {
+          "location": "query",
+          "required": false
+        },
+        "pageNum": {
+          "location": "query",
+          "required": false
+        },
+        "pageSize": {
+          "location": "query",
+          "required": false
+        },
+        "sortby": {
+          "location": "query",
+          "required": false
+        },
+        "keyword": {
+          "location": "query",
+          "required": false
+        },
+        "view": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getRepairShopsCount": {
+      "extends": "abstractService",
+      "uri": "/api/dealer/v2/repairshops/count",
+      "responseClass": "repairShopCount",
+      "parameters": {
+        "zipcode": {
+          "location": "query",
+          "required": true
+        },
+        "radius": {
+          "location": "query",
+          "required": false
+        },
+        "make": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getContentByDealerId": {
+      "extends": "abstractService",
+      "uri": "/v1/api/drrrepository/getdrrbydealerid",
+      "responseClass": "DealerRatingsAndReviews",
+      "parameters": {
+        "dealerid": {
+          "location": "query",
+          "required": true
+        },
+        "limit": {
+          "location": "query",
+          "required": false
+        }
+      }
+    },
+    "getContentByZipAndMake": {
+      "extends": "abstractService",
+      "uri": "/v1/api/drrrepository/getdrrbyzipcodeandmake",
+      "responseClass": "dealerSalesReviewsHolder",
+      "parameters": {
+        "zipcode": {
+          "location": "query",
+          "required": true
+        },
+        "make": {
+          "location": "query",
+          "required": true
+        },
+        "limit": {
+          "location": "query",
+          "required": false
+        }
+      }
     }
   },
   "models": {
@@ -300,6 +488,287 @@
         },
         "type": {
           "type": "string"
+        }
+      }
+    },
+    "franchiseHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "franchises": {
+          "type": "array",
+          "items": {
+            "$ref": "Franchise"
+          }
+        }
+      }
+    },
+    "Franchise": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "dealerId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "niceName": {
+          "type": "string"
+        },
+        "operations": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "address": {
+          "$ref": "Address"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "franchiseId": {
+          "type": "string"
+        },
+        "make": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
+        },
+        "contactInfo": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "state": {
+          "type": "string"
+        },
+        "premier": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "lpStatus": {
+          "type": "string"
+        },
+        "ppStatus": {
+          "type": "string"
+        },
+        "upStatus": {
+          "type": "string"
+        },
+        "cpStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "franchiseCount": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "franchisesCount": {
+          "type": "numeric"
+        }
+      }
+    },
+    "repairShopHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "repairshops": {
+          "type": "array",
+          "items": {
+            "$ref": "RepairShop"
+          }
+        }
+      }
+    },
+    "RepairShop": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "dealerId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "niceName": {
+          "type": "string"
+        },
+        "operations": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "address": {
+          "$ref": "Address"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "repairshopId": {
+          "type": "string"
+        },
+        "make": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "niceName": {
+              "type": "string"
+            }
+          }
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "repairShopCount": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "repairshopsCount": {
+          "type": "numeric"
+        }
+      }
+    },
+    "DealerRatingsAndReviews": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "dealerId": {
+          "type": "string"
+        },
+        "locationId": {
+          "type": "string"
+        },
+        "dealerName": {
+          "type": "string"
+        },
+        "dealerAddress": {
+          "$ref": "Address"
+        },
+        "dealerContactInfo": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "dealer_website": {
+              "type": "string"
+            },
+            "email_address": {
+              "type": "string"
+            },
+            "phone_areacode": {
+              "type": "string"
+            },
+            "phone_postfix": {
+              "type": "string"
+            },
+            "phone_prefix": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            }
+          }
+        },
+        "salesReviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "averageRating": {
+                "type": "numeric"
+              },
+              "title": {
+                "type": "string"
+              },
+              "reviewBody": {
+                "type": "string"
+              },
+              "consumerName": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "totalRating": {
+                "type": "numeric"
+              },
+              "recommendedDealer": {
+                "type": "string"
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "any"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "dealerSalesReviewsHolder": {
+      "location": "json",
+      "type": "object",
+      "properties": {
+        "salesReviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dealerId": {
+                "type": "string"
+              },
+              "locationId": {
+                "type": "string"
+              },
+              "dealerName": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "averageRating": {
+                "type": "numeric"
+              },
+              "title": {
+                "type": "string"
+              },
+              "reviewBody": {
+                "type": "string"
+              },
+              "consumerName": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "totalRating": {
+                "type": "numeric"
+              },
+              "recommendedDealer": {
+                "type": "string"
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "any"
+                }
+              }
+            }
+          }
         }
       }
     },

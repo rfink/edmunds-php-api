@@ -1,0 +1,351 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "repairshops": [{
+        "dealerId": "879",
+        "name": "Santa Monica Audi",
+        "niceName": "SantaMonicaAudi26711",
+        "distance": 1.2034900794357524,
+        "operations": {
+            "Wednesday": "7:30 AM-6:00 PM",
+            "Tuesday": "7:30 AM-6:00 PM",
+            "Thursday": "7:30 AM-6:00 PM",
+            "Saturday": "Day off",
+            "Friday": "7:30 AM-6:00 PM",
+            "Monday": "7:30 AM-6:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "1020 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.021211,
+            "longitude": -118.489241,
+            "zipcode": "90401"
+        },
+        "active": true,
+        "repairshopId": "72251",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "737183",
+        "name": "Audi Beverly Hills",
+        "niceName": "AudiBeverlyHills_1",
+        "distance": 5.523121636807561,
+        "operations": {
+            "Wednesday": "07:00 AM-06:00 PM",
+            "Tuesday": "07:00 AM-06:00 PM",
+            "Thursday": "07:00 AM-06:00 PM",
+            "Saturday": "09:00 AM-08:00 PM",
+            "Friday": "07:00 AM-06:00 PM",
+            "Monday": "07:00 AM-06:00 PM",
+            "Sunday": "10:00 AM-07:00 PM"
+        },
+        "address": {
+            "street": "8850 Wilshire Blvd",
+            "apartment": "",
+            "city": "Beverly Hills",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.066688,
+            "longitude": -118.385399,
+            "zipcode": "90211"
+        },
+        "active": true,
+        "repairshopId": "737185",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "1075",
+        "name": "Keyes Audi",
+        "niceName": "KeyesAudi27025",
+        "distance": 9.572937959530702,
+        "operations": {
+            "Wednesday": "7:30 AM-6:00 PM",
+            "Tuesday": "7:30 AM-6:00 PM",
+            "Thursday": "7:30 AM-6:00 PM",
+            "Saturday": "Day off",
+            "Friday": "7:30 AM-6:00 PM",
+            "Monday": "7:30 AM-6:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "5239 Van Nuys Blvd",
+            "apartment": "",
+            "city": "Los Angeles",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.165989,
+            "longitude": -118.449517,
+            "zipcode": "91401"
+        },
+        "active": true,
+        "repairshopId": "72554",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "296795",
+        "name": "Audi of Downtown LA",
+        "niceName": "PorscheVolkswagenAudiofDowntownLA_10",
+        "distance": 11.347981243516346,
+        "operations": {
+            "Wednesday": "7:00 AM-6:00 PM",
+            "Tuesday": "7:00 AM-6:00 PM",
+            "Thursday": "7:00 AM-6:00 PM",
+            "Saturday": "8:00 AM-4:00 PM",
+            "Friday": "7:00 AM-6:00 PM",
+            "Monday": "7:00 AM-6:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "1900 S Figueroa St",
+            "apartment": "",
+            "city": "Los Angeles",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.034279,
+            "longitude": -118.27209,
+            "zipcode": "90007"
+        },
+        "active": true,
+        "repairshopId": "296800",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "1067",
+        "name": "The Auto Gallery Audi",
+        "niceName": "TheAutoGalleryAudi_1",
+        "distance": 11.993665507997838,
+        "operations": {
+            "Wednesday": "7:00 AM-6:00 PM",
+            "Tuesday": "7:00 AM-6:00 PM",
+            "Thursday": "7:00 AM-6:00 PM",
+            "Saturday": "Day off",
+            "Friday": "7:00 AM-6:00 PM",
+            "Monday": "7:00 AM-6:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "21301 Ventura Blvd",
+            "apartment": "",
+            "city": "Woodland Hills",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.167525,
+            "longitude": -118.595668,
+            "zipcode": "91364"
+        },
+        "active": true,
+        "repairshopId": "72375",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "895",
+        "name": "Audi Pacific",
+        "niceName": "AudiPacific_2",
+        "distance": 14.289101528719979,
+        "operations": {
+            "Wednesday": "7:30 AM-5:30 PM",
+            "Tuesday": "7:30 AM-5:30 PM",
+            "Thursday": "7:30 AM-5:30 PM",
+            "Saturday": "8:00 AM-5:00 PM",
+            "Friday": "7:30 AM-5:30 PM",
+            "Monday": "7:30 AM-5:30 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "20460 Hawthorne Blvd",
+            "apartment": "",
+            "city": "Torrance",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 33.845668,
+            "longitude": -118.353641,
+            "zipcode": "90503"
+        },
+        "active": true,
+        "repairshopId": "72264",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "21052",
+        "name": "Rusnak Pasadena Audi",
+        "niceName": "RusnakAudiPasadena66211",
+        "distance": 19.686048622569043,
+        "operations": {
+            "Wednesday": "7:30 AM-6:00 PM",
+            "Tuesday": "7:30 AM-6:00 PM",
+            "Thursday": "7:30 AM-6:00 PM",
+            "Saturday": "Day off",
+            "Friday": "7:30 AM-6:00 PM",
+            "Monday": "7:30 AM-6:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "267 W Colorado Blvd",
+            "apartment": "",
+            "city": "Pasadena",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.145749,
+            "longitude": -118.156605,
+            "zipcode": "91105"
+        },
+        "active": true,
+        "repairshopId": "79434",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "935",
+        "name": "McKenna Audi",
+        "niceName": "McKennaAudi_1",
+        "distance": 22.306855918628944,
+        "operations": {
+            "Wednesday": "7:00 AM-7:00 PM",
+            "Tuesday": "7:00 AM-7:00 PM",
+            "Thursday": "7:00 AM-7:00 PM",
+            "Saturday": "8:00 AM-5:00 PM",
+            "Friday": "7:00 AM-7:00 PM",
+            "Monday": "7:00 AM-7:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "10850 Firestone Blvd",
+            "apartment": "",
+            "city": "Norwalk",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 33.923485,
+            "longitude": -118.102002,
+            "zipcode": "90650"
+        },
+        "active": true,
+        "repairshopId": "76847",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "765521",
+        "name": "Rusnak Westlake Audi",
+        "niceName": "RusnakBMWWestlake_1",
+        "distance": 22.43474229681064,
+        "operations": {
+            "Wednesday": "07:30 AM-05:30 PM",
+            "Tuesday": "07:30 AM-05:30 PM",
+            "Thursday": "07:30 AM-05:30 PM",
+            "Saturday": "Day off",
+            "Friday": "07:30 AM-05:30 PM",
+            "Monday": "07:30 AM-05:30 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "3832 E Thousand Oaks Blvd",
+            "apartment": "",
+            "city": "Westlake Village",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Ventura",
+            "country": "USA",
+            "latitude": 34.162935,
+            "longitude": -118.827067,
+            "zipcode": "91362"
+        },
+        "active": true,
+        "repairshopId": "72358",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }, {
+        "dealerId": "972",
+        "name": "Circle Audi",
+        "niceName": "CircleAudi_1",
+        "distance": 24.889426226206314,
+        "operations": {
+            "Wednesday": "7:00 AM-6:00 PM",
+            "Tuesday": "7:00 AM-6:00 PM",
+            "Thursday": "7:00 AM-6:00 PM",
+            "Saturday": "8:00 AM-5:00 PM",
+            "Friday": "7:00 AM-6:00 PM",
+            "Monday": "7:00 AM-6:00 PM",
+            "Sunday": "Day off"
+        },
+        "address": {
+            "street": "1919 N Lakewood Blvd",
+            "apartment": "",
+            "city": "Long Beach",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 33.791935,
+            "longitude": -118.142805,
+            "zipcode": "90815"
+        },
+        "active": true,
+        "repairshopId": "78531",
+        "make": {
+            "name": "Audi",
+            "niceName": "audi"
+        },
+        "type": "REPAIRSHOP"
+    }],
+    "repairshopsCount": 19,
+    "links": [{
+        "rel": "first",
+        "href": "/api/dealer/v2/repairshops/?sortby=distance:ASC&api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=90404&radius=100&view=basic&make=audi&pagesize=10&pagenum=1"
+    }, {
+        "rel": "next",
+        "href": "/api/dealer/v2/repairshops/?sortby=distance:ASC&api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=90404&radius=100&view=basic&make=audi&pagesize=10&pagenum=2"
+    }, {
+        "rel": "last",
+        "href": "/api/dealer/v2/repairshops/?sortby=distance:ASC&api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=90404&radius=100&view=basic&make=audi&pagesize=10&pagenum=2"
+    }]
+}

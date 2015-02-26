@@ -1,0 +1,421 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "franchises": [{
+        "dealerId": "893",
+        "name": "Volkswagen Santa Monica",
+        "niceName": "VolkswagenSantaMonica_3",
+        "distance": 0.408611146753936,
+        "operations": {
+            "Wednesday": "9:00 AM-9:00 PM",
+            "Thursday": "9:00 AM-9:00 PM",
+            "Tuesday": "9:00 AM-9:00 PM",
+            "Saturday": "9:00 AM-7:00 PM",
+            "Friday": "9:00 AM-9:00 PM",
+            "Monday": "9:00 AM-9:00 PM",
+            "Sunday": "10:00 AM-6:00 PM"
+        },
+        "address": {
+            "street": "2440 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.032043,
+            "longitude": -118.475861,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "26729",
+        "make": {
+            "name": "Volkswagen",
+            "niceName": "volkswagen"
+        },
+        "tier": {
+            "level": "T6",
+            "type": "DIRECT"
+        },
+        "contactInfo": {
+            "phone": "(888) 459-0773",
+            "website": "http://www.volkswagensantamonica.com/"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "ACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": true,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "893",
+        "name": "Volkswagen Santa Monica",
+        "niceName": "VolkswagenSantaMonica_4",
+        "distance": 0.408611146753936,
+        "operations": {
+            "Wednesday": "09:00 AM-09:00 PM",
+            "Thursday": "09:00 AM-09:00 PM",
+            "Tuesday": "09:00 AM-09:00 PM",
+            "Saturday": "09:00 AM-07:00 PM",
+            "Friday": "09:00 AM-09:00 PM",
+            "Monday": "09:00 AM-09:00 PM",
+            "Sunday": "10:00 AM-06:00 PM"
+        },
+        "address": {
+            "street": "2440 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.032043,
+            "longitude": -118.475861,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "745203",
+        "tier": {
+            "level": "T1",
+            "type": "DIRECT"
+        },
+        "contactInfo": {
+            "phone": "(888) 348-5039",
+            "website": "http://www.volkswagensantamonica.com"
+        },
+        "state": "USED",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": true,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "887705",
+        "name": "Payless Auto Sales",
+        "niceName": "PaylessAutoSales_887706",
+        "distance": 0.4249791528142572,
+        "address": {
+            "street": "2635 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.034007,
+            "longitude": -118.473447,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "887706",
+        "tier": {
+            "level": "T1",
+            "type": "REGULAR"
+        },
+        "state": "USED",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "879645",
+        "name": "OMNI AUTO TRADE",
+        "niceName": "OMNIAUTOTRADE_879646",
+        "distance": 0.42804802942305265,
+        "address": {
+            "street": "2703 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.0341,
+            "longitude": -118.473338,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "879646",
+        "tier": {
+            "level": "T1",
+            "type": "REGULAR"
+        },
+        "state": "USED",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "829992",
+        "name": "Major Motor Cars",
+        "niceName": "MajorMotorCars",
+        "distance": 0.5365122142807793,
+        "operations": {
+            "Wednesday": "10:00 AM-07:00 PM",
+            "Tuesday": "10:00 AM-07:00 PM",
+            "Thursday": "10:00 AM-07:00 PM",
+            "Saturday": "10:00 AM-06:00 PM",
+            "Friday": "10:00 AM-07:00 PM",
+            "Monday": "10:00 AM-07:00 PM",
+            "Sunday": "11:00 AM-06:00 PM"
+        },
+        "address": {
+            "street": "2932 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.036251,
+            "longitude": -118.470627,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "829993",
+        "tier": {
+            "level": "T1",
+            "type": "REGULAR"
+        },
+        "state": "USED",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "883",
+        "name": "Hornburg Land Rover Santa Monica",
+        "niceName": "HornburgLandRoverSantaMonica_2",
+        "distance": 0.5541776896284363,
+        "operations": {
+            "Wednesday": "9:00 AM-6:00 PM",
+            "Thursday": "9:00 AM-6:00 PM",
+            "Tuesday": "9:00 AM-6:00 PM",
+            "Saturday": "10:00 AM-6:00 PM",
+            "Friday": "9:00 AM-6:00 PM",
+            "Monday": "9:00 AM-6:00 PM",
+            "Sunday": "11:00 AM-6:00 PM"
+        },
+        "address": {
+            "street": "3020 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.036516,
+            "longitude": -118.470279,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "26716",
+        "make": {
+            "name": "Land Rover",
+            "niceName": "land-rover"
+        },
+        "tier": {
+            "level": "T4",
+            "type": "NON_DIRECT"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "824803",
+        "name": "Hornburg Jaguar Santa Monica",
+        "niceName": "HornburgLandRoverSantaMonica_1",
+        "distance": 0.5541776896284363,
+        "operations": {
+            "Wednesday": "09:00 AM-06:00 PM",
+            "Thursday": "09:00 AM-06:00 PM",
+            "Tuesday": "09:00 AM-06:00 PM",
+            "Saturday": "10:00 AM-06:00 PM",
+            "Friday": "09:00 AM-06:00 PM",
+            "Monday": "09:00 AM-06:00 PM",
+            "Sunday": "11:00 AM-06:00 PM"
+        },
+        "address": {
+            "street": "3020 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.036516,
+            "longitude": -118.470279,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "26715",
+        "make": {
+            "name": "Jaguar",
+            "niceName": "jaguar"
+        },
+        "tier": {
+            "level": "T4",
+            "type": "NON_DIRECT"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "883",
+        "name": "Hornburg Land Rover Santa Monica",
+        "niceName": "HornburgLandRoverSantaMonica_3",
+        "distance": 0.5541776896284363,
+        "operations": {
+            "Wednesday": "09:00 AM-06:00 PM",
+            "Tuesday": "09:00 AM-06:00 PM",
+            "Thursday": "09:00 AM-06:00 PM",
+            "Saturday": "10:00 AM-06:00 PM",
+            "Friday": "09:00 AM-06:00 PM",
+            "Monday": "09:00 AM-06:00 PM",
+            "Sunday": "11:00 AM-06:00 PM"
+        },
+        "address": {
+            "street": "3020 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.036516,
+            "longitude": -118.470279,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "745194",
+        "tier": {
+            "level": "T1",
+            "type": "REGULAR"
+        },
+        "state": "USED",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "824803",
+        "name": "Hornburg Jaguar Santa Monica",
+        "niceName": "HornburgJaguarSantaMonica_1",
+        "distance": 0.5541776896284363,
+        "operations": {
+            "Wednesday": "09:00 AM-06:00 PM",
+            "Tuesday": "09:00 AM-06:00 PM",
+            "Thursday": "09:00 AM-06:00 PM",
+            "Saturday": "10:00 AM-06:00 PM",
+            "Friday": "09:00 AM-06:00 PM",
+            "Monday": "09:00 AM-06:00 PM",
+            "Sunday": "11:00 AM-06:00 PM"
+        },
+        "address": {
+            "street": "3020 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.036516,
+            "longitude": -118.470279,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "824804",
+        "tier": {
+            "level": "T1",
+            "type": "REGULAR"
+        },
+        "state": "USED",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "INACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": false,
+        "type": "DEALERFRANCHISE"
+    }, {
+        "dealerId": "825505",
+        "name": "Santa Monica FIAT",
+        "niceName": "SantaMonicaFIAT_1",
+        "distance": 0.6633155542143536,
+        "operations": {
+            "Wednesday": "9:00 AM-8:00 PM",
+            "Thursday": "9:00 AM-8:00 PM",
+            "Tuesday": "9:00 AM-8:00 PM",
+            "Saturday": "9:00 AM-7:00 PM",
+            "Friday": "9:00 AM-8:00 PM",
+            "Monday": "9:00 AM-8:00 PM",
+            "Sunday": "11:00 AM-6:00 PM"
+        },
+        "address": {
+            "street": "1820 Santa Monica Blvd",
+            "apartment": "",
+            "city": "Santa Monica",
+            "stateCode": "CA",
+            "stateName": "California",
+            "county": "Los Angeles",
+            "country": "USA",
+            "latitude": 34.02735,
+            "longitude": -118.481652,
+            "zipcode": "90404"
+        },
+        "active": true,
+        "franchiseId": "825506",
+        "make": {
+            "name": "FIAT",
+            "niceName": "fiat"
+        },
+        "tier": {
+            "level": "T6",
+            "type": "DIRECT"
+        },
+        "contactInfo": {
+            "phone": "(888) 576-4629",
+            "website": "http://www.santamonicafiat.com/index.htm"
+        },
+        "state": "NEW",
+        "lpStatus": "INACTIVE",
+        "ppStatus": "ACTIVE",
+        "upStatus": "INACTIVE",
+        "cpStatus": "ACTIVE",
+        "premier": true,
+        "type": "DEALERFRANCHISE"
+    }],
+    "franchisesCount": 2669,
+    "links": [{
+        "rel": "first",
+        "href": "/api/dealer/v2/franchises/?api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=90404&view=full&pagesize=10&pagenum=1"
+    }, {
+        "rel": "next",
+        "href": "/api/dealer/v2/franchises/?api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=90404&view=full&pagesize=10&pagenum=2"
+    }, {
+        "rel": "last",
+        "href": "/api/dealer/v2/franchises/?api_key=scaawaa9cxa6bhy6pd723ggg&zipcode=90404&view=full&pagesize=10&pagenum=267"
+    }]
+}

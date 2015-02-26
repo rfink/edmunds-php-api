@@ -69,7 +69,6 @@ class TmvRepositoryTest extends TestCase
 
     public function testGetCertifiedPriceForStyle()
     {
-        $this->markTestIncomplete();
         $this->setMockResponse(__DIR__ . '/mocks/certified_price.txt');
         $args = array('styleid' => '', 'zip' => '00001');
         $response = $this->client->getCertifiedPriceForStyle($args);

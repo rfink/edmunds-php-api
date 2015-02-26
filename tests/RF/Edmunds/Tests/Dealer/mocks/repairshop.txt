@@ -1,0 +1,40 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "dealerId": "839025",
+    "name": "Mike Reichenbach Volkswagen",
+    "niceName": "MikeReichenbachVolkswagen_2",
+    "operations": {
+        "Wednesday": "7:30 AM-6:00 PM",
+        "Tuesday": "7:30 AM-6:00 PM",
+        "Thursday": "7:30 AM-6:00 PM",
+        "Saturday": "8:00 AM-4:00 PM",
+        "Friday": "7:30 AM-6:00 PM",
+        "Monday": "7:30 AM-6:00 PM",
+        "Sunday": "Day off"
+    },
+    "address": {
+        "street": "600 N Coit St",
+        "apartment": "",
+        "city": "Florence",
+        "stateCode": "SC",
+        "stateName": "South Carolina",
+        "county": "Florence",
+        "country": "USA",
+        "latitude": 34.204264,
+        "longitude": -79.770935,
+        "zipcode": "29501"
+    },
+    "active": true,
+    "repairshopId": "839031",
+    "make": {
+        "name": "Volkswagen",
+        "niceName": "volkswagen"
+    },
+    "type": "REPAIRSHOP"
+}

@@ -1,0 +1,124 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "dealerId": "26711",
+    "locationId": "879",
+    "dealerName": "Santa Monica Audi",
+    "dealerAddress": {
+        "street": "1020 Santa Monica Blvd",
+        "apartment": "",
+        "city": "Santa Monica",
+        "stateCode": "CA",
+        "stateName": "California",
+        "county": "Los Angeles",
+        "country": "USA",
+        "zipcode": "90401",
+        "latitude": 34.021211,
+        "longitude": -118.489241
+    },
+    "dealerContactInfo": {
+        "dealer_website": "",
+        "email_address": "",
+        "phone_areacode": "888",
+        "phone_postfix": "6004",
+        "phone_prefix": "479",
+        "phone": "8884796004"
+    },
+    "salesReviews": [{
+        "id": "568719954396962816",
+        "averageRating": 4.2,
+        "title": "Sales at Audi",
+        "reviewBody": "Most impressive sales representative, Dante Samimi.  If you\u0027re  into presentable, knowledgeable, humorous and friendly, go to Santa Monica Audi and ask for Dante.  You\u0027ll be pleasantly surprised.",
+        "consumerName": "Caroline14",
+        "date": "Feb 24, 2015 4:25:01 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "id": "535660676929454080",
+        "averageRating": 4.2,
+        "title": "Best Served to Buy Your Used Vehicle Elsewhere",
+        "reviewBody": "You would be best served to purchase a used care elsewhere. Here\u0027s why. I bought a well used vehicle from them. At the time of purchase it made a bit of noise but didn\u0027t sound too serious. I was told that the vehicle had been checked by their mechanics and wouldn\u0027t be there if it was a real problem. Turns out the noise was a bad timing chain, a very expensive repair. I called and asked my salesperson for the dealer to contribute to the cost of the repair. He said not likely but he would follow up with the used car manager and get back to me. Surprise he never did. I left a message for the used car manager and received no call back. I understand that a well used vehicle may have issues. I said nothing about the oil leak or the bad bushings. But their mechanics were remiss in not properly identifying the timing chain issue and the fact the dealer has failed to even offer a call back speaks volumes about their lack of service, used car quality and overall customer care.",
+        "consumerName": "bkbergla",
+        "date": "Jan 10, 2015 1:42:08 AM",
+        "totalRating": 1.0,
+        "recommendedDealer": "FALSE",
+        "comments": []
+    }, {
+        "id": "390966910436655104",
+        "averageRating": 4.2,
+        "title": "At your service",
+        "reviewBody": "I just purchased an A5 Cabriolet from Santa Monica Audi.\nIt was a great experience.\nEvan and Mike the internet sales team came back to my request through Edmunds quickly and with a definite response with a specific car, unlike other dealers who did not seem to have read the specifications I had submitted to Edmunds.\nAfter a quick back and forth by e-mail, Evan found 2 cars with all the features I wanted and gave me a lease price that I shopped elsewhere but could not beat.\n\nThey went to another dealer in Northern California to get my car and had it in just a couple of days.\nDelivery was smooth; they took all the time I wanted/needed to explain all of the hi tech parts of the car.\nThese guys were really a pleasure to work with.\nI highly recommend them.",
+        "consumerName": "JS13",
+        "date": "Jun 24, 2014 11:21:27 AM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "id": "53914200",
+        "averageRating": 4.2,
+        "title": "Great people, great experience!",
+        "reviewBody": "I recently leased an A3 from this dealership, and I have to say it\u0027s been the best experience I\u0027ve ever had in all my car-buying years. Evan G. and Steve M. were nothing but patient and helpful as i returned twice to test-drive various vehicles and to ask questions. The process of negotiating the price and drawing up the paperwork was totally transparent and honest. There was slight misunderstanding on the terms of the contract that I caught a couple days later, and Evan cheerfully drew up a brand-new contract, it was waiting for me when I came into the dealership that afternoon! Couldn\u0027t be happier with my car, and couldn\u0027t be happier with my experience.",
+        "consumerName": "philip_evans",
+        "date": "May 24, 2014 3:03:31 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "id": "1256959028",
+        "averageRating": 4.2,
+        "title": "Internet and Email",
+        "reviewBody": "Contact Steve M., concerning internet sales. The only way to go.\nI wanted a very specific car, that I knew was in the state, at a $3,000 off sticker. He didn\u0027t barter, or question, or switch!\nI told him I would be in today to fill out the paperwork if he could get the car at that price. He said, \"no problem and no problem\". I took care of my end, and by the next day he had had it shipped in and detailed, and out the door we went.\nThis was the best car buying experience I have ever had...as opposed to Keyes European! ",
+        "consumerName": "thepastaman",
+        "date": "Dec 10, 2013 5:50:25 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }],
+    "serviceReviews": [{
+        "id": "97285",
+        "averageRating": 0.0,
+        "title": "horrible service",
+        "reviewBody": "Just wanted to confirm the other poor reviews for SM Audi Service. By the way, Bev Hills Audu Service is probably even worse (they\u0027re owned by the same company). They blamed everything on external factors to avoid doing warrantied repair work on my leased A4. No loaner car, slow to respond to phone calls (you have to bombard them with calls to get a return call and the car is rarely ready when they say it will be). Avoid!",
+        "consumerName": "twodomes",
+        "date": "Oct 31, 2008 12:00:00 AM",
+        "totalRating": 1.4,
+        "recommendedDealer": "FALSE",
+        "comments": []
+    }, {
+        "id": "61583",
+        "averageRating": 0.0,
+        "title": "Poor service philosophy & lazy techs",
+        "reviewBody": "I took my S4 (still under warranty) in for an oil leak problem. The dealer said the oil pan was damaged by impact and therefor not covered. Naturally, I saught a second opinion and price quote from an independant (Eurotech Motors, Los Angeles, Jose\u0027s the man - I highly recommend this place.) Indeed the oil pan was damaged by impact but not the source of the leak. The actual leak was power steering fluid - and the failed item along with labor to fix was under warranty. \r\n\r\nEurotech, who took several hours to diagnose the issue didn\u0027t charge me. Took it back to the dealer. Figured it was an honest mistake. \"Oh no, we\u0027re not wrong and we won\u0027t fix the power steering issue because there\u0027s nothing wrong with it.\" I set up a conference call with Jose (Eurotech) and the Audi dealer service manager and tech guy. Jose tells them how to diagnose the issue (turn the wheel all the way to one side and it will squirt fluid). The dealer agrees to fix the power steering issue, but not before yelling at me at the dealership - saying I am the type of customer who is never happy. I\u0027m happy now that I found an experienced and honest service garage that specializes in Audis.\r\n\r\n",
+        "consumerName": "odoomp",
+        "date": "Apr 9, 2008 12:00:00 AM",
+        "totalRating": 2.5,
+        "recommendedDealer": "FALSE",
+        "comments": []
+    }, {
+        "id": "5413",
+        "averageRating": 0.0,
+        "title": "Worst Service in the WORLD",
+        "reviewBody": "I\u0027ve had three Audis. I LIVE in Santa Monica. The worst experience ever. They\u0027ve crashed two of my S4s into other cars. Resulting in them sending my car out to paint and body shops for a week or two. The day I was supposed to sell my twin-turbo S4 to this guy, I took it in to have the oil changed. They ended up causing $12,000.00 in damage to the engine and it needed a complete rebuild that took three weeks.  But that\u0027s not even the worst of it. A friend had his car serviced at Santa Monica. Went home to his house in Malibu and something they did to the electrical system caused a short that set the car, and subsequently his entire house, on fire and burned both clean to the ground. The fire dpt investigation pointed the finger at faulty electrical in the Audi. Which previously, had had no problems... until the day it went to SM Audi.  If you\u0027re stupid, don\u0027t give a crap about money, your time, or your car. Take it to Santa Monica Audi. May the Earth open up and swallow that dealership straight back to h@ll where it came from.",
+        "consumerName": "blevinrpa",
+        "date": "Aug 30, 2007 12:00:00 AM",
+        "totalRating": 1.0,
+        "recommendedDealer": "FALSE",
+        "comments": []
+    }, {
+        "id": "3063",
+        "averageRating": 0.0,
+        "title": "Avoid like the plague",
+        "reviewBody": "I had my vehicle taken to Santa Monica Audi after it was hit by a driver running a red light. The work involved replacing the entire rear suspension for both sides of the car. The drivers side was completely destroyed while the passengers side was severely bent. After having the car for over a month they still were unable to complete the work due to a lack of parts. Once the parts finally did arrive they turned the car around fairly quickly (within a few weeks). By this time my rental coverage had expired and I was stuck paying the bill myself.  Once I picked up my car I noticed that the car didn\u0027t drive correctly. I took the car over to Stokes tires (an excellent shop!) and asked them to do an alignment. They where unable to do so as the passengers side rear assembly was still bent! Santa Monica Audi had not done all the work! I immediately took the car over and they stated that the insurance company had only authorized them to work on the drivers side. I use USAA for insurance and have never had a single complaint, so I called my adjuster. Not only had he never been to Santa Monica Audi (he inspected the car at the body shop) he said he specifically wrote up the claim to replace the entire rear assembly. Upon inspecting my bill I saw that Santa Monica Audi had infact only charged me for the passenger side and not the driver side. The drivers side was obviously replaced, according to Stokes, and the passengers side was completely unsafe for driving and was bent.  Santa Monica Audi took my car in and agreed to replace the part. They provided me with minimal car rental and turned the work around in a little over a week. In total these are my complaints:  1) They took over a month to do the work and only completed half of it 2) They lied about the insurance claim being rejected 3) They gave me an unsafe car 4) They billed me for the wrong work  In short, I would never take my car to them again.",
+        "consumerName": "pihannon",
+        "date": "Jul 19, 2007 12:00:00 AM",
+        "totalRating": 1.0,
+        "recommendedDealer": "FALSE",
+        "comments": []
+    }]
+}

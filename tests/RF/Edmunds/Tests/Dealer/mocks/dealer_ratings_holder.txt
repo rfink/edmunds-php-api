@@ -1,0 +1,141 @@
+HTTP/1.1 200 OK
+Date: Sat, 05 Jan 2013 06:05:19 GMT
+Server: Apache/2.2.3 (Red Hat)
+X-Powered-By: PHP/5.4.13
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+    "salesReviews": [{
+        "dealerId": "1015",
+        "locationId": "1015",
+        "dealerName": "Bob Smith BMW",
+        "id": "563560460130353152",
+        "averageRating": 4.909,
+        "title": "New Car Purchase",
+        "reviewBody": "The sales experience at Bob Smith is excellent.\r\nHovik Azolyan is the salesman we worked with and he was excellent - professional, experienced and he possessed product knowledge second to none.   We would recommend Hovik to our friends and families who are in the market for a new car.",
+        "consumerName": "beatrice5",
+        "date": "Feb 17, 2015 1:34:02 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "dealerId": "817",
+        "locationId": "817",
+        "dealerName": "Nick Alexander BMW",
+        "id": "562841032203862016",
+        "averageRating": 4.0,
+        "title": "Excellent experience",
+        "reviewBody": "I recently leased a 640 at Nick Alexander. They are professional, honest, timely and made the purchase decision very easy and informative. I shopped it around a few dealers and they were by far the most proactive and service oriented without being too pushy. ",
+        "consumerName": "Sinta",
+        "date": "Feb 16, 2015 1:44:39 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "dealerId": "1015",
+        "locationId": "1015",
+        "dealerName": "Bob Smith BMW",
+        "id": "556254785989664768",
+        "averageRating": 4.909,
+        "title": "Great Sales person Neil Perlmutter",
+        "reviewBody": "We visited Bob Smith BMW looking for a used newer 328i. We met Neil who was very much understanding to the type of car we were looking for and our budget. For the next several days he stayed in touch with us until the right car came along and he worked with us and the manager to get the right price for a CLEAN, beautiful low mile 2013 LOADED beauty.  He is a very considerate sales person and works hard to earn your business.",
+        "consumerName": "dandv1",
+        "date": "Feb 7, 2015 11:38:57 AM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "dealerId": "1051",
+        "locationId": "1051",
+        "dealerName": "Valencia BMW",
+        "id": "553548053408546816",
+        "averageRating": 4.784,
+        "title": "Finally I enjoyed buying a car",
+        "reviewBody": "I have finally enjoyed buying a car, Sergik from Valencia BMW made the whole process a great experience. It was easy and fun. He was on top of all the details, helping and giving great advise. \r\nI wish all my previous purchases had been like this.",
+        "consumerName": "snjnbnt",
+        "date": "Feb 3, 2015 6:01:10 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "dealerId": "845",
+        "locationId": "845",
+        "dealerName": "Beverly Hills BMW",
+        "id": "553214677342388224",
+        "averageRating": 2.2,
+        "title": "I am surprised how good they are!",
+        "reviewBody": "I bought 550I this September from Beverly Hills BMW. I got, by far, the best deal in Southern cal. I know, because I have shopped in every dealership in town! \r\nIf you are not an idiot and have a calculator, this is a place for you...\r\nAlso the service department is extremely friendly and  accommodating  compared to BMW of South Bay which is a nice bonus ....\r\nI strongly recommend this dealership, just do your home work beforehand!\r\nAS",
+        "consumerName": "ttss123",
+        "date": "Feb 3, 2015 6:58:48 AM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }],
+    "serviceReviews": [{
+        "dealerId": "1051",
+        "locationId": "1051",
+        "dealerName": "Valencia BMW",
+        "id": "569314727799939072",
+        "averageRating": 4.6,
+        "title": "BMW Valencia - excellent care specialists",
+        "reviewBody": "My X5 just days away from lease end required a brake service. True to the BMW warranty I incurred $0 for the car to be repaired. I was offered a loaner for the overnight service ( I dropped into the dealership without an appt at around noon) and recv\u0027d mycar washed and repaired by noon the next day. What more can you ask of a service dept? Great Job Valencia BMW",
+        "consumerName": "weichel5",
+        "date": "Feb 25, 2015 12:06:44 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "dealerId": "926",
+        "locationId": "926",
+        "dealerName": "Shelly BMW",
+        "id": "568005007159975936",
+        "averageRating": 1.0,
+        "title": "Horrible Experience. Blatantly Cheated",
+        "reviewBody": "I just wanted to say that I had a very bad experience with your service department.  I brought in a 20% off coupon, and in fact it was even advertised on your televisions, yet I received a paltry $177.83 discount.  The original amount prior to discount was $2,940.48, meaning I should have paid $588 less.  Therefore, I was cheated by $411.  When called about my $2,760 bill, the customer service person even had the nerve to say as the first thing out of his mouth when I answered the phone \"it\u0027s your lucky day,\" and then when asked why is that lucky he said \"because the parts are all in stock.\"   Unbelievable. \r\n\r\nEven though I stressed that I had a coupon before write up, and then on the phone before I picked up the car, I felt ignored.  The client service person even had the nerve to say that I had brought in a 15% coupon, which is ridiculous.  \r\nThe 20% coupon was sent to my home address, plus it is on the website and was advertised on the televisions that day.  This is a very easy case to prove to authorities.\r\n\r\nWhen I asked about the price on the phone that I was quoted and a discount, the service provider changed the subject by saying it was expensive because the starter for the car was also broken and that it would be replaced.  The starter was not touched, nor repaired, nor on the receipt.  Another blatant lie just to get me off the phone and not apply the discount.\r\n\r\nOn a side note, I took my car in on a Saturday night.  As of Monday night, no call on the status.  Fine.  I called, left a message.  I was called later saying the car would be done tomorrow.  So Tuesday comes, no call.  I call again on Wednesday, and am then told that my car would be ready on Thursday evening.  Of course, the provider was not at work when I arrived, and so i was left with a ridiculous bill that had no 20% discount.  I\u0027m forced to pay for it to get the car back.  \r\n\r\nNot only was I cheated on that day, this dealership lost a customer for life, and I will relay the facts to others via social media.",
+        "consumerName": "dd6",
+        "date": "Feb 23, 2015 4:44:33 PM",
+        "totalRating": 1.0,
+        "recommendedDealer": "FALSE",
+        "comments": []
+    }, {
+        "dealerId": "1006",
+        "locationId": "1006",
+        "dealerName": "Pacific BMW",
+        "id": "536267614285365248",
+        "averageRating": 5.0,
+        "title": "Service review",
+        "reviewBody": "Always excellent service everytime I bring my car in. Galo Mora, my service advisor is always polite and very nice!",
+        "consumerName": "eagleye46",
+        "date": "Jan 10, 2015 9:48:01 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "dealerId": "1006",
+        "locationId": "1006",
+        "dealerName": "Pacific BMW",
+        "id": "525269074826387456",
+        "averageRating": 5.0,
+        "title": "Sensors",
+        "reviewBody": "Great service, the best Dealer service provider, I have been servicing my BMW\u0027s for years at Pacific BMW, service agent Gilbert Pogosyan helped me to understand what was wrong with my car, it was last minute call that I made and he helped to finish the service within hours.  By the way they wash my car better then Car washers ",
+        "consumerName": "HagopB",
+        "date": "Dec 26, 2014 5:35:53 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }, {
+        "dealerId": "1006",
+        "locationId": "1006",
+        "dealerName": "Pacific BMW",
+        "id": "525255760645873664",
+        "averageRating": 5.0,
+        "title": "Since 2002",
+        "reviewBody": "Purchased certified pre-owned in 2002 and always had serviced at Pacific. It is some drive for me to get to the dealership, but they have need good on loaner or shuttle service. Car continues in excellent condition.",
+        "consumerName": "oscillight",
+        "date": "Dec 26, 2014 5:09:26 PM",
+        "totalRating": 5.0,
+        "recommendedDealer": "TRUE",
+        "comments": []
+    }]
+}
