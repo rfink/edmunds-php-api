@@ -34,7 +34,7 @@
     },
     "searchDealers": {
       "extends": "abstractService",
-      "uri": "/api/dealer/v2/dealers",
+      "uri": "/api/dealer/v2/dealers/",
       "responseClass": "dealerHolderModel",
       "summary": "Return a filtered list of dealers",
       "parameters": {
@@ -106,10 +106,10 @@
     },
     "getFranchiseById": {
       "extends": "abstractService",
-      "uri": "/api/dealer/v2/franchises/{id}",
+      "uri": "/api/dealer/v2/franchises/{franchiseId}",
       "responseClass": "Franchise",
       "parameters": {
-        "id": {
+        "franchiseId": {
           "location": "uri",
           "required": true
         }
@@ -117,7 +117,7 @@
     },
     "getFranchises": {
       "extends": "abstractService",
-      "uri": "/api/dealer/v2/franchises",
+      "uri": "/api/dealer/v2/franchises/",
       "responseClass": "franchiseHolder",
       "parameters": {
         "zipcode": {
@@ -187,10 +187,10 @@
     },
     "getRepairShopById": {
       "extends": "abstractService",
-      "uri": "/api/dealer/v2/repairshops/{id}",
+      "uri": "/api/dealer/v2/repairshops/{repairShopId}",
       "responseClass": "RepairShop",
       "parameters": {
-        "id": {
+        "repairShopId": {
           "location": "uri",
           "required": true
         }
@@ -198,7 +198,7 @@
     },
     "getRepairShops": {
       "extends": "abstractService",
-      "uri": "/api/dealer/v2/repairshops",
+      "uri": "/api/dealer/v2/repairshops/",
       "responseClass": "repairShopHolder",
       "parameters": {
         "zipcode": {

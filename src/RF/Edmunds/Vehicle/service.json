@@ -304,7 +304,7 @@
     },
     "getIncentivesByStyleId": {
       "extends": "abstractService",
-      "uri": "/v1/api/incentive/incentiverepository/findincentivebystyleid",
+      "uri": "/v1/api/incentive/incentiverepository/findincentivesbystyleid",
       "responseClass": "incentiveHolderModel",
       "parameters": {
         "styleid": {
@@ -330,10 +330,10 @@
     },
     "getMaintenanceActionById": {
       "extends": "abstractService",
-      "uri": "/v1/api/maintenance/action/{id}",
+      "uri": "/v1/api/maintenance/action/{actionId}",
       "responseClass": "actionHolderModel",
       "parameters": {
-        "id": {
+        "actionId": {
           "location": "uri",
           "required": true
         }
@@ -357,10 +357,10 @@
     },
     "getRecallById": {
       "extends": "abstractService",
-      "uri": "/v1/api/maintenance/recall/{id}",
+      "uri": "/v1/api/maintenance/recall/{recallId}",
       "responseClass": "recallHolderModel",
       "parameters": {
-        "id": {
+        "recallId": {
           "location": "uri",
           "required": true
         }
@@ -379,11 +379,11 @@
     },
     "getServiceBulletinById": {
       "extends": "abstractService",
-      "uri": "/v1/api/maintenance/servicebulletin/{id}",
+      "uri": "/v1/api/maintenance/servicebulletin/{serviceBulletinId}",
       "responseClass": "serviceBulletinHolderModel",
       "parameters": {
-        "id": {
-          "location": "query",
+        "serviceBulletinId": {
+          "location": "uri",
           "required": true
         }
       }
@@ -401,10 +401,10 @@
     },
     "getStyleNotesById": {
       "extends": "abstractService",
-      "uri": "/v1/api/maintenance/stylesnotes/{id}",
+      "uri": "/v1/api/maintenance/stylesnotes/{styleId}",
       "responseClass": "styleNotesHolderModel",
       "parameters": {
-        "id": {
+        "styleId": {
           "location": "uri",
           "required": true
         }
@@ -686,7 +686,7 @@
         },
         "submodel": {
           "location": "query",
-          "required": false
+          "required": true
         }
       }
     },
@@ -935,10 +935,10 @@
     },
     "getEquipmentDetailsById": {
       "extends": "abstractService",
-      "uri": "/api/vehicle/v2/equipment/{id}",
+      "uri": "/api/vehicle/v2/equipment/{equipmentId}",
       "responseClass": "Equipment",
       "parameters": {
-        "id": {
+        "equipmentId": {
           "location": "uri",
           "required": true
         }
@@ -966,10 +966,10 @@
     },
     "getEngineById": {
       "extends": "abstractService",
-      "uri": "/api/vehicle/v2/engines/{id}",
+      "uri": "/api/vehicle/v2/engines/{engineId}",
       "responseClass": "Engine",
       "parameters": {
-        "id": {
+        "engineId": {
           "location": "uri",
           "required": true
         }
@@ -992,10 +992,10 @@
     },
     "getTransmissionById": {
       "extends": "abstractService",
-      "uri": "/api/vehicle/v2/transmissions/{id}",
+      "uri": "/api/vehicle/v2/transmissions/{transmissionId}",
       "responseClass": "Transmission",
       "parameters": {
-        "id": {
+        "transmissionId": {
           "location": "uri",
           "required": true
         }
@@ -1015,10 +1015,10 @@
     },
     "getOptionDetailsById": {
       "extends": "abstractService",
-      "uri": "/api/vehicle/v2/options/{id}",
+      "uri": "/api/vehicle/v2/options/{optionId}",
       "responseClass": "Option",
       "parameters": {
-        "id": {
+        "optionId": {
           "location": "uri",
           "required": true
         }
@@ -1041,10 +1041,10 @@
     },
     "getColorDetailsById": {
       "extends": "abstractService",
-      "uri": "/api/vehicle/v2/colors/{id}",
+      "uri": "/api/vehicle/v2/colors/{colorId}",
       "responseClass": "Color",
       "parameters": {
-        "id": {
+        "colorId": {
           "location": "uri",
           "required": true
         }
@@ -1053,10 +1053,10 @@
 
     "getStyleById": {
       "extends": "abstractService",
-      "uri": "/api/vehicle/v2/styles/{id}",
+      "uri": "/api/vehicle/v2/styles/{styleId}",
       "responseClass": "Style",
       "parameters": {
-        "id": {
+        "styleId": {
           "location": "uri",
           "required": true
         },
